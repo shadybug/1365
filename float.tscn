@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://float.gd" type="Script" id=1]
+[ext_resource path="res://assets/point.png" type="Texture" id=2]
+[ext_resource path="res://littlemonster.fnt" type="BitmapFont" id=3]
+
+[node name="Float" type="Node2D"]
+
+script/script = ExtResource( 1 )
+group = "dysphoria"
+offsety = 8
+
+[node name="Sprite" type="Sprite" parent="."]
+
+visibility/blend_mode = 1
+visibility/light_mask = 2
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="Sprite"]
+
+visibility/blend_mode = 1
+visibility/light_mask = 2
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
+rect/scale = Vector2( 0.5, 0.5 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 26.0
+margin/top = 22.5
+margin/right = -64.5
+margin/bottom = -21.5
+custom_fonts/font = ExtResource( 3 )
+text = "depression"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+

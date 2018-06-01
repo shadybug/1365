@@ -1,0 +1,215 @@
+[gd_scene load_steps=10 format=1]
+
+[ext_resource path="res://depression.gd" type="Script" id=1]
+[ext_resource path="res://assets/Enemies/Depression/idle1.png" type="Texture" id=2]
+[ext_resource path="res://assets/Enemies/Depression/idle2.png" type="Texture" id=3]
+[ext_resource path="res://assets/Enemies/Depression/idle3.png" type="Texture" id=4]
+[ext_resource path="res://assets/Enemies/Depression/blob.png" type="Texture" id=5]
+[ext_resource path="res://assets/Enemies/Depression/glow.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 13, 15 )
+
+[sub_resource type="SpriteFrames" id=3]
+
+animations = [ { "frames":[ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ], "loop":true, "name":"default", "speed":2.0 } ]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 16, 30.2574 )
+
+[node name="depression" type="RigidBody2D" groups=[ "depression" ]]
+
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -3, -1 )
+shapes/0/trigger = false
+collision/layers = 2
+collision/mask = 2
+mode = 2
+mass = 1.0
+friction = 0.0
+bounce = 1.0
+gravity_scale = 0.15
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+script/script = ExtResource( 1 )
+
+[node name="sprite" type="AnimatedSprite" parent="."]
+
+frames = SubResource( 3 )
+animation = "default"
+frame = 2
+playing = true
+
+[node name="blobsright" type="Particles2D" parent="sprite"]
+
+visibility/opacity = 0.75
+visibility/behind_parent = true
+transform/pos = Vector2( -9, 0 )
+config/amount = 10
+config/lifetime = 3.0
+config/preprocess = 3.0
+config/local_space = false
+config/texture = ExtResource( 5 )
+params/direction = 75.0
+params/spread = 20.0
+params/linear_velocity = 10.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 0.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 1.0
+params/final_size = 4.0
+params/hue_variation = 1.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/spread = 1.0
+
+[node name="blobsleft" type="Particles2D" parent="sprite"]
+
+visibility/opacity = 0.75
+visibility/behind_parent = true
+transform/pos = Vector2( 6, -3 )
+config/amount = 10
+config/lifetime = 3.0
+config/preprocess = 3.0
+config/local_space = false
+config/texture = ExtResource( 5 )
+params/direction = 285.0
+params/spread = 20.0
+params/linear_velocity = 10.0
+params/spin_velocity = 0.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 0.0
+params/gravity_strength = 0.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 0.0
+params/initial_angle = 0.0
+params/initial_size = 1.0
+params/final_size = 4.0
+params/hue_variation = 1.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+randomness/spread = 1.0
+
+[node name="spookyright" type="Particles2D" parent="sprite"]
+
+visibility/behind_parent = true
+transform/pos = Vector2( 3, -1 )
+config/amount = 40
+config/lifetime = 4.0
+config/preprocess = 3.0
+config/local_space = false
+params/direction = 55.0
+params/spread = 50.0
+params/linear_velocity = 10.0
+params/spin_velocity = 10.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 90.0
+params/gravity_strength = 5.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 3.0
+params/initial_angle = 0.0
+params/initial_size = 1.0
+params/final_size = 5.0
+params/hue_variation = 1.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+color/color = Color( 0, 0, 0, 1 )
+
+[node name="spookyleft" type="Particles2D" parent="sprite"]
+
+visibility/behind_parent = true
+transform/pos = Vector2( 2, 2 )
+config/amount = 40
+config/lifetime = 4.0
+config/preprocess = 3.0
+config/local_space = false
+params/direction = 305.0
+params/spread = 50.0
+params/linear_velocity = 10.0
+params/spin_velocity = 10.0
+params/orbit_velocity = 0.0
+params/gravity_direction = 270.0
+params/gravity_strength = 5.0
+params/radial_accel = 0.0
+params/tangential_accel = 0.0
+params/damping = 3.0
+params/initial_angle = 0.0
+params/initial_size = 1.0
+params/final_size = 5.0
+params/hue_variation = 1.0
+params/anim_speed_scale = 1.0
+params/anim_initial_pos = 0.0
+color/color = Color( 0, 0, 0, 1 )
+
+[node name="Light2D" type="Light2D" parent="sprite"]
+
+enabled = true
+editor_only = false
+texture = ExtResource( 6 )
+offset = Vector2( 0, 0 )
+scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( -3, -1 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="playerArea" type="Area2D" parent="."]
+
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 0.625, 0, 0, 0.330497, -9.53674e-07, 7.15256e-07 )
+shapes/0/trigger = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playerArea"]
+
+transform/pos = Vector2( -9.53674e-07, 7.15256e-07 )
+transform/scale = Vector2( 0.625, 0.330497 )
+shape = SubResource( 1 )
+trigger = true
+_update_shape_index = 0
+
+[connection signal="body_enter" from="playerArea" to="." method="_on_playerArea_body_enter"]
+
+

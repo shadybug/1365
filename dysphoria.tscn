@@ -1,0 +1,115 @@
+[gd_scene load_steps=12 format=1]
+
+[ext_resource path="res://dysphoria.gd" type="Script" id=1]
+[ext_resource path="res://assets/Enemies/Dysphoria/glow.png" type="Texture" id=2]
+[ext_resource path="res://assets/Enemies/Dysphoria/pink1.png" type="Texture" id=3]
+[ext_resource path="res://assets/Enemies/Dysphoria/pink2.png" type="Texture" id=4]
+[ext_resource path="res://assets/Enemies/Dysphoria/pink3.png" type="Texture" id=5]
+[ext_resource path="res://assets/Enemies/Dysphoria/blue1.png" type="Texture" id=6]
+[ext_resource path="res://assets/Enemies/Dysphoria/blue2.png" type="Texture" id=7]
+[ext_resource path="res://assets/Enemies/Dysphoria/blue3.png" type="Texture" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ { "frames":[ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ], "loop":true, "name":"pink", "speed":8.0 }, { "frames":[ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ], "loop":true, "name":"blue", "speed":8.0 } ]
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 13, 12.0397 )
+
+[node name="dysphoria" type="RigidBody2D" groups=[ "dysphoria" ]]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 0.634615, 0, 0, 0.538462, 0.250001, 0.5 )
+shapes/0/trigger = false
+collision/layers = 2
+collision/mask = 2
+mode = 2
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 0.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 3
+contact_monitor = true
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+script/script = ExtResource( 1 )
+
+[node name="Light2D" type="Light2D" parent="."]
+
+transform/pos = Vector2( -0.118234, -0.791593 )
+transform/rot = 180.0
+enabled = true
+editor_only = false
+texture = ExtResource( 2 )
+offset = Vector2( 0, 0 )
+scale = 1.0
+color = Color( 0.388235, 0.607843, 1, 1 )
+energy = 0.75
+mode = 0
+range/height = 0.0
+range/z_min = -1024
+range/z_max = 1024
+range/layer_min = 0
+range/layer_max = 0
+range/item_mask = 1
+shadow/enabled = false
+shadow/color = Color( 0, 0, 0, 0 )
+shadow/buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="sprite" type="AnimatedSprite" parent="."]
+
+frames = SubResource( 2 )
+animation = "blue"
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( 0.250001, 0.5 )
+transform/scale = Vector2( 0.634615, 0.538462 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="playerArea" type="Area2D" parent="."]
+
+transform/pos = Vector2( -0.999999, -0.999999 )
+transform/scale = Vector2( 0.96875, 0.96875 )
+input/pickable = true
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 0.645161, 0, 0, 0.686354, 1.03226, 1.03226 )
+shapes/0/trigger = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="playerArea"]
+
+visibility/visible = false
+transform/pos = Vector2( 1.03226, 1.03226 )
+transform/scale = Vector2( 0.645161, 0.686354 )
+shape = SubResource( 3 )
+trigger = true
+_update_shape_index = 0
+
+[connection signal="body_enter" from="playerArea" to="." method="_on_playerArea_body_enter"]
+
+

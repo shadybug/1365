@@ -1,0 +1,480 @@
+[gd_scene load_steps=24 format=1]
+
+[ext_resource path="res://level0.gd" type="Script" id=1]
+[ext_resource path="res://assets/Maps/3_junior.png" type="Texture" id=2]
+[ext_resource path="res://player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://light.tscn" type="PackedScene" id=4]
+[ext_resource path="res://plotpoint.tscn" type="PackedScene" id=5]
+[ext_resource path="res://dysphoria.tscn" type="PackedScene" id=6]
+[ext_resource path="res://depression.tscn" type="PackedScene" id=7]
+[ext_resource path="res://float.tscn" type="PackedScene" id=8]
+[ext_resource path="res://heart.tscn" type="PackedScene" id=9]
+[ext_resource path="res://littlemonster.fnt" type="BitmapFont" id=10]
+[ext_resource path="res://pausemenu.tscn" type="PackedScene" id=11]
+[ext_resource path="res://diemenu.tscn" type="PackedScene" id=12]
+[ext_resource path="res://health.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/Music/goback.ogg" type="AudioStream" id=14]
+
+[sub_resource type="ConcavePolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+segments = Vector2Array( -9.37916, -6, -5.12195, -6, -5.12195, -6, -5.12195, 70.1905, -5.12195, 70.1905, 18.0562, 70.1905, 18.0562, 70.1905, 18.0562, 82.381, 18.0562, 82.381, 9.54176, 82.381, 9.54176, 82.381, 9.54176, 173.81, 9.54176, 173.81, 18.0562, 173.81, 18.0562, 173.81, 18.0562, 182.952, 18.0562, 182.952, 8.12269, 182.952, 8.12269, 182.952, 8.12269, 82.381, 8.12269, 82.381, -7.01404, 82.381, -7.01404, 82.381, -7.01404, 0.0952387, -7.01404, 0.0952387, -9.37916, 0.0952387, -9.37916, 0.0952387, -9.37916, -6 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 28.4167, 18.6 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 31, 18.6 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 31, 18.6 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 28, 18.6 )
+
+[sub_resource type="OccluderPolygon2D" id=6]
+
+closed = true
+cull_mode = 0
+polygon = Vector2Array( 32, 32, 98, 32, 98, 30, 126, 30, 126, 32, 258, 32, 258, 30, 286, 30, 286, 32, 320, 32, 320, 832, 354, 832, 354, 830, 382, 830, 382, 832, 514, 832, 514, 830, 542, 830, 542, 832, 674, 832, 674, 830, 702, 830, 702, 832, 834, 832, 834, 830, 862, 830, 862, 832, 994, 832, 994, 830, 1022, 830, 1022, 832, 1154, 832, 1154, 830, 1182, 830, 1182, 832, 1314, 832, 1314, 830, 1342, 830, 1342, 832, 1474, 832, 1474, 830, 1502, 830, 1502, 832, 1634, 832, 1634, 830, 1662, 830, 1662, 832, 1794, 832, 1794, 830, 1822, 830, 1822, 832, 1888, 832, 1888, 964, 1312, 964, 1312, 1920, 1794, 1920, 1794, 1918, 1822, 1918, 1822, 1920, 1888, 1920, 1888, 2020, 1216, 2020, 1216, 964, 192, 964, 192, 100, 32, 100, 32, 32, 24, 32, 24, 112, 184, 112, 184, 976, 1208, 976, 1208, 2032, 1896, 2032, 1896, 1904, 1320, 1904, 1320, 976, 1896, 976, 1896, 816, 328, 816, 328, 16, 24, 16, 24, 32 )
+
+[sub_resource type="GDScript" id=7]
+
+script/source = "extends Area2D\n\nexport var text = \"\"\nvar talking = false\nvar i = 0\nvar t = 0\n\nfunc _ready():\n\tset_process(true)\n\nfunc _process(delta):\n\tif talking == true && i <= text.length():\n\t\tif t > 0.01:\n\t\t\tget_parent().get_node(\"CanvasLayer/Control/Label\").set_text(text.left(i))\n\t\t\ti += 1\n\t\t\tt = 0\n\telif i > text.length():\n\t\ttalking = false\n\t\tglobal.talking = false\n\t\tqueue_free()\n\tt += delta\n\nfunc _on_Area2D_body_enter( body ):\n\tif body.is_in_group(\"Player\"):\n\t\ttalking = true\n\t\tglobal.talking = true\n\t\ti = 0\n\t\tbody.set_linear_velocity(Vector2(0,0))\n\t\tbody._hurt(40)\n"
+
+[sub_resource type="RectangleShape2D" id=8]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
+light_color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
+dark_color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
+border_size = 0
+border_blend = true
+draw_bg = true
+
+[node name="level0" type="CanvasModulate"]
+
+transform/pos = Vector2( 6, -3 )
+color = Color( 0.156863, 0.156863, 0.156863, 1 )
+script/script = ExtResource( 1 )
+scene = "res://level4.tscn"
+day = "0819"
+
+[node name="TileMap" type="Sprite" parent="."]
+
+transform/pos = Vector2( -6, 3 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TileMap"]
+
+editor/display_folded = true
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 67.65, 0, 0, 10.5, 666.5, 95 )
+shapes/0/trigger = false
+collision/layers = 7
+collision/mask = 7
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/StaticBody2D"]
+
+visibility/visible = false
+transform/pos = Vector2( 666.5, 95 )
+transform/scale = Vector2( 67.65, 10.5 )
+build_mode = 1
+polygon = Vector2Array( -9.37916, -6, -5.12195, -6, -5.12195, 70.1905, 18.0562, 70.1905, 18.0562, 82.381, 9.54176, 82.381, 9.54176, 173.81, 18.0562, 173.81, 18.0562, 182.952, 8.12269, 182.952, 8.12269, 82.381, -7.01404, 82.381, -7.01404, 0.0952387, -9.37916, 0.0952387 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="Lockers" type="StaticBody2D" parent="TileMap"]
+
+editor/display_folded = true
+input/pickable = false
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 3.09677, 0, 0, -8.33969e-07, 672, 896 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 3 )
+shapes/1/transform = Matrix32( -2.58064, 0, 0, 1.25915e-06, 1104, 896 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 4 )
+shapes/2/transform = Matrix32( 2.58065, 0, 0, 1.25914e-06, 1552, 896 )
+shapes/2/trigger = false
+shapes/3/shape = SubResource( 5 )
+shapes/3/transform = Matrix32( 1.71429, 0, 0, 1.25915e-06, 1712, 896 )
+shapes/3/trigger = false
+collision/layers = 1
+collision/mask = 1
+one_way_collision/direction = Vector2( 0, 1 )
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="LockerCollide" type="CollisionShape2D" parent="TileMap/Lockers"]
+
+transform/pos = Vector2( 672, 896 )
+transform/scale = Vector2( 3.09677, -8.33969e-07 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="LockerCollide1" type="CollisionShape2D" parent="TileMap/Lockers"]
+
+transform/pos = Vector2( 1104, 896 )
+transform/scale = Vector2( -2.58064, 1.25915e-06 )
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 1
+
+[node name="LockerCollide2" type="CollisionShape2D" parent="TileMap/Lockers"]
+
+transform/pos = Vector2( 1552, 896 )
+transform/scale = Vector2( 2.58065, 1.25914e-06 )
+shape = SubResource( 4 )
+trigger = false
+_update_shape_index = 2
+
+[node name="LockerCollide3" type="CollisionShape2D" parent="TileMap/Lockers"]
+
+transform/pos = Vector2( 1712, 896 )
+transform/scale = Vector2( 1.71429, 1.25915e-06 )
+shape = SubResource( 5 )
+trigger = false
+_update_shape_index = 3
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="TileMap"]
+
+occluder = SubResource( 6 )
+light_mask = 1
+
+[node name="player" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 50, 83 )
+
+[node name="Camera" type="Camera2D" parent="player"]
+
+offset = Vector2( 0, 64 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 0.5, 0.5 )
+limit/left = 0
+limit/top = -10000
+limit/right = 1920
+limit/bottom = 2112
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = false
+smoothing/speed = 5.0
+drag_margin/left = 0.05
+drag_margin/top = 0.05
+drag_margin/right = 0.05
+drag_margin/bottom = 0.05
+
+[node name="Light2D" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 106, 35 )
+offchance = 0.6
+flickerchance = 0.8
+
+[node name="Light2D1" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 266, 35 )
+offchance = 0.6
+flickerchance = 0.8
+
+[node name="Light2D2" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 362, 835 )
+offchance = 0.6
+flickerchance = 0.8
+
+[node name="Light2D3" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 522, 835 )
+offchance = 0.6
+flickerchance = 0.8
+
+[node name="Light2D4" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 682, 835 )
+offchance = 0.6
+flickerchance = 0.8
+
+[node name="Light2D5" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 842, 835 )
+offchance = 0.6
+flickerchance = 0.8
+
+[node name="Light2D6" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1002, 835 )
+offchance = 0.6
+flickerchance = 0.8
+
+[node name="Light2D7" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1162, 835 )
+offchance = 0.6
+flickerchance = 0.8
+
+[node name="Light2D8" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1322, 835 )
+offchance = 0.6
+flickerchance = 0.8
+
+[node name="Light2D9" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1482, 835 )
+offchance = 0.6
+flickerchance = 0.8
+
+[node name="Light2D10" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1642, 835 )
+offchance = 0.6
+flickerchance = 0.8
+
+[node name="Light2D11" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1802, 835 )
+offchance = 0.6
+flickerchance = 0.8
+
+[node name="Light2D12" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1802, 1923 )
+offchance = 0.0
+flickerchance = 1.0
+
+[node name="plotpoint" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 128, 99 )
+text = "Dead end. Time to go home."
+
+[node name="plotpoint 2" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 224, 99 )
+text = "STOP!"
+
+[node name="plotpoint 3" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 250, 955 )
+transform/rot = 90.0
+script/script = SubResource( 7 )
+text = "...You could have gotten yourself killed."
+
+[node name="plotpoint 4" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 706, 899 )
+text = "There\'s nothing for you here. You\'re not supposed to be here."
+
+[node name="plotpoint 5" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 850, 899 )
+text = "You idiot. Never listening, never thinking. All this time, all I\'ve tried to do is help."
+
+[node name="plotpoint6" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1100, 899 )
+text = "Well, enough of that, I say."
+
+[node name="plotpoint7" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1242, 899 )
+text = "F A L L ."
+
+[node name="plotpoint8" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1400, 1971 )
+text = "Isn\'t this lovely\? See where your disobedience got you\?"
+
+[node name="plotpoint9" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1842, 1971 )
+text = "It\'s hilarious that you\'re still trying."
+
+[node name="dysphoria" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 500, 930 )
+
+[node name="dysphoria1" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 700, 890 )
+
+[node name="dysphoria2" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1600, 2000 )
+
+[node name="dysphoria3" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1400, 1950 )
+
+[node name="dysphoria4" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1350, 2000 )
+
+[node name="dysphoria5" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1800, 1975 )
+
+[node name="depression" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 230, 400 )
+
+[node name="depression1" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 1275, 1700 )
+
+[node name="depression2" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 1275, 1400 )
+
+[node name="depression3" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 1500, 1950 )
+
+[node name="exit" type="Area2D" parent="."]
+
+transform/pos = Vector2( 1302, 131 )
+transform/scale = Vector2( 0.125, 1 )
+input/pickable = true
+shapes/0/shape = SubResource( 8 )
+shapes/0/transform = Matrix32( 3.20004, 0, 0, 3.2, 4617.6, 1857.6 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit"]
+
+transform/pos = Vector2( 4617.6, 1857.6 )
+transform/scale = Vector2( 3.20004, 3.2 )
+shape = SubResource( 8 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Float" parent="." instance=ExtResource( 8 )]
+
+[node name="Float1" parent="." instance=ExtResource( 8 )]
+
+group = "depression"
+offsety = 16
+
+[node name="trust" parent="." instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 362, 939 )
+heart = "trust"
+
+[node name="confidence" parent="." instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 1802, 1995 )
+heart = "confidence"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+
+anchor/top = 1
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 20.0
+margin/top = 680.0
+margin/right = 20.0
+margin/bottom = 20.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
+
+visibility/opacity = 0.75
+anchor/top = 1
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -20.0
+margin/top = 94.0
+margin/right = -20.0
+margin/bottom = -20.0
+custom_styles/panel = SubResource( 9 )
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+
+anchor/top = 1
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 10.0
+margin/top = 84.0
+margin/right = 10.0
+margin/bottom = 10.0
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource( 11 )]
+
+visibility/visible = false
+
+[node name="Die" parent="CanvasLayer" instance=ExtResource( 12 )]
+
+visibility/visible = false
+
+[node name="health" parent="CanvasLayer" instance=ExtResource( 13 )]
+
+transform/pos = Vector2( 16, 16 )
+animation = "junior"
+
+[node name="StreamPlayer" type="StreamPlayer" parent="CanvasLayer"]
+
+stream/stream = ExtResource( 14 )
+stream/play = true
+stream/loop = true
+stream/volume_db = 0.0
+stream/autoplay = true
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[connection signal="body_enter" from="exit" to="." method="_on_exit_body_enter"]
+
+

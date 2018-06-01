@@ -1,0 +1,324 @@
+[gd_scene load_steps=20 format=1]
+
+[ext_resource path="res://assets/health/cardSophomore.png" type="Texture" id=1]
+[ext_resource path="res://assets/health/cardJunior.png" type="Texture" id=2]
+[ext_resource path="res://assets/health/cardSenior.png" type="Texture" id=3]
+[ext_resource path="res://assets/health/cardFreshman1.png" type="Texture" id=4]
+[ext_resource path="res://assets/health/cardFreshman.png" type="Texture" id=5]
+[ext_resource path="res://health.gd" type="Script" id=6]
+[ext_resource path="res://assets/health/health0.png" type="Texture" id=7]
+[ext_resource path="res://assets/health/health1.png" type="Texture" id=8]
+[ext_resource path="res://assets/health/health2.png" type="Texture" id=9]
+[ext_resource path="res://assets/health/health3.png" type="Texture" id=10]
+[ext_resource path="res://assets/health/health4.png" type="Texture" id=11]
+[ext_resource path="res://assets/health/health5.png" type="Texture" id=12]
+[ext_resource path="res://assets/health/health6.png" type="Texture" id=13]
+[ext_resource path="res://assets/health/health7.png" type="Texture" id=14]
+[ext_resource path="res://assets/health/health8.png" type="Texture" id=15]
+[ext_resource path="res://assets/health/health9.png" type="Texture" id=16]
+[ext_resource path="res://assets/health/health10.png" type="Texture" id=17]
+[ext_resource path="res://littlemonster2.fnt" type="BitmapFont" id=18]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ { "frames":[ ExtResource( 1 ) ], "loop":true, "name":"sophomore", "speed":5.0 }, { "frames":[ ExtResource( 2 ) ], "loop":true, "name":"junior", "speed":5.0 }, { "frames":[ ExtResource( 3 ) ], "loop":true, "name":"senior", "speed":5.0 }, { "frames":[ ExtResource( 4 ) ], "loop":true, "name":"freshman1", "speed":5.0 }, { "frames":[ ExtResource( 5 ) ], "loop":true, "name":"freshman", "speed":5.0 } ]
+
+[node name="health" type="AnimatedSprite"]
+
+process/pause_mode = 2
+frames = SubResource( 1 )
+animation = "freshman"
+centered = false
+script/script = ExtResource( 6 )
+
+[node name="health0" type="TextureProgress" parent="."]
+
+rect/scale = Vector2( 1.5, 1.5 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 192.0
+margin/top = 0.0
+margin/right = 392.0
+margin/bottom = 96.0
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 0.0
+range/exp_edit = false
+range/rounded = false
+texture/under = null
+texture/over = null
+texture/progress = ExtResource( 7 )
+radial_fill/fill_degrees = 360.0
+radial_fill/center_offset = Vector2( 0, 0 )
+
+[node name="health1" type="TextureProgress" parent="."]
+
+visibility/visible = false
+rect/scale = Vector2( 1.5, 1.5 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 192.0
+margin/top = 0.0
+margin/right = 392.0
+margin/bottom = 96.0
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+texture/under = null
+texture/over = null
+texture/progress = ExtResource( 8 )
+radial_fill/fill_degrees = 360.0
+radial_fill/center_offset = Vector2( 0, 0 )
+
+[node name="health2" type="TextureProgress" parent="."]
+
+visibility/visible = false
+rect/scale = Vector2( 1.5, 1.5 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 192.0
+margin/top = 0.0
+margin/right = 392.0
+margin/bottom = 96.0
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+texture/under = null
+texture/over = null
+texture/progress = ExtResource( 9 )
+radial_fill/fill_degrees = 360.0
+radial_fill/center_offset = Vector2( 0, 0 )
+
+[node name="health3" type="TextureProgress" parent="."]
+
+visibility/visible = false
+rect/scale = Vector2( 1.5, 1.5 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 192.0
+margin/top = 0.0
+margin/right = 392.0
+margin/bottom = 96.0
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+texture/under = null
+texture/over = null
+texture/progress = ExtResource( 10 )
+radial_fill/fill_degrees = 360.0
+radial_fill/center_offset = Vector2( 0, 0 )
+
+[node name="health4" type="TextureProgress" parent="."]
+
+visibility/visible = false
+rect/scale = Vector2( 1.5, 1.5 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 192.0
+margin/top = 0.0
+margin/right = 392.0
+margin/bottom = 96.0
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+texture/under = null
+texture/over = null
+texture/progress = ExtResource( 11 )
+radial_fill/fill_degrees = 360.0
+radial_fill/center_offset = Vector2( 0, 0 )
+
+[node name="health5" type="TextureProgress" parent="."]
+
+visibility/visible = false
+rect/scale = Vector2( 1.5, 1.5 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 192.0
+margin/top = 0.0
+margin/right = 392.0
+margin/bottom = 96.0
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+texture/under = null
+texture/over = null
+texture/progress = ExtResource( 12 )
+radial_fill/fill_degrees = 360.0
+radial_fill/center_offset = Vector2( 0, 0 )
+
+[node name="health6" type="TextureProgress" parent="."]
+
+visibility/visible = false
+rect/scale = Vector2( 1.5, 1.5 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 192.0
+margin/top = 0.0
+margin/right = 392.0
+margin/bottom = 96.0
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+texture/under = null
+texture/over = null
+texture/progress = ExtResource( 13 )
+radial_fill/fill_degrees = 360.0
+radial_fill/center_offset = Vector2( 0, 0 )
+
+[node name="health7" type="TextureProgress" parent="."]
+
+visibility/visible = false
+rect/scale = Vector2( 1.5, 1.5 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 192.0
+margin/top = 0.0
+margin/right = 392.0
+margin/bottom = 96.0
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+texture/under = null
+texture/over = null
+texture/progress = ExtResource( 14 )
+radial_fill/fill_degrees = 360.0
+radial_fill/center_offset = Vector2( 0, 0 )
+
+[node name="health8" type="TextureProgress" parent="."]
+
+visibility/visible = false
+rect/scale = Vector2( 1.5, 1.5 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 192.0
+margin/top = 0.0
+margin/right = 392.0
+margin/bottom = 96.0
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+texture/under = null
+texture/over = null
+texture/progress = ExtResource( 15 )
+radial_fill/fill_degrees = 360.0
+radial_fill/center_offset = Vector2( 0, 0 )
+
+[node name="health9" type="TextureProgress" parent="."]
+
+visibility/visible = false
+rect/scale = Vector2( 1.5, 1.5 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 192.0
+margin/top = 0.0
+margin/right = 392.0
+margin/bottom = 96.0
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+texture/under = null
+texture/over = null
+texture/progress = ExtResource( 16 )
+radial_fill/fill_degrees = 360.0
+radial_fill/center_offset = Vector2( 0, 0 )
+
+[node name="health10" type="TextureProgress" parent="."]
+
+visibility/visible = false
+rect/scale = Vector2( 1.5, 1.5 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 192.0
+margin/top = 0.0
+margin/right = 392.0
+margin/bottom = 96.0
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+texture/under = null
+texture/over = null
+texture/progress = ExtResource( 17 )
+radial_fill/fill_degrees = 360.0
+radial_fill/center_offset = Vector2( 0, 0 )
+
+[node name="day" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 97.0
+margin/top = 99.0
+margin/right = 167.0
+margin/bottom = 135.0
+custom_fonts/font = ExtResource( 18 )
+text = "1365"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+

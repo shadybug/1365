@@ -1,0 +1,812 @@
+[gd_scene load_steps=33 format=1]
+
+[ext_resource path="res://level0.gd" type="Script" id=1]
+[ext_resource path="res://assets/Maps/2_sophomore.png" type="Texture" id=2]
+[ext_resource path="res://player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://light.tscn" type="PackedScene" id=4]
+[ext_resource path="res://plotpoint.tscn" type="PackedScene" id=5]
+[ext_resource path="res://dysphoria.tscn" type="PackedScene" id=6]
+[ext_resource path="res://depression.tscn" type="PackedScene" id=7]
+[ext_resource path="res://guilt.tscn" type="PackedScene" id=8]
+[ext_resource path="res://float.tscn" type="PackedScene" id=9]
+[ext_resource path="res://heart.tscn" type="PackedScene" id=10]
+[ext_resource path="res://littlemonster.fnt" type="BitmapFont" id=11]
+[ext_resource path="res://pausemenu.tscn" type="PackedScene" id=12]
+[ext_resource path="res://diemenu.tscn" type="PackedScene" id=13]
+[ext_resource path="res://health.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/Music/goback.ogg" type="AudioStream" id=15]
+
+[sub_resource type="ConcavePolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+segments = Vector2Array( -9.37916, 94.5714, 1.97339, 94.5714, 1.97339, 94.5714, 1.97339, 91.5238, 1.97339, 91.5238, 2.44641, 91.5238, 2.44641, 91.5238, 2.44641, 88.4762, 2.44641, 88.4762, 2.91944, 88.4762, 2.91944, 88.4762, 2.91944, 85.4286, 2.91944, 85.4286, 3.39246, 85.4286, 3.39246, 85.4286, 3.39246, 82.381, 3.39246, 82.381, 18.5292, 82.381, 18.5292, 82.381, 18.5292, 85.4286, 18.5292, 85.4286, 29.8817, 85.4286, 29.8817, 85.4286, 29.8817, -6, 29.8817, -6, 33.1929, -6, 33.1929, -6, 33.1929, 0.0952377, 33.1929, 0.0952377, 32.2469, 0.0952377, 32.2469, 0.0952377, 32.2469, 91.5238, 32.2469, 91.5238, 29.8817, 91.5238, 29.8817, 91.5238, 29.8817, 88.4762, 29.8817, 88.4762, 18.5292, 88.4762, 18.5292, 88.4762, 18.5292, 109.81, 18.5292, 109.81, -9.37916, 109.81, -9.37916, 109.81, -9.37916, 94.5714 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 16.5188, 89.1429, 16.6371, 89.1429, 16.6371, 91.4286, 16.5188, 92.1905 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 17.7014, 92.1905, 16.5188, 92.1905, 16.6371, 91.4286, 17.5831, 91.4286 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 17.7014, 89.1429, 17.7014, 92.1905, 17.5831, 91.4286, 17.5831, 89.1429 )
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 80.5001, 27.7432 )
+
+[sub_resource type="RectangleShape2D" id=6]
+
+custom_solver_bias = 0.0
+extents = Vector2( 80.5, 27.7427 )
+
+[sub_resource type="RectangleShape2D" id=7]
+
+custom_solver_bias = 0.0
+extents = Vector2( 80.4998, 27.7432 )
+
+[sub_resource type="RectangleShape2D" id=8]
+
+custom_solver_bias = 0.0
+extents = Vector2( 80.5, 27.7437 )
+
+[sub_resource type="RectangleShape2D" id=9]
+
+custom_solver_bias = 0.0
+extents = Vector2( 86.5002, 30.7422 )
+
+[sub_resource type="RectangleShape2D" id=10]
+
+custom_solver_bias = 0.0
+extents = Vector2( 48.1411, 24.5723 )
+
+[sub_resource type="RectangleShape2D" id=11]
+
+custom_solver_bias = 0.0
+extents = Vector2( 78.4683, 24.7432 )
+
+[sub_resource type="RectangleShape2D" id=12]
+
+custom_solver_bias = 0.0
+extents = Vector2( 365.248, 27.7427 )
+
+[sub_resource type="RectangleShape2D" id=13]
+
+custom_solver_bias = 0.0
+extents = Vector2( 977.508, 36.5889 )
+
+[sub_resource type="RectangleShape2D" id=14]
+
+custom_solver_bias = 0.0
+extents = Vector2( 495.164, 57.5858 )
+
+[sub_resource type="OccluderPolygon2D" id=15]
+
+closed = true
+cull_mode = 0
+polygon = Vector2Array( 32, 1088, 98, 1088, 98, 1086, 126, 1086, 126, 1088, 258, 1088, 258, 1086, 286, 1086, 286, 1088, 418, 1088, 418, 1086, 446, 1086, 446, 1088, 578, 1088, 578, 1086, 606, 1086, 606, 1088, 738, 1088, 738, 1086, 766, 1086, 766, 1088, 800, 1088, 800, 1056, 832, 1056, 832, 1024, 864, 1024, 864, 992, 896, 992, 896, 960, 962, 960, 962, 958, 990, 958, 990, 960, 1122, 960, 1122, 958, 1150, 958, 1150, 960, 1282, 960, 1282, 958, 1310, 958, 1310, 960, 1442, 960, 1442, 958, 1470, 958, 1470, 960, 1602, 960, 1602, 958, 1630, 958, 1630, 960, 1762, 960, 1762, 958, 1790, 958, 1790, 960, 1920, 960, 1920, 992, 2688, 992, 2688, 926, 2686, 926, 2686, 898, 2688, 898, 2688, 766, 2686, 766, 2686, 738, 2688, 738, 2688, 606, 2686, 606, 2686, 578, 2688, 578, 2688, 446, 2686, 446, 2686, 418, 2688, 418, 2688, 286, 2686, 286, 2686, 258, 2688, 258, 2688, 126, 2686, 126, 2686, 98, 2688, 98, 2688, 32, 2850, 32, 2850, 29, 2878, 29, 2878, 32, 2912, 32, 2912, 100, 2852, 100, 2852, 1056, 2688, 1056, 2688, 1028, 1920, 1028, 1920, 1252, 32, 1252, 32, 1096, 32, 1088, 24, 1072, 776, 1072, 888, 944, 1928, 944, 1928, 984, 2672, 984, 2672, 16, 2920, 16, 2920, 104, 2856, 104, 2856, 1064, 2680, 1064, 2680, 1032, 1928, 1032, 1928, 1256, 24, 1256, 24, 1088 )
+
+[sub_resource type="RectangleShape2D" id=16]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
+light_color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
+dark_color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
+border_size = 0
+border_blend = true
+draw_bg = true
+
+[node name="level0" type="CanvasModulate"]
+
+transform/pos = Vector2( 6, 1114 )
+color = Color( 0.235294, 0.235294, 0.235294, 1 )
+script/script = ExtResource( 1 )
+scene = "res://level3.tscn"
+day = "0546"
+
+[node name="TileMap" type="Sprite" parent="."]
+
+transform/pos = Vector2( -6, -1085 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TileMap"]
+
+editor/display_folded = true
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 67.65, 0, 0, 10.5, 666.5, 95 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 2 )
+shapes/1/transform = Matrix32( 67.65, 0, 0, 10.5, 666.5, 95 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 3 )
+shapes/2/transform = Matrix32( 67.65, 0, 0, 10.5, 666.5, 95 )
+shapes/2/trigger = false
+shapes/3/shape = SubResource( 4 )
+shapes/3/transform = Matrix32( 67.65, 0, 0, 10.5, 666.5, 95 )
+shapes/3/trigger = false
+collision/layers = 7
+collision/mask = 7
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/StaticBody2D"]
+
+visibility/visible = false
+transform/pos = Vector2( 666.5, 95 )
+transform/scale = Vector2( 67.65, 10.5 )
+build_mode = 1
+polygon = Vector2Array( -9.37916, 94.5714, 1.97339, 94.5714, 1.97339, 91.5238, 2.44641, 91.5238, 2.44641, 88.4762, 2.91944, 88.4762, 2.91944, 85.4286, 3.39246, 85.4286, 3.39246, 82.381, 18.5292, 82.381, 18.5292, 85.4286, 29.8817, 85.4286, 29.8817, -6, 33.1929, -6, 33.1929, 0.0952377, 32.2469, 0.0952377, 32.2469, 91.5238, 29.8817, 91.5238, 29.8817, 88.4762, 18.5292, 88.4762, 18.5292, 109.81, -9.37916, 109.81 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="CollisionPolygon2D 2" type="CollisionPolygon2D" parent="TileMap/StaticBody2D"]
+
+visibility/visible = false
+transform/pos = Vector2( 666.5, 95 )
+transform/scale = Vector2( 67.65, 10.5 )
+build_mode = 0
+polygon = Vector2Array( 16.6371, 89.1429, 16.6371, 91.4286, 17.5831, 91.4286, 17.5831, 89.1429, 17.7014, 89.1429, 17.7014, 92.1905, 16.5188, 92.1905, 16.5188, 89.1429 )
+shape_range = Vector2( 1, 3 )
+trigger = false
+
+[node name="Lockers" type="StaticBody2D" parent="TileMap"]
+
+transform/pos = Vector2( 0, 1089 )
+input/pickable = false
+shapes/0/shape = SubResource( 5 )
+shapes/0/transform = Matrix32( 0.993788, 0, 0, 0.00703463, 976, 93.7838 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 6 )
+shapes/1/transform = Matrix32( 0.596274, 0, 0, 0.0070348, 1136, 29.7837 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 7 )
+shapes/2/transform = Matrix32( 0.596273, 0, 0, 0.00703477, 1264, 29.7838 )
+shapes/2/trigger = false
+shapes/3/shape = SubResource( 8 )
+shapes/3/transform = Matrix32( 0.596273, 0, 0, 0.00703562, 1392, -34.2162 )
+shapes/3/trigger = false
+shapes/4/shape = SubResource( 9 )
+shapes/4/transform = Matrix32( 0.554912, 0, 0, 3.43089e-06, 1520, 30.0001 )
+shapes/4/trigger = false
+shapes/5/shape = SubResource( 10 )
+shapes/5/transform = Matrix32( 0.332357, 0, 0, -1.10391e-06, 1616, -1.99997 )
+shapes/5/trigger = false
+shapes/6/shape = SubResource( 11 )
+shapes/6/transform = Matrix32( 0.198757, 0, 0, 1.45713e-06, 1680, -34 )
+shapes/6/trigger = false
+shapes/7/shape = SubResource( 11 )
+shapes/7/transform = Matrix32( 0.203903, 0, 0, 1.88337e-07, 1584, 93.9999 )
+shapes/7/trigger = false
+shapes/8/shape = SubResource( 12 )
+shapes/8/transform = Matrix32( 0.0876115, 0, 0, 0.00703371, 1760, -66.2162 )
+shapes/8/trigger = false
+shapes/9/shape = SubResource( 13 )
+shapes/9/transform = Matrix32( 0.0327363, 0, 0, 0.00414221, 1888, -66.164 )
+shapes/9/trigger = false
+shapes/10/shape = SubResource( 14 )
+shapes/10/transform = Matrix32( 0.085507, 0, 0, 0.00414229, 2816, -98.1639 )
+shapes/10/trigger = false
+shapes/11/shape = SubResource( 14 )
+shapes/11/transform = Matrix32( 0.0841582, 0, 0, 0.00355995, 2720, -226.151 )
+shapes/11/trigger = false
+shapes/12/shape = SubResource( 14 )
+shapes/12/transform = Matrix32( 0.0834994, 0, 0, 0.00309051, 2816, -354.141 )
+shapes/12/trigger = false
+shapes/13/shape = SubResource( 14 )
+shapes/13/transform = Matrix32( 0.0828515, 0, 0, 0.00270888, 2720, -482.132 )
+shapes/13/trigger = false
+shapes/14/shape = SubResource( 14 )
+shapes/14/transform = Matrix32( 0.0825322, 0, 0, 0.00239347, 2719.88, -610.123 )
+shapes/14/trigger = false
+shapes/15/shape = SubResource( 14 )
+shapes/15/transform = Matrix32( 0.0654175, 0, 0, 0.00213077, 2816, -738.116 )
+shapes/15/trigger = false
+shapes/16/shape = SubResource( 14 )
+shapes/16/transform = Matrix32( 0.0650191, 0, 0, 0.00190863, 2720, -866.11 )
+shapes/16/trigger = false
+shapes/17/shape = SubResource( 14 )
+shapes/17/transform = Matrix32( 0.0646252, 0, 0, 0.00171968, 2816, -994.104 )
+shapes/17/trigger = false
+collision/layers = 1
+collision/mask = 1
+one_way_collision/direction = Vector2( 0, 1 )
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="LockerCollide1" type="CollisionShape2D" parent="TileMap/Lockers"]
+
+transform/pos = Vector2( 976, 93.7838 )
+transform/scale = Vector2( 0.993788, 0.00703463 )
+shape = SubResource( 5 )
+trigger = false
+_update_shape_index = 0
+
+[node name="LockerCollide2" type="CollisionShape2D" parent="TileMap/Lockers"]
+
+transform/pos = Vector2( 1136, 29.7837 )
+transform/scale = Vector2( 0.596274, 0.0070348 )
+shape = SubResource( 6 )
+trigger = false
+_update_shape_index = 1
+
+[node name="LockerCollide3" type="CollisionShape2D" parent="TileMap/Lockers"]
+
+transform/pos = Vector2( 1264, 29.7838 )
+transform/scale = Vector2( 0.596273, 0.00703477 )
+shape = SubResource( 7 )
+trigger = false
+_update_shape_index = 2
+
+[node name="LockerCollide4" type="CollisionShape2D" parent="TileMap/Lockers"]
+
+transform/pos = Vector2( 1392, -34.2162 )
+transform/scale = Vector2( 0.596273, 0.00703562 )
+shape = SubResource( 8 )
+trigger = false
+_update_shape_index = 3
+
+[node name="LockerCollide5" type="CollisionShape2D" parent="TileMap/Lockers"]
+
+transform/pos = Vector2( 1520, 30.0001 )
+transform/scale = Vector2( 0.554912, 3.43089e-06 )
+shape = SubResource( 9 )
+trigger = false
+_update_shape_index = 4
+
+[node name="LockerCollide6" type="CollisionShape2D" parent="TileMap/Lockers"]
+
+transform/pos = Vector2( 1616, -1.99997 )
+transform/scale = Vector2( 0.332357, -1.10391e-06 )
+shape = SubResource( 10 )
+trigger = false
+_update_shape_index = 5
+
+[node name="LockerCollide7" type="CollisionShape2D" parent="TileMap/Lockers"]
+
+transform/pos = Vector2( 1680, -34 )
+transform/scale = Vector2( 0.198757, 1.45713e-06 )
+shape = SubResource( 11 )
+trigger = false
+_update_shape_index = 6
+
+[node name="LockerCollide18" type="CollisionShape2D" parent="TileMap/Lockers"]
+
+transform/pos = Vector2( 1584, 93.9999 )
+transform/scale = Vector2( 0.203903, 1.88337e-07 )
+shape = SubResource( 11 )
+trigger = false
+_update_shape_index = 7
+
+[node name="LockerCollide8" type="CollisionShape2D" parent="TileMap/Lockers"]
+
+transform/pos = Vector2( 1760, -66.2162 )
+transform/scale = Vector2( 0.0876115, 0.00703371 )
+shape = SubResource( 12 )
+trigger = false
+_update_shape_index = 8
+
+[node name="LockerCollide9" type="CollisionShape2D" parent="TileMap/Lockers"]
+
+transform/pos = Vector2( 1888, -66.164 )
+transform/scale = Vector2( 0.0327363, 0.00414221 )
+shape = SubResource( 13 )
+trigger = false
+_update_shape_index = 9
+
+[node name="LockerCollide10" type="CollisionShape2D" parent="TileMap/Lockers"]
+
+transform/pos = Vector2( 2816, -98.1639 )
+transform/scale = Vector2( 0.085507, 0.00414229 )
+shape = SubResource( 14 )
+trigger = false
+_update_shape_index = 10
+
+[node name="LockerCollide11" type="CollisionShape2D" parent="TileMap/Lockers"]
+
+transform/pos = Vector2( 2720, -226.151 )
+transform/scale = Vector2( 0.0841582, 0.00355995 )
+shape = SubResource( 14 )
+trigger = false
+_update_shape_index = 11
+
+[node name="LockerCollide12" type="CollisionShape2D" parent="TileMap/Lockers"]
+
+transform/pos = Vector2( 2816, -354.141 )
+transform/scale = Vector2( 0.0834994, 0.00309051 )
+shape = SubResource( 14 )
+trigger = false
+_update_shape_index = 12
+
+[node name="LockerCollide13" type="CollisionShape2D" parent="TileMap/Lockers"]
+
+transform/pos = Vector2( 2720, -482.132 )
+transform/scale = Vector2( 0.0828515, 0.00270888 )
+shape = SubResource( 14 )
+trigger = false
+_update_shape_index = 13
+
+[node name="LockerCollide14" type="CollisionShape2D" parent="TileMap/Lockers"]
+
+transform/pos = Vector2( 2719.88, -610.123 )
+transform/scale = Vector2( 0.0825322, 0.00239347 )
+shape = SubResource( 14 )
+trigger = false
+_update_shape_index = 14
+
+[node name="LockerCollide15" type="CollisionShape2D" parent="TileMap/Lockers"]
+
+transform/pos = Vector2( 2816, -738.116 )
+transform/scale = Vector2( 0.0654175, 0.00213077 )
+shape = SubResource( 14 )
+trigger = false
+_update_shape_index = 15
+
+[node name="LockerCollide16" type="CollisionShape2D" parent="TileMap/Lockers"]
+
+transform/pos = Vector2( 2720, -866.11 )
+transform/scale = Vector2( 0.0650191, 0.00190863 )
+shape = SubResource( 14 )
+trigger = false
+_update_shape_index = 16
+
+[node name="LockerCollide17" type="CollisionShape2D" parent="TileMap/Lockers"]
+
+transform/pos = Vector2( 2816, -994.104 )
+transform/scale = Vector2( 0.0646252, 0.00171968 )
+shape = SubResource( 14 )
+trigger = false
+_update_shape_index = 17
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="TileMap"]
+
+occluder = SubResource( 15 )
+light_mask = 1
+
+[node name="player" parent="." instance=ExtResource( 3 )]
+
+editor/display_folded = true
+transform/pos = Vector2( 50, 147 )
+
+[node name="Camera" type="Camera2D" parent="player"]
+
+offset = Vector2( 0, 64 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 0.5, 0.5 )
+limit/left = 0
+limit/top = -10000
+limit/right = 2944
+limit/bottom = 1360
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = false
+smoothing/speed = 5.0
+drag_margin/left = 0.05
+drag_margin/top = 0.05
+drag_margin/right = 0.05
+drag_margin/bottom = 0.05
+
+[node name="Light2D" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 106, 3 )
+offchance = 0.4
+flickerchance = 0.6
+
+[node name="Light2D1" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 266, 3 )
+offchance = 0.4
+flickerchance = 0.6
+
+[node name="Light2D2" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 426, 3 )
+offchance = 0.4
+flickerchance = 0.6
+
+[node name="Light2D3" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 586, 3 )
+offchance = 0.4
+flickerchance = 0.6
+
+[node name="Light2D4" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 746, 3 )
+offchance = 0.4
+flickerchance = 0.6
+
+[node name="Light2D5" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 970, -125 )
+offchance = 0.4
+flickerchance = 0.6
+
+[node name="Light2D6" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1130, -125 )
+offchance = 0.4
+flickerchance = 0.6
+
+[node name="Light2D7" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1290, -125 )
+offchance = 0.4
+flickerchance = 0.6
+
+[node name="Light2D8" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1450, -125 )
+offchance = 0.4
+flickerchance = 0.6
+
+[node name="Light2D9" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1610, -125 )
+offchance = 0.4
+flickerchance = 0.6
+
+[node name="Light2D10" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 1770, -125 )
+offchance = 0.4
+flickerchance = 0.6
+
+[node name="Light2D11" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2682, -173 )
+transform/rot = 90.0
+offchance = 0.4
+flickerchance = 0.6
+
+[node name="Light2D12" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2682, -333 )
+transform/rot = 90.0
+offchance = 0.4
+flickerchance = 0.6
+
+[node name="Light2D13" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2682, -493 )
+transform/rot = 90.0
+offchance = 0.4
+flickerchance = 0.6
+
+[node name="Light2D14" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2682, -653 )
+transform/rot = 90.0
+offchance = 0.4
+flickerchance = 0.6
+
+[node name="Light2D15" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2682, -813 )
+transform/rot = 90.0
+offchance = 0.4
+flickerchance = 0.6
+
+[node name="Light2D16" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2682, -973 )
+transform/rot = 90.0
+offchance = 0.4
+flickerchance = 0.6
+
+[node name="Light2D17" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 2858, -1053 )
+offchance = 0.4
+flickerchance = 0.6
+
+[node name="plotpoint" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 300, 99 )
+text = ". . ."
+
+[node name="plotpoint 2" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 400, 99 )
+text = "Are you listening\?"
+
+[node name="plotpoint 3" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 992, 99 )
+text = "You can\'t get it, not that you deserve it anyways. It\'s too high."
+
+[node name="plotpoint 4" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1602, 314 )
+text = "That\'s enough. You can\'t go any farther."
+
+[node name="plotpoint 5" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1538, -206 )
+text = "You can\'t make those jumps."
+
+[node name="plotpoint6" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1856, -206 )
+text = "Where are you going\?"
+
+[node name="plotpoint7" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 2720, -206 )
+text = "Now look what you\'ve done."
+
+[node name="plotpoint8" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 2754, -278 )
+transform/rot = 90.0
+text = "Do you actually expect to make it up this\?"
+
+[node name="dysphoria" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 345, 120 )
+
+[node name="dysphoria1" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 453, 64 )
+
+[node name="dysphoria2" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 466, 100 )
+
+[node name="dysphoria3" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 715, 32 )
+
+[node name="dysphoria4" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 796, 104 )
+
+[node name="dysphoria5" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 922, 64 )
+
+[node name="dysphoria6" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 937, 96 )
+
+[node name="dysphoria7" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 969, 32 )
+
+[node name="dysphoria8" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1007, 48 )
+
+[node name="dysphoria9" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1102, -64 )
+
+[node name="dysphoria10" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1206, 0 )
+
+[node name="dysphoria11" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1228, -32 )
+
+[node name="dysphoria12" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1417, -60 )
+
+[node name="dysphoria13" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1450, -90 )
+
+[node name="dysphoria14" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1475, -100 )
+
+[node name="dysphoria15" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1544, 0 )
+
+[node name="dysphoria16" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1616, -32 )
+
+[node name="dysphoria17" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1624, -16 )
+
+[node name="dysphoria18" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1660, -100 )
+
+[node name="dysphoria19" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1682, -115 )
+
+[node name="dysphoria20" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1701, -90 )
+
+[node name="dysphoria21" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1771, -70 )
+
+[node name="dysphoria22" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1774, -100 )
+
+[node name="dysphoria23" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 2700, -400 )
+
+[node name="dysphoria24" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 2725, -300 )
+
+[node name="dysphoria25" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 2750, -100 )
+
+[node name="dysphoria26" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 2830, -900 )
+
+[node name="depression" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 1400, -70 )
+
+[node name="guilt" parent="." instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 2750, -400 )
+
+[node name="guilt1" parent="." instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 2800, -800 )
+
+[node name="exit" type="Area2D" parent="."]
+
+transform/pos = Vector2( 2902, -1021 )
+transform/scale = Vector2( 0.125, 1 )
+input/pickable = true
+shapes/0/shape = SubResource( 16 )
+shapes/0/transform = Matrix32( 3.20004, 0, 0, 3.2, -0.000366211, 5.72205e-06 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit"]
+
+transform/pos = Vector2( -0.000366211, 5.72205e-06 )
+transform/scale = Vector2( 3.20004, 3.2 )
+shape = SubResource( 16 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Float" parent="." instance=ExtResource( 9 )]
+
+[node name="Float1" parent="." instance=ExtResource( 9 )]
+
+group = "guilt"
+offsety = 24
+
+[node name="Float2" parent="." instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 2, 3 )
+group = "depression"
+offsety = 16
+
+[node name="identity" parent="." instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 1130, 18 )
+heart = "identity"
+
+[node name="passion" parent="." instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 2858, -1014 )
+heart = "passion"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+
+anchor/top = 1
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 20.0
+margin/top = 680.0
+margin/right = 20.0
+margin/bottom = 20.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
+
+visibility/opacity = 0.75
+anchor/top = 1
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = -20.0
+margin/top = 94.0
+margin/right = -20.0
+margin/bottom = -20.0
+custom_styles/panel = SubResource( 17 )
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+
+anchor/top = 1
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 10.0
+margin/top = 84.0
+margin/right = 10.0
+margin/bottom = 10.0
+custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource( 12 )]
+
+visibility/visible = false
+
+[node name="Die" parent="CanvasLayer" instance=ExtResource( 13 )]
+
+visibility/visible = false
+
+[node name="health" parent="CanvasLayer" instance=ExtResource( 14 )]
+
+transform/pos = Vector2( 16, 16 )
+animation = "sophomore"
+
+[node name="StreamPlayer" type="StreamPlayer" parent="CanvasLayer"]
+
+stream/stream = ExtResource( 15 )
+stream/play = true
+stream/loop = true
+stream/volume_db = 0.0
+stream/autoplay = true
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[connection signal="body_enter" from="exit" to="." method="_on_exit_body_enter"]
+
+
