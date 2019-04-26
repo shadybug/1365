@@ -1,73 +1,216 @@
-[gd_scene load_steps=47 format=1]
+[gd_scene load_steps=58 format=1]
 
 [ext_resource path="res://player.gd" type="Script" id=1]
 [ext_resource path="res://assets/Player/Stage1/idle1.png" type="Texture" id=2]
 [ext_resource path="res://assets/Player/Stage1/idle2.png" type="Texture" id=3]
 [ext_resource path="res://assets/Player/Stage1/idle3.png" type="Texture" id=4]
 [ext_resource path="res://assets/Player/Stage1/fall.png" type="Texture" id=5]
-[ext_resource path="res://assets/Player/Stage1/run1.png" type="Texture" id=6]
-[ext_resource path="res://assets/Player/Stage1/run2.png" type="Texture" id=7]
-[ext_resource path="res://assets/Player/Stage1/run3.png" type="Texture" id=8]
-[ext_resource path="res://assets/Player/Stage1/run4.png" type="Texture" id=9]
-[ext_resource path="res://assets/Player/Stage1/jump.png" type="Texture" id=10]
-[ext_resource path="res://assets/Player/Stage1/wall.png" type="Texture" id=11]
+[ext_resource path="res://assets/Player/Stage1/wall.png" type="Texture" id=6]
+[ext_resource path="res://assets/Player/Stage1/run1.png" type="Texture" id=7]
+[ext_resource path="res://assets/Player/Stage1/run2.png" type="Texture" id=8]
+[ext_resource path="res://assets/Player/Stage1/run3.png" type="Texture" id=9]
+[ext_resource path="res://assets/Player/Stage1/run4.png" type="Texture" id=10]
+[ext_resource path="res://assets/Player/Stage1/jump.png" type="Texture" id=11]
 [ext_resource path="res://assets/Player/Stage2/idle1.png" type="Texture" id=12]
 [ext_resource path="res://assets/Player/Stage2/idle2.png" type="Texture" id=13]
 [ext_resource path="res://assets/Player/Stage2/idle3.png" type="Texture" id=14]
 [ext_resource path="res://assets/Player/Stage2/fall.png" type="Texture" id=15]
-[ext_resource path="res://assets/Player/Stage2/run1.png" type="Texture" id=16]
-[ext_resource path="res://assets/Player/Stage2/run2.png" type="Texture" id=17]
-[ext_resource path="res://assets/Player/Stage2/run3.png" type="Texture" id=18]
-[ext_resource path="res://assets/Player/Stage2/run4.png" type="Texture" id=19]
-[ext_resource path="res://assets/Player/Stage2/jump.png" type="Texture" id=20]
-[ext_resource path="res://assets/Player/Stage2/wall.png" type="Texture" id=21]
+[ext_resource path="res://assets/Player/Stage2/wall.png" type="Texture" id=16]
+[ext_resource path="res://assets/Player/Stage2/run1.png" type="Texture" id=17]
+[ext_resource path="res://assets/Player/Stage2/run2.png" type="Texture" id=18]
+[ext_resource path="res://assets/Player/Stage2/run3.png" type="Texture" id=19]
+[ext_resource path="res://assets/Player/Stage2/run4.png" type="Texture" id=20]
+[ext_resource path="res://assets/Player/Stage2/jump.png" type="Texture" id=21]
 [ext_resource path="res://assets/Player/Stage3/idle1.png" type="Texture" id=22]
 [ext_resource path="res://assets/Player/Stage3/idle2.png" type="Texture" id=23]
 [ext_resource path="res://assets/Player/Stage3/idle3.png" type="Texture" id=24]
 [ext_resource path="res://assets/Player/Stage3/fall.png" type="Texture" id=25]
-[ext_resource path="res://assets/Player/Stage3/run1.png" type="Texture" id=26]
-[ext_resource path="res://assets/Player/Stage3/run2.png" type="Texture" id=27]
-[ext_resource path="res://assets/Player/Stage3/run3.png" type="Texture" id=28]
-[ext_resource path="res://assets/Player/Stage3/run4.png" type="Texture" id=29]
-[ext_resource path="res://assets/Player/Stage3/jump.png" type="Texture" id=30]
-[ext_resource path="res://assets/Player/Stage3/wall.png" type="Texture" id=31]
-[ext_resource path="res://assets/Player/Stage4/idle1.png" type="Texture" id=32]
-[ext_resource path="res://assets/Player/Stage4/idle2.png" type="Texture" id=33]
-[ext_resource path="res://assets/Player/Stage4/idle3.png" type="Texture" id=34]
-[ext_resource path="res://assets/Player/Stage4/fall.png" type="Texture" id=35]
-[ext_resource path="res://assets/Player/Stage4/run1.png" type="Texture" id=36]
-[ext_resource path="res://assets/Player/Stage4/run2.png" type="Texture" id=37]
-[ext_resource path="res://assets/Player/Stage4/run3.png" type="Texture" id=38]
-[ext_resource path="res://assets/Player/Stage4/run4.png" type="Texture" id=39]
-[ext_resource path="res://assets/Player/Stage4/jump.png" type="Texture" id=40]
-[ext_resource path="res://assets/Player/Stage4/wall.png" type="Texture" id=41]
+[ext_resource path="res://assets/Player/Die/rez1.png" type="Texture" id=26]
+[ext_resource path="res://assets/Player/Die/rez1.1.png" type="Texture" id=27]
+[ext_resource path="res://assets/Player/Die/rez2.png" type="Texture" id=28]
+[ext_resource path="res://assets/Player/Die/rez2.1.png" type="Texture" id=29]
+[ext_resource path="res://assets/Player/Die/rez3.png" type="Texture" id=30]
+[ext_resource path="res://assets/Player/Die/rez4.png" type="Texture" id=31]
+[ext_resource path="res://assets/Player/Stage3/wall.png" type="Texture" id=32]
+[ext_resource path="res://assets/Player/Stage3/run1.png" type="Texture" id=33]
+[ext_resource path="res://assets/Player/Stage3/run2.png" type="Texture" id=34]
+[ext_resource path="res://assets/Player/Stage3/run3.png" type="Texture" id=35]
+[ext_resource path="res://assets/Player/Stage3/run4.png" type="Texture" id=36]
+[ext_resource path="res://assets/Player/Stage3/jump.png" type="Texture" id=37]
+[ext_resource path="res://assets/Player/Stage4/idle1.png" type="Texture" id=38]
+[ext_resource path="res://assets/Player/Stage4/idle2.png" type="Texture" id=39]
+[ext_resource path="res://assets/Player/Stage4/idle3.png" type="Texture" id=40]
+[ext_resource path="res://assets/Player/Stage4/fall.png" type="Texture" id=41]
+[ext_resource path="res://assets/Player/Stage4/wall.png" type="Texture" id=42]
+[ext_resource path="res://assets/Player/Stage4/run1.png" type="Texture" id=43]
+[ext_resource path="res://assets/Player/Stage4/run2.png" type="Texture" id=44]
+[ext_resource path="res://assets/Player/Stage4/run3.png" type="Texture" id=45]
+[ext_resource path="res://assets/Player/Stage4/run4.png" type="Texture" id=46]
+[ext_resource path="res://assets/Player/Stage4/jump.png" type="Texture" id=47]
+[ext_resource path="res://assets/Player/Die/die1.png" type="Texture" id=48]
+[ext_resource path="res://assets/Player/Die/die2.png" type="Texture" id=49]
+[ext_resource path="res://assets/Player/Die/die3.png" type="Texture" id=50]
+[ext_resource path="res://assets/Player/Die/die4.png" type="Texture" id=51]
+[ext_resource path="res://assets/Player/Die/die5.png" type="Texture" id=52]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 9.00001, 14.5 )
 
 [sub_resource type="SpriteFrames" id=2]
 
-animations = [ { "frames":[ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ], "loop":true, "name":"idle", "speed":5.0 }, { "frames":[ ExtResource( 5 ) ], "loop":true, "name":"fall", "speed":5.0 }, { "frames":[ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ], "loop":true, "name":"run", "speed":8.0 }, { "frames":[ ExtResource( 10 ) ], "loop":true, "name":"jump", "speed":5.0 }, { "frames":[ ExtResource( 11 ) ], "loop":true, "name":"wall", "speed":5.0 }, { "frames":[ ExtResource( 5 ), null ], "loop":true, "name":"hurt", "speed":10.0 } ]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), null ],
+"loop": true,
+"name": "hurt",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "wall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "run",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+} ]
 
 [sub_resource type="SpriteFrames" id=3]
 
-animations = [ { "frames":[ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ], "loop":true, "name":"idle", "speed":5.0 }, { "frames":[ ExtResource( 15 ) ], "loop":true, "name":"fall", "speed":5.0 }, { "frames":[ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ], "loop":true, "name":"run", "speed":8.0 }, { "frames":[ ExtResource( 20 ) ], "loop":true, "name":"jump", "speed":5.0 }, { "frames":[ ExtResource( 21 ) ], "loop":true, "name":"wall", "speed":5.0 }, { "frames":[ ExtResource( 15 ), null ], "loop":true, "name":"hurt", "speed":10.0 } ]
+animations = [ {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), null ],
+"loop": true,
+"name": "hurt",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "wall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "run",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 21 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+} ]
 
 [sub_resource type="SpriteFrames" id=4]
 
-animations = [ { "frames":[ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ], "loop":true, "name":"idle", "speed":5.0 }, { "frames":[ ExtResource( 25 ) ], "loop":true, "name":"fall", "speed":5.0 }, { "frames":[ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ], "loop":true, "name":"run", "speed":8.0 }, { "frames":[ ExtResource( 30 ) ], "loop":true, "name":"jump", "speed":5.0 }, { "frames":[ ExtResource( 31 ) ], "loop":true, "name":"wall", "speed":5.0 }, { "frames":[ ExtResource( 25 ), null ], "loop":true, "name":"hurt", "speed":10.0 } ]
+animations = [ {
+"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ), null ],
+"loop": true,
+"name": "hurt",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 26 ), ExtResource( 26 ), ExtResource( 28 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 28 ), ExtResource( 28 ), ExtResource( 30 ), ExtResource( 30 ), ExtResource( 31 ) ],
+"loop": false,
+"name": "rez",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 25 ) ],
+"loop": true,
+"name": "fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 32 ) ],
+"loop": true,
+"name": "wall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ) ],
+"loop": true,
+"name": "run",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 37 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+} ]
 
 [sub_resource type="SpriteFrames" id=5]
 
-animations = [ { "frames":[ ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ) ], "loop":true, "name":"idle", "speed":5.0 }, { "frames":[ ExtResource( 35 ) ], "loop":true, "name":"fall", "speed":5.0 }, { "frames":[ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ) ], "loop":true, "name":"run", "speed":8.0 }, { "frames":[ ExtResource( 40 ) ], "loop":true, "name":"jump", "speed":5.0 }, { "frames":[ ExtResource( 41 ) ], "loop":true, "name":"wall", "speed":5.0 }, { "frames":[ ExtResource( 35 ), null ], "loop":true, "name":"hurt", "speed":10.0 } ]
+animations = [ {
+"frames": [ ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 41 ), null ],
+"loop": true,
+"name": "hurt",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 41 ) ],
+"loop": true,
+"name": "fall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 42 ) ],
+"loop": true,
+"name": "wall",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ) ],
+"loop": true,
+"name": "run",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 47 ) ],
+"loop": true,
+"name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 48 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 52 ), ExtResource( 52 ), ExtResource( 52 ), ExtResource( 52 ), ExtResource( 52 ), ExtResource( 52 ) ],
+"loop": false,
+"name": "die",
+"speed": 6.0
+} ]
 
-[node name="player" type="RigidBody2D" groups=[ "Player" ]]
+[node name="player" type="RigidBody2D" groups=[
+"Player",
+]]
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 0.923076, 0, 0, 1.5, -6.49691e-06, 0.499999 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -6.49691e-06, 0.499999 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -75,9 +218,9 @@ mode = 2
 mass = 1.0
 friction = 1.0
 bounce = 0.0
-gravity_scale = 10.0
+gravity_scale = 6.0
 custom_integrator = false
-continuous_cd = 0
+continuous_cd = 1
 contacts_reported = 2
 contact_monitor = true
 sleeping = false
@@ -109,8 +252,8 @@ flip_h = true
 
 visibility/visible = false
 frames = SubResource( 4 )
-animation = "idle"
-frame = 2
+animation = "rez"
+frame = 16
 playing = true
 flip_h = true
 
@@ -119,45 +262,38 @@ flip_h = true
 visibility/visible = false
 frames = SubResource( 5 )
 animation = "idle"
-frame = 1
 playing = true
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 transform/pos = Vector2( -6.49691e-06, 0.499999 )
-transform/scale = Vector2( 0.923076, 1.5 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
 [node name="feet" type="RayCast2D" parent="."]
 
-transform/pos = Vector2( 0, 6.5 )
-transform/scale = Vector2( 0.3, 0.3 )
+transform/pos = Vector2( 0, 6 )
 enabled = true
-cast_to = Vector2( 0, 50 )
+cast_to = Vector2( 0, 9 )
 layer_mask = 1
 type_mask = 15
 
 [node name="right" type="RayCast2D" parent="."]
 
 transform/pos = Vector2( 5, 0 )
-transform/scale = Vector2( 0.15, 0.5 )
 enabled = true
-cast_to = Vector2( 50, 0 )
+cast_to = Vector2( 4, 0 )
 layer_mask = 1
 type_mask = 15
 
 [node name="left" type="RayCast2D" parent="."]
 
 transform/pos = Vector2( -5, 0 )
-transform/scale = Vector2( 0.15, 0.5 )
 enabled = true
-cast_to = Vector2( -50, 0 )
+cast_to = Vector2( -4, 0 )
 layer_mask = 1
 type_mask = 15
-
-[connection signal="body_enter" from="." to="." method="_on_player_body_enter"]
 
 

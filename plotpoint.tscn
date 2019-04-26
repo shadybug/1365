@@ -21,6 +21,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 script/script = ExtResource( 1 )
 text = ""
+fall = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 

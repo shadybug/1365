@@ -27,6 +27,7 @@ func _on_Continue_pressed():
 func _on_Quit_pressed():
 	get_tree().set_pause(false)
 	get_tree().change_scene("res://mainmenu.tscn")
+	global._restart()
 
 func _on_About_pressed():
 	get_node("Continue").hide()

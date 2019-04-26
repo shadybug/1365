@@ -16,14 +16,26 @@ extents = Vector2( 10, 10 )
 
 [sub_resource type="SpriteFrames" id=2]
 
-animations = [ { "frames":[ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ], "loop":true, "name":"pink", "speed":8.0 }, { "frames":[ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ], "loop":true, "name":"blue", "speed":8.0 } ]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "pink",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "blue",
+"speed": 8.0
+} ]
 
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 13, 12.0397 )
 
-[node name="dysphoria" type="RigidBody2D" groups=[ "dysphoria" ]]
+[node name="dysphoria" type="RigidBody2D" groups=[
+"dysphoria",
+]]
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
@@ -76,7 +88,7 @@ shadow/item_mask = 1
 
 frames = SubResource( 2 )
 animation = "blue"
-frame = 1
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

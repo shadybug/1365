@@ -9,11 +9,13 @@
 script/script = ExtResource( 1 )
 group = "dysphoria"
 offsety = 8
+flipped = false
 
 [node name="Sprite" type="Sprite" parent="."]
 
 visibility/blend_mode = 1
 visibility/light_mask = 2
+transform/pos = Vector2( 0.5, 0 )
 texture = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="Sprite"]
@@ -29,9 +31,9 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 26.0
+margin/left = 27.5
 margin/top = 22.5
-margin/right = -64.5
+margin/right = -72.5
 margin/bottom = -21.5
 custom_fonts/font = ExtResource( 3 )
 text = "depression"

@@ -5,16 +5,18 @@
 [ext_resource path="res://lightflicker.tres" type="Animation" id=3]
 [ext_resource path="res://lightflicker.gd" type="Script" id=4]
 
+
+
 [node name="halllight" type="Light2D"]
 
 transform/pos = Vector2( 0, 80 )
 enabled = true
 editor_only = false
 texture = ExtResource( 1 )
-offset = Vector2( 0, 288 )
+offset = Vector2( 0, 76 )
 scale = 1.0
 color = Color( 1, 1, 1, 1 )
-energy = 0.5
+energy = 1.0
 mode = 0
 range/height = 0.0
 range/z_min = -1024
@@ -24,7 +26,7 @@ range/layer_max = 0
 range/item_mask = 1
 shadow/enabled = true
 shadow/color = Color( 0, 0, 0, 1 )
-shadow/buffer_size = 2048
+shadow/buffer_size = 8192
 shadow/esm_multiplier = 80.0
 shadow/item_mask = 1
 script/script = ExtResource( 2 )

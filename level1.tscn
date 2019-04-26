@@ -7,13 +7,13 @@
 [ext_resource path="res://plotpoint.tscn" type="PackedScene" id=5]
 [ext_resource path="res://dysphoria.tscn" type="PackedScene" id=6]
 [ext_resource path="res://guilt.tscn" type="PackedScene" id=7]
-[ext_resource path="res://float.tscn" type="PackedScene" id=8]
-[ext_resource path="res://heart.tscn" type="PackedScene" id=9]
-[ext_resource path="res://littlemonster.fnt" type="BitmapFont" id=10]
-[ext_resource path="res://pausemenu.tscn" type="PackedScene" id=11]
-[ext_resource path="res://diemenu.tscn" type="PackedScene" id=12]
-[ext_resource path="res://health.tscn" type="PackedScene" id=13]
-[ext_resource path="res://assets/Music/goback.ogg" type="AudioStream" id=14]
+[ext_resource path="res://expectation.tscn" type="PackedScene" id=8]
+[ext_resource path="res://float.tscn" type="PackedScene" id=9]
+[ext_resource path="res://heart.tscn" type="PackedScene" id=10]
+[ext_resource path="res://littlemonster.fnt" type="BitmapFont" id=11]
+[ext_resource path="res://pausemenu.tscn" type="PackedScene" id=12]
+[ext_resource path="res://diemenu.tscn" type="PackedScene" id=13]
+[ext_resource path="res://health.tscn" type="PackedScene" id=14]
 
 [sub_resource type="ConcavePolygonShape2D" id=1]
 
@@ -23,7 +23,7 @@ segments = Vector2Array( -9.37916, -6, -9.37916, 6.19048, -9.37916, 6.19048, 28.
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 34.7745, 25 )
+extents = Vector2( 48, 0.239998 )
 
 [sub_resource type="RectangleShape2D" id=3]
 
@@ -90,8 +90,8 @@ input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 67.65, 0, 0, 10.5, 666.5, 95 )
 shapes/0/trigger = false
-collision/layers = 7
-collision/mask = 7
+collision/layers = 15
+collision/mask = 15
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
@@ -109,10 +109,9 @@ trigger = false
 
 [node name="Lockers" type="StaticBody2D" parent="TileMap"]
 
-editor/display_folded = true
 input/pickable = false
 shapes/0/shape = SubResource( 2 )
-shapes/0/transform = Matrix32( 1.38032, 0, 0, 0.00857143, 176, 95.76 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 176, 96 )
 shapes/0/trigger = false
 shapes/1/shape = SubResource( 3 )
 shapes/1/transform = Matrix32( 6.15385, 0, 0, 0.0288461, 400, 95.5385 )
@@ -129,6 +128,7 @@ shapes/4/trigger = false
 collision/layers = 1
 collision/mask = 1
 one_way_collision/direction = Vector2( 0, 1 )
+one_way_collision/max_depth = 1.0
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
@@ -136,8 +136,7 @@ bounce = 0.0
 
 [node name="LockerCollide" type="CollisionShape2D" parent="TileMap/Lockers"]
 
-transform/pos = Vector2( 176, 95.76 )
-transform/scale = Vector2( 1.38032, 0.00857143 )
+transform/pos = Vector2( 176, 96 )
 shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -302,32 +301,48 @@ flickerchance = 0.5
 [node name="plotpoint" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 402, 99 )
-text = "I don\'t think you understand. I\'m just trying to protect you."
+text = "I don't think you understand. I'm just trying to protect you."
 
 [node name="plotpoint 2" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 500, 99 )
-text = "It\'s dangerous."
+text = "It's dangerous."
 
 [node name="plotpoint 3" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 706, 99 )
-text = "They\'ll hurt you. But you can\'t avoid them. The only way out is to give up."
+text = "They'll hurt you. But you can't avoid them. The only way out is to give up."
 
 [node name="plotpoint 4" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 1100, 99 )
-text = "Don\'t take that. You don\'t deserve it."
+text = "Don't take that. You don't deserve it."
 
 [node name="plotpoint 5" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 1300, 99 )
-text = "Why won\'t you quit\?"
+text = "Why won't you quit?"
+
+[node name="plotpoint7" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1450, 99 )
+text = "Look. This expectation is too high. You can't possibly make it over."
+
+[node name="Control" type="Control" parent="plotpoint7"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
 
 [node name="plotpoint6" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 2200, 99 )
-text = "There\'s no point. Stop."
+text = "There's no point. Stop."
 
 [node name="dysphoria" parent="." instance=ExtResource( 6 )]
 
@@ -379,20 +394,27 @@ transform/pos = Vector2( 500, 80 )
 
 [node name="guilt1" parent="." instance=ExtResource( 7 )]
 
-transform/pos = Vector2( 1600, 120 )
-
-[node name="guilt2" parent="." instance=ExtResource( 7 )]
-
 transform/pos = Vector2( 1900, 132 )
 
-[node name="exit" type="Area2D" parent="."]
+[node name="expectation" parent="." instance=ExtResource( 8 )]
 
+transform/pos = Vector2( 1530, 148 )
+
+[node name="expectation1" parent="." instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 2378, 147 )
+
+[node name="exit" type="Area2D" parent="." groups=[
+"exit",
+]]
+
+editor/display_folded = true
 transform/pos = Vector2( 2582, 131 )
 transform/scale = Vector2( 0.125, 1 )
 input/pickable = true
 shapes/0/shape = SubResource( 8 )
 shapes/0/transform = Matrix32( 3.20004, 0, 0, 3.2, -0.000366211, 5.72205e-06 )
-shapes/0/trigger = false
+shapes/0/trigger = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
@@ -403,27 +425,34 @@ angular_damp = 1.0
 transform/pos = Vector2( -0.000366211, 5.72205e-06 )
 transform/scale = Vector2( 3.20004, 3.2 )
 shape = SubResource( 8 )
-trigger = false
+trigger = true
 _update_shape_index = 0
 
-[node name="Float" parent="." instance=ExtResource( 8 )]
+[node name="Float" parent="." instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 266, 91 )
 
-[node name="Float1" parent="." instance=ExtResource( 8 )]
+[node name="Float1" parent="." instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 266, 91 )
 group = "guilt"
 offsety = 24
 
-[node name="tolerance" parent="." instance=ExtResource( 9 )]
+[node name="Float2" parent="." instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 266, 91 )
+group = "expectation"
+offsety = -24
+flipped = true
+
+[node name="tolerance" parent="." instance=ExtResource( 10 )]
 
 transform/pos = Vector2( 1226, 139 )
 heart = "tolerance"
 
-[node name="patience" parent="." instance=ExtResource( 9 )]
+[node name="patience" parent="." instance=ExtResource( 10 )]
 
-transform/pos = Vector2( 2506, 139 )
+transform/pos = Vector2( 2330, 139 )
 heart = "patience"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -476,36 +505,25 @@ margin/left = 10.0
 margin/top = 84.0
 margin/right = 10.0
 margin/bottom = 10.0
-custom_fonts/font = ExtResource( 10 )
+custom_fonts/font = ExtResource( 11 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Pause" parent="CanvasLayer" instance=ExtResource( 11 )]
+[node name="Pause" parent="CanvasLayer" instance=ExtResource( 12 )]
 
 visibility/visible = false
 
-[node name="Die" parent="CanvasLayer" instance=ExtResource( 12 )]
+[node name="Die" parent="CanvasLayer" instance=ExtResource( 13 )]
 
 visibility/visible = false
 
-[node name="health" parent="CanvasLayer" instance=ExtResource( 13 )]
+[node name="health" parent="CanvasLayer" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 16, 16 )
 animation = "freshman1"
-
-[node name="StreamPlayer" type="StreamPlayer" parent="CanvasLayer"]
-
-stream/stream = ExtResource( 14 )
-stream/play = true
-stream/loop = true
-stream/volume_db = 0.0
-stream/autoplay = true
-stream/paused = false
-stream/loop_restart_time = 0.0
-stream/buffering_ms = 500
 
 [connection signal="body_enter" from="exit" to="." method="_on_exit_body_enter"]
 

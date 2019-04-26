@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=1]
+[gd_scene load_steps=16 format=1]
 
 [ext_resource path="res://level0.gd" type="Script" id=1]
 [ext_resource path="res://assets/Maps/5_freedom.png" type="Texture" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://pausemenu.tscn" type="PackedScene" id=8]
 [ext_resource path="res://diemenu.tscn" type="PackedScene" id=9]
 [ext_resource path="res://health.tscn" type="PackedScene" id=10]
-[ext_resource path="res://assets/Music/goback.ogg" type="AudioStream" id=11]
 
 [sub_resource type="ConcavePolygonShape2D" id=1]
 
@@ -67,8 +66,8 @@ input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 67.65, 0, 0, 10.5, 666.5, 95 )
 shapes/0/trigger = false
-collision/layers = 7
-collision/mask = 7
+collision/layers = 15
+collision/mask = 15
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
@@ -197,31 +196,33 @@ text = "1365 ways to say goodbye."
 [node name="plotpoint 3" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 500, 99 )
-text = "1365 days - but you\'re still alive."
+text = "1365 days - but you're still alive."
 
 [node name="plotpoint 4" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 800, 99 )
-text = "It\'s a wonder you made it this far. Quit while you\'re ahead."
+text = "It's a wonder you made it this far. Quit while you're ahead."
 
 [node name="plotpoint 5" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 1000, 99 )
-text = "What are you doing\?"
+text = "What are you doing?"
 
 [node name="plotpoint6" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 1200, 99 )
 text = "Go BACK."
 
-[node name="exit" type="Area2D" parent="."]
+[node name="exit" type="Area2D" parent="." groups=[
+"exit",
+]]
 
 transform/pos = Vector2( 1302, 131 )
 transform/scale = Vector2( 0.125, 1 )
 input/pickable = true
 shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 3.20004, 0, 0, 3.2, -0.000366211, 5.72205e-06 )
-shapes/0/trigger = false
+shapes/0/trigger = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
@@ -232,7 +233,7 @@ angular_damp = 1.0
 transform/pos = Vector2( -0.000366211, 5.72205e-06 )
 transform/scale = Vector2( 3.20004, 3.2 )
 shape = SubResource( 4 )
-trigger = false
+trigger = true
 _update_shape_index = 0
 
 [node name="independence" parent="." instance=ExtResource( 6 )]
@@ -309,17 +310,6 @@ visibility/visible = false
 
 transform/pos = Vector2( 16, 16 )
 animation = "senior"
-
-[node name="StreamPlayer" type="StreamPlayer" parent="CanvasLayer"]
-
-stream/stream = ExtResource( 11 )
-stream/play = true
-stream/loop = true
-stream/volume_db = 0.0
-stream/autoplay = true
-stream/paused = false
-stream/loop_restart_time = 0.0
-stream/buffering_ms = 500
 
 [connection signal="body_enter" from="exit" to="." method="_on_exit_body_enter"]
 

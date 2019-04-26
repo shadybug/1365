@@ -36,6 +36,5 @@ func _process(delta):
 	active.set_value(100 - global.health)
 
 func _day(d):
-	d = d.replace("0","o")
-	print(d)
+	#d = d.replace("0","o")
 	get_node("day").set_text(d)

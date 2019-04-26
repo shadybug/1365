@@ -38,10 +38,15 @@ func _process(delta):
 	hspeed = get_linear_velocity().x
 	vspeed = get_linear_velocity().y
 	
-	if !global.talking:
+	if sprite.get_frame() == 16:
+		global.dead = false
+		sprite.set_animation("idle")
+		_hurt(0)
+	
+	if !global.talking && !global.dead:
 		if feet.is_colliding():
 			if Input.is_action_pressed("ui_up") && !jumping:
-				set_axis_velocity(Vector2(0,-400))
+				set_axis_velocity(Vector2(0,-325))
 				jumping = true
 			if Input.is_action_pressed("ui_left") && hspeed > -max_speed && !left.is_colliding():
 				set_axis_velocity(Vector2(hspeed - 30,0))
@@ -54,11 +59,11 @@ func _process(delta):
 			if left.is_colliding():
 				set_axis_velocity(Vector2(0,20))
 				if Input.is_action_pressed("ui_left") && Input.is_action_pressed("ui_up"):
-					set_axis_velocity(Vector2(200,-600))
+					set_axis_velocity(Vector2(250,-450))
 			if right.is_colliding():
 				set_axis_velocity(Vector2(0,20))
 				if Input.is_action_pressed("ui_right") && Input.is_action_pressed("ui_up"):
-					set_axis_velocity(Vector2(-200,-600))
+					set_axis_velocity(Vector2(-250,-450))
 			
 			if Input.is_action_pressed("ui_left") && hspeed > -max_air_speed && !left.is_colliding():
 				set_axis_velocity(Vector2(hspeed - 30,0))
@@ -67,7 +72,8 @@ func _process(delta):
 	
 	check_health()
 	
-	check_state()
+	if !global.dead:
+		check_state()
 	if hurting == true:
 		if hurtloop < 8:
 			hurtcount += delta
@@ -92,7 +98,7 @@ func check_state():
 			sprite.set_animation("idle")
 		elif hspeed != 0:
 			sprite.set_animation("run")
-	if (left.is_colliding() || right.is_colliding()):
+	if (left.is_colliding() || right.is_colliding()) && !feet.is_colliding():
 		sprite.set_animation("wall")
 	if hspeed < 0:
 		if sprite.is_flipped_h():
@@ -115,7 +121,7 @@ func check_health():
 	sprite.show()
 
 func _hurt(h):
-	if !hurting:
+	if !hurting && !global.dead:
 		global.health -= h
 		hurting = true
 		hurtloop = 0
@@ -126,3 +132,19 @@ func _heal(h):
 	if global.health > 100:
 		global.health = 100
 	check_health()
+
+func _die():
+	check_health()
+	global.dead = true
+	sprite.set_animation("die")
+	hurting = false
+	if sprite.get_frame() == 12:
+		get_parent()._dieMenu()
+
+func _rez():
+	check_health()
+	sprite.set_animation("rez")
+	sprite.set_frame(0)
+
+func _gravity(grav):
+	set_gravity_scale(grav)

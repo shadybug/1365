@@ -2,6 +2,7 @@ extends Area2D
 
 export var text = ""
 var talking = false
+export var fall = false
 var i = 0
 var t = 0
 
@@ -25,4 +26,5 @@ func _on_Area2D_body_enter( body ):
 		talking = true
 		global.talking = true
 		i = 0
-		body.set_linear_velocity(Vector2(0,0))
+		if fall:
+			body.set_linear_velocity(Vector2(0,500))

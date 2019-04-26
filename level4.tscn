@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=1]
+[gd_scene load_steps=17 format=1]
 
 [ext_resource path="res://level0.gd" type="Script" id=1]
 [ext_resource path="res://assets/Maps/4_senior.png" type="Texture" id=2]
@@ -12,7 +12,6 @@
 [ext_resource path="res://pausemenu.tscn" type="PackedScene" id=10]
 [ext_resource path="res://diemenu.tscn" type="PackedScene" id=11]
 [ext_resource path="res://health.tscn" type="PackedScene" id=12]
-[ext_resource path="res://assets/Music/goback.ogg" type="AudioStream" id=13]
 
 [sub_resource type="ConcavePolygonShape2D" id=1]
 
@@ -63,8 +62,8 @@ input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 67.65, 0, 0, 10.5, 666.5, 95 )
 shapes/0/trigger = false
-collision/layers = 7
-collision/mask = 7
+collision/layers = 15
+collision/mask = 15
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
@@ -224,7 +223,7 @@ flickerchance = 0.0
 [node name="plotpoint" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 75, 99 )
-text = "There\'s no way out. You did this to yourself."
+text = "There's no way out. You did this to yourself."
 
 [node name="plotpoint 2" parent="." instance=ExtResource( 5 )]
 
@@ -234,12 +233,12 @@ text = "Alone. Lost. Worthless."
 [node name="plotpoint 3" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 400, 99 )
-text = "And what are those, hiding in the dark\?"
+text = "And what are those, hiding in the dark?"
 
 [node name="plotpoint 4" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 600, 99 )
-text = "They\'re just like you. Cowards. Too afraid to show themselves."
+text = "They're just like you. Cowards. Too afraid to show themselves."
 
 [node name="plotpoint 5" parent="." instance=ExtResource( 5 )]
 
@@ -254,17 +253,17 @@ text = "Only a matter of time now."
 [node name="plotpoint7" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 1000, 99 )
-text = "...\?"
+text = "...?"
 
 [node name="plotpoint8" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 1200, 99 )
-text = "You actually think you can fight back\? Adorable."
+text = "You actually think you can fight back? Adorable."
 
 [node name="plotpoint9" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 1300, 99 )
-text = "They\'ll win in the end. I\'LL win in the end."
+text = "They'll win in the end. I'LL win in the end."
 
 [node name="plotpoint10" parent="." instance=ExtResource( 5 )]
 
@@ -279,17 +278,17 @@ text = "Give up already."
 [node name="plotpoint12" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 2000, 99 )
-text = "Wouldn\'t it be nice to stop fighting\?"
+text = "Wouldn't it be nice to stop fighting?"
 
 [node name="plotpoint13" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 2050, 99 )
-text = "Wouldn\'t it be nice to stop trying\?"
+text = "Wouldn't it be nice to stop trying?"
 
 [node name="plotpoint14" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 2100, 99 )
-text = "Wouldn\'t it be nice to just... give... IN\?"
+text = "Wouldn't it be nice to just... give... IN?"
 
 [node name="plotpoint15" parent="." instance=ExtResource( 5 )]
 
@@ -381,14 +380,16 @@ transform/pos = Vector2( 368, 96 )
 
 transform/pos = Vector2( 651, 96 )
 
-[node name="exit" type="Area2D" parent="."]
+[node name="exit" type="Area2D" parent="." groups=[
+"exit",
+]]
 
 transform/pos = Vector2( 1302, 131 )
 transform/scale = Vector2( 0.125, 1 )
 input/pickable = true
 shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 3.20004, 0, 0, 3.2, 9993.6, -30.4 )
-shapes/0/trigger = false
+shapes/0/trigger = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
@@ -399,7 +400,7 @@ angular_damp = 1.0
 transform/pos = Vector2( 9993.6, -30.4 )
 transform/scale = Vector2( 3.20004, 3.2 )
 shape = SubResource( 3 )
-trigger = false
+trigger = true
 _update_shape_index = 0
 
 [node name="Float" parent="." instance=ExtResource( 7 )]
@@ -480,17 +481,6 @@ visibility/visible = false
 [node name="health" parent="CanvasLayer" instance=ExtResource( 12 )]
 
 transform/pos = Vector2( 16, 16 )
-
-[node name="StreamPlayer" type="StreamPlayer" parent="CanvasLayer"]
-
-stream/stream = ExtResource( 13 )
-stream/play = true
-stream/loop = true
-stream/volume_db = 0.0
-stream/autoplay = true
-stream/paused = false
-stream/loop_restart_time = 0.0
-stream/buffering_ms = 500
 
 [connection signal="body_enter" from="exit" to="." method="_on_exit_body_enter"]
 

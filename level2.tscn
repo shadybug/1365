@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=1]
+[gd_scene load_steps=34 format=1]
 
 [ext_resource path="res://level0.gd" type="Script" id=1]
 [ext_resource path="res://assets/Maps/2_sophomore.png" type="Texture" id=2]
@@ -14,7 +14,7 @@
 [ext_resource path="res://pausemenu.tscn" type="PackedScene" id=12]
 [ext_resource path="res://diemenu.tscn" type="PackedScene" id=13]
 [ext_resource path="res://health.tscn" type="PackedScene" id=14]
-[ext_resource path="res://assets/Music/goback.ogg" type="AudioStream" id=15]
+[ext_resource path="res://spawner.tscn" type="PackedScene" id=15]
 
 [sub_resource type="ConcavePolygonShape2D" id=1]
 
@@ -110,6 +110,13 @@ border_size = 0
 border_blend = true
 draw_bg = true
 
+[sub_resource type="Curve2D" id=18]
+
+bake_interval = 5.0
+_data = {
+"points": Vector2Array( 0, 0, 0, 0, 1906, -85, 0, 0, 0, 0, 1906, -117, 0, 0, 0, 0, 898, -117, 0, 0, 0, 0, 898, -85, 0, 0, 0, 0, 866, -85, 0, 0, 0, 0, 866, -53, 0, 0, 0, 0, 834, -53, 0, 0, 0, 0, 834, -21, 0, 0, 0, 0, 802, -21, 0, 0, 0, 0, 802, 11, 0, 0, 0, 0, 34, 11, 0, 0, 0, 0, 34, 155, 0, 0, 0, 0, 1906, 155, 0, 0, 0, 0, 1906, -69, 0, 0, 0, 0, 2690, -69, 0, 0, 0, 0, 2690, -37, 0, 0, 0, 0, 2834, -37, 0, 0, 0, 0, 2834, -997, 0, 0, 0, 0, 2898, -997, 0, 0, 0, 0, 2898, -1045, 0, 0, 0, 0, 2690, -1045, 0, 0, 0, 0, 2690, -85, 0, 0, 0, 0, 1906, -85 )
+}
+
 [node name="level0" type="CanvasModulate"]
 
 transform/pos = Vector2( 6, 1114 )
@@ -126,7 +133,6 @@ centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="TileMap"]
 
-editor/display_folded = true
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 67.65, 0, 0, 10.5, 666.5, 95 )
@@ -140,8 +146,8 @@ shapes/2/trigger = false
 shapes/3/shape = SubResource( 4 )
 shapes/3/transform = Matrix32( 67.65, 0, 0, 10.5, 666.5, 95 )
 shapes/3/trigger = false
-collision/layers = 7
-collision/mask = 7
+collision/layers = 15
+collision/mask = 15
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
@@ -169,6 +175,7 @@ trigger = false
 
 [node name="Lockers" type="StaticBody2D" parent="TileMap"]
 
+editor/display_folded = true
 transform/pos = Vector2( 0, 1089 )
 input/pickable = false
 shapes/0/shape = SubResource( 5 )
@@ -529,38 +536,38 @@ text = ". . ."
 [node name="plotpoint 2" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 400, 99 )
-text = "Are you listening\?"
+text = "Are you listening?"
 
 [node name="plotpoint 3" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 992, 99 )
-text = "You can\'t get it, not that you deserve it anyways. It\'s too high."
+text = "You can't get it, not that you deserve it anyways. It's too high."
 
 [node name="plotpoint 4" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 1602, 314 )
-text = "That\'s enough. You can\'t go any farther."
+text = "That's enough. You can't go any farther."
 
 [node name="plotpoint 5" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 1538, -206 )
-text = "You can\'t make those jumps."
+text = "You can't make those jumps."
 
 [node name="plotpoint6" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 1856, -206 )
-text = "Where are you going\?"
+text = "Where are you going?"
 
 [node name="plotpoint7" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 2720, -206 )
-text = "Now look what you\'ve done."
+text = "Now look what you've done."
 
 [node name="plotpoint8" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 2754, -278 )
 transform/rot = 90.0
-text = "Do you actually expect to make it up this\?"
+text = "Do you actually expect to make it up this?"
 
 [node name="dysphoria" parent="." instance=ExtResource( 6 )]
 
@@ -682,14 +689,16 @@ transform/pos = Vector2( 2750, -400 )
 
 transform/pos = Vector2( 2800, -800 )
 
-[node name="exit" type="Area2D" parent="."]
+[node name="exit" type="Area2D" parent="." groups=[
+"exit",
+]]
 
 transform/pos = Vector2( 2902, -1021 )
 transform/scale = Vector2( 0.125, 1 )
 input/pickable = true
 shapes/0/shape = SubResource( 16 )
 shapes/0/transform = Matrix32( 3.20004, 0, 0, 3.2, -0.000366211, 5.72205e-06 )
-shapes/0/trigger = false
+shapes/0/trigger = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
@@ -700,7 +709,7 @@ angular_damp = 1.0
 transform/pos = Vector2( -0.000366211, 5.72205e-06 )
 transform/scale = Vector2( 3.20004, 3.2 )
 shape = SubResource( 16 )
-trigger = false
+trigger = true
 _update_shape_index = 0
 
 [node name="Float" parent="." instance=ExtResource( 9 )]
@@ -715,6 +724,12 @@ offsety = 24
 transform/pos = Vector2( 2, 3 )
 group = "depression"
 offsety = 16
+
+[node name="Float3" parent="." instance=ExtResource( 9 )]
+
+transform/pos = Vector2( 2, 3 )
+group = "insomnia"
+offsety = 12
 
 [node name="identity" parent="." instance=ExtResource( 10 )]
 
@@ -796,16 +811,15 @@ visibility/visible = false
 transform/pos = Vector2( 16, 16 )
 animation = "sophomore"
 
-[node name="StreamPlayer" type="StreamPlayer" parent="CanvasLayer"]
+[node name="Path2D" type="Path2D" parent="."]
 
-stream/stream = ExtResource( 15 )
-stream/play = true
-stream/loop = true
-stream/volume_db = 0.0
-stream/autoplay = true
-stream/paused = false
-stream/loop_restart_time = 0.0
-stream/buffering_ms = 500
+curve = SubResource( 18 )
+
+[node name="spawner" parent="Path2D" instance=ExtResource( 15 )]
+
+transform/pos = Vector2( 1906, -85 )
+transform/rot = 90.0
+spawnrate = 0.9
 
 [connection signal="body_enter" from="exit" to="." method="_on_exit_body_enter"]
 

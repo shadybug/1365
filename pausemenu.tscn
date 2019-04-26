@@ -152,14 +152,25 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 20.0
-margin/top = 20.0
-margin/right = 20.0
-margin/bottom = 20.0
+margin/left = 60.0
+margin/top = 40.0
+margin/right = 60.0
+margin/bottom = 0.0
 custom_fonts/normal_font = ExtResource( 3 )
 bbcode/enabled = true
-bbcode/bbcode = "[center]I started this project at the end of my senior year of high school, when my classmates and I were asked to make a presentation about what our last four years had been like. I realized that I couldn\'t really remember because of my mental illnesses.\n\nInstead, I took the opportunity to show what the world looks like from the eyes of someone with mental illness. Even mundane things like school can become hostile, and inner demons don\'t leave you alone. In particular, I chose to focus on my lifetime companion - Anxiety - and the Depression that gradually surfaced as I grew. The original game was buggy and slow because I had hand-coded it in Java, using the bare bones Mini2Dx engine. After I couldn\'t iron out the game I had created then, I opted to remake it entirely, this time using the open source game engine Godot.\n\nI have since been rediagnosed with PTSD and Bipolar Disorder, which I think are far more accurate. However, I kept the original concept, monsters, and dialogue intact in the hope of preserving my old worldview, even if it\'s changed since then. I did add a few features that I didn\'t have time to add before - music, more monsters, better lighting, etc. - but the game otherwise remains\nunchanged.\n\nNearly every part of 1365 was made by me, including graphics, sound, code, writing, and concept. The only parts that weren\'t are the font, which is Little Monster by Jack Oatley, and the game engine itself, built by the Godot team. I couldn\'t have done it without them.\n\nSo, two years after its initial creation, I\'m proud to present: 1365. I hope you enjoy playing it as much as I enjoyed making it![/center]\n\n[right]-Cicada Scott[/right]"
+bbcode/bbcode = "
+
+In 2016, just before I graduated from high school, I was asked to make a presentation on my last 1365 days at the school. I realized that I couldn't really remember, thanks to my many mental illnesses. So, instead, I made a game about what I could remember: a hostile world, bleak and full of inescapable monsters, but a world that I had just made it out of in one piece. 1365 is a reflection of my own struggles in overcoming Anxiety, Depression, and other such monsters of the mind, specifically in the context of public school.
+
+While my understanding of myself and my world have changed drastically since I first started working on this game, I opted to keep the original concept intact. I've remade the original game entirely and added a few features that I didn't have time for, but otherwise the game is a time capsule to three years ago, when I finished its first incarnation.
+
+Nearly every part of 1365 was made by me, including graphics, sound, code, writing, and concept. The only parts that weren't are the font, which is Little Monster by Jack Oatley, and the game engine itself, built by the Godot team. I couldn't have done it without them.
+
+So, three years after its initial creation, I'm proud to present: 1365. I hope you enjoy playing it as much as I enjoyed making it!
+
+[right]-Cicada Carpenter[/right]"
 visible_characters = -1
+percent_visible = 1.0
 
 [node name="Back" type="Button" parent="."]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=1]
+[gd_scene load_steps=26 format=1]
 
 [ext_resource path="res://level0.gd" type="Script" id=1]
 [ext_resource path="res://assets/Maps/3_junior.png" type="Texture" id=2]
@@ -13,7 +13,8 @@
 [ext_resource path="res://pausemenu.tscn" type="PackedScene" id=11]
 [ext_resource path="res://diemenu.tscn" type="PackedScene" id=12]
 [ext_resource path="res://health.tscn" type="PackedScene" id=13]
-[ext_resource path="res://assets/Music/goback.ogg" type="AudioStream" id=14]
+[ext_resource path="res://expectation.tscn" type="PackedScene" id=14]
+[ext_resource path="res://spawner.tscn" type="PackedScene" id=15]
 
 [sub_resource type="ConcavePolygonShape2D" id=1]
 
@@ -48,7 +49,36 @@ polygon = Vector2Array( 32, 32, 98, 32, 98, 30, 126, 30, 126, 32, 258, 32, 258, 
 
 [sub_resource type="GDScript" id=7]
 
-script/source = "extends Area2D\n\nexport var text = \"\"\nvar talking = false\nvar i = 0\nvar t = 0\n\nfunc _ready():\n\tset_process(true)\n\nfunc _process(delta):\n\tif talking == true && i <= text.length():\n\t\tif t > 0.01:\n\t\t\tget_parent().get_node(\"CanvasLayer/Control/Label\").set_text(text.left(i))\n\t\t\ti += 1\n\t\t\tt = 0\n\telif i > text.length():\n\t\ttalking = false\n\t\tglobal.talking = false\n\t\tqueue_free()\n\tt += delta\n\nfunc _on_Area2D_body_enter( body ):\n\tif body.is_in_group(\"Player\"):\n\t\ttalking = true\n\t\tglobal.talking = true\n\t\ti = 0\n\t\tbody.set_linear_velocity(Vector2(0,0))\n\t\tbody._hurt(40)\n"
+script/source = "extends Area2D
+
+export var text = \"\"
+var talking = false
+var i = 0
+var t = 0
+
+func _ready():
+	set_process(true)
+
+func _process(delta):
+	if talking == true && i <= text.length():
+		if t > 0.01:
+			get_parent().get_node(\"CanvasLayer/Control/Label\").set_text(text.left(i))
+			i += 1
+			t = 0
+	elif i > text.length():
+		talking = false
+		global.talking = false
+		queue_free()
+	t += delta
+
+func _on_Area2D_body_enter( body ):
+	if body.is_in_group(\"Player\"):
+		talking = true
+		global.talking = true
+		i = 0
+		body.set_linear_velocity(Vector2(0,0))
+		body._hurt(40)
+"
 
 [sub_resource type="RectangleShape2D" id=8]
 
@@ -68,6 +98,13 @@ border_size = 0
 border_blend = true
 draw_bg = true
 
+[sub_resource type="Curve2D" id=10]
+
+bake_interval = 5.0
+_data = {
+"points": Vector2Array( 0, 0, 0, 0, 34, 43, 0, 0, 0, 0, 34, 91, 0, 0, 0, 0, 194, 91, 0, 0, 0, 0, 194, 955, 0, 0, 0, 0, 1218, 955, 0, 0, 0, 0, 1218, 2011, 0, 0, 0, 0, 1874, 2011, 0, 0, 0, 0, 1874, 1931, 0, 0, 0, 0, 1298, 1931, 0, 0, 0, 0, 1298, 955, 0, 0, 0, 0, 1874, 955, 0, 0, 0, 0, 1874, 843, 0, 0, 0, 0, 306, 843, 0, 0, 0, 0, 306, 43, 0, 0, 0, 0, 34, 43 )
+}
+
 [node name="level0" type="CanvasModulate"]
 
 transform/pos = Vector2( 6, -3 )
@@ -84,13 +121,12 @@ centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="TileMap"]
 
-editor/display_folded = true
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 67.65, 0, 0, 10.5, 666.5, 95 )
 shapes/0/trigger = false
-collision/layers = 7
-collision/mask = 7
+collision/layers = 15
+collision/mask = 15
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
@@ -169,6 +205,7 @@ light_mask = 1
 
 [node name="player" parent="." instance=ExtResource( 3 )]
 
+editor/display_folded = true
 transform/pos = Vector2( 50, 83 )
 
 [node name="Camera" type="Camera2D" parent="player"]
@@ -200,7 +237,7 @@ flickerchance = 0.8
 [node name="Light2D1" parent="." instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 266, 35 )
-offchance = 0.6
+offchance = 0.0
 flickerchance = 0.8
 
 [node name="Light2D2" parent="." instance=ExtResource( 4 )]
@@ -289,32 +326,33 @@ text = "...You could have gotten yourself killed."
 [node name="plotpoint 4" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 706, 899 )
-text = "There\'s nothing for you here. You\'re not supposed to be here."
+text = "There's nothing for you here. You're not supposed to be here."
 
 [node name="plotpoint 5" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 850, 899 )
-text = "You idiot. Never listening, never thinking. All this time, all I\'ve tried to do is help."
+text = "You idiot. Never listening, never thinking. All this time, all I've tried to do is help."
 
 [node name="plotpoint6" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 1100, 899 )
+transform/pos = Vector2( 1122, 899 )
 text = "Well, enough of that, I say."
 
 [node name="plotpoint7" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 1242, 899 )
+transform/pos = Vector2( 1258, 899 )
 text = "F A L L ."
+fall = true
 
 [node name="plotpoint8" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 1400, 1971 )
-text = "Isn\'t this lovely\? See where your disobedience got you\?"
+text = "Isn't this lovely? See where your disobedience got you?"
 
 [node name="plotpoint9" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 1842, 1971 )
-text = "It\'s hilarious that you\'re still trying."
+text = "It's hilarious that you're still trying."
 
 [node name="dysphoria" parent="." instance=ExtResource( 6 )]
 
@@ -356,14 +394,16 @@ transform/pos = Vector2( 1275, 1400 )
 
 transform/pos = Vector2( 1500, 1950 )
 
-[node name="exit" type="Area2D" parent="."]
+[node name="exit" type="Area2D" parent="." groups=[
+"exit",
+]]
 
 transform/pos = Vector2( 1302, 131 )
 transform/scale = Vector2( 0.125, 1 )
 input/pickable = true
 shapes/0/shape = SubResource( 8 )
 shapes/0/transform = Matrix32( 3.20004, 0, 0, 3.2, 4617.6, 1857.6 )
-shapes/0/trigger = false
+shapes/0/trigger = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
@@ -374,7 +414,7 @@ angular_damp = 1.0
 transform/pos = Vector2( 4617.6, 1857.6 )
 transform/scale = Vector2( 3.20004, 3.2 )
 shape = SubResource( 8 )
-trigger = false
+trigger = true
 _update_shape_index = 0
 
 [node name="Float" parent="." instance=ExtResource( 8 )]
@@ -383,6 +423,12 @@ _update_shape_index = 0
 
 group = "depression"
 offsety = 16
+
+[node name="Float2" parent="." instance=ExtResource( 8 )]
+
+group = "expectation"
+offsety = -24
+flipped = true
 
 [node name="trust" parent="." instance=ExtResource( 9 )]
 
@@ -464,16 +510,23 @@ visibility/visible = false
 transform/pos = Vector2( 16, 16 )
 animation = "junior"
 
-[node name="StreamPlayer" type="StreamPlayer" parent="CanvasLayer"]
+[node name="expectation" parent="." instance=ExtResource( 14 )]
 
-stream/stream = ExtResource( 14 )
-stream/play = true
-stream/loop = true
-stream/volume_db = 0.0
-stream/autoplay = true
-stream/paused = false
-stream/loop_restart_time = 0.0
-stream/buffering_ms = 500
+transform/pos = Vector2( 658, 948 )
+
+[node name="expectation1" parent="." instance=ExtResource( 14 )]
+
+transform/pos = Vector2( 1074, 948 )
+
+[node name="Path2D" type="Path2D" parent="."]
+
+curve = SubResource( 10 )
+
+[node name="spawner" parent="Path2D" instance=ExtResource( 15 )]
+
+transform/pos = Vector2( 34, 43 )
+transform/rot = -90.0
+spawnrate = 0.7
 
 [connection signal="body_enter" from="exit" to="." method="_on_exit_body_enter"]
 
