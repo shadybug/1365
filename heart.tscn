@@ -1,33 +1,33 @@
 [gd_scene load_steps=34 format=1]
 
 [ext_resource path="res://heart.gd" type="Script" id=1]
-[ext_resource path="res://assets/Symbol/identity1.png" type="Texture" id=2]
-[ext_resource path="res://assets/Symbol/identity2.png" type="Texture" id=3]
-[ext_resource path="res://assets/Symbol/identity3.png" type="Texture" id=4]
-[ext_resource path="res://assets/Symbol/courage1.png" type="Texture" id=5]
-[ext_resource path="res://assets/Symbol/courage2.png" type="Texture" id=6]
-[ext_resource path="res://assets/Symbol/courage3.png" type="Texture" id=7]
+[ext_resource path="res://assets/Symbol/confidence1.png" type="Texture" id=2]
+[ext_resource path="res://assets/Symbol/confidence2.png" type="Texture" id=3]
+[ext_resource path="res://assets/Symbol/confidence3.png" type="Texture" id=4]
+[ext_resource path="res://assets/Symbol/independence1.png" type="Texture" id=5]
+[ext_resource path="res://assets/Symbol/independence2.png" type="Texture" id=6]
+[ext_resource path="res://assets/Symbol/independence3.png" type="Texture" id=7]
 [ext_resource path="res://assets/Symbol/tolerance1.png" type="Texture" id=8]
 [ext_resource path="res://assets/Symbol/tolerance2.png" type="Texture" id=9]
 [ext_resource path="res://assets/Symbol/tolerance3.png" type="Texture" id=10]
-[ext_resource path="res://assets/Symbol/patience1.png" type="Texture" id=11]
-[ext_resource path="res://assets/Symbol/patience2.png" type="Texture" id=12]
-[ext_resource path="res://assets/Symbol/patience3.png" type="Texture" id=13]
-[ext_resource path="res://assets/Symbol/independence1.png" type="Texture" id=14]
-[ext_resource path="res://assets/Symbol/independence2.png" type="Texture" id=15]
-[ext_resource path="res://assets/Symbol/independence3.png" type="Texture" id=16]
-[ext_resource path="res://assets/Symbol/trust1.png" type="Texture" id=17]
-[ext_resource path="res://assets/Symbol/trust2.png" type="Texture" id=18]
-[ext_resource path="res://assets/Symbol/trust3.png" type="Texture" id=19]
-[ext_resource path="res://assets/Symbol/passion1.png" type="Texture" id=20]
-[ext_resource path="res://assets/Symbol/passion2.png" type="Texture" id=21]
-[ext_resource path="res://assets/Symbol/passion3.png" type="Texture" id=22]
-[ext_resource path="res://assets/Symbol/determination1.png" type="Texture" id=23]
-[ext_resource path="res://assets/Symbol/determination2.png" type="Texture" id=24]
-[ext_resource path="res://assets/Symbol/determination3.png" type="Texture" id=25]
-[ext_resource path="res://assets/Symbol/confidence1.png" type="Texture" id=26]
-[ext_resource path="res://assets/Symbol/confidence2.png" type="Texture" id=27]
-[ext_resource path="res://assets/Symbol/confidence3.png" type="Texture" id=28]
+[ext_resource path="res://assets/Symbol/courage1.png" type="Texture" id=11]
+[ext_resource path="res://assets/Symbol/courage2.png" type="Texture" id=12]
+[ext_resource path="res://assets/Symbol/courage3.png" type="Texture" id=13]
+[ext_resource path="res://assets/Symbol/determination1.png" type="Texture" id=14]
+[ext_resource path="res://assets/Symbol/determination2.png" type="Texture" id=15]
+[ext_resource path="res://assets/Symbol/determination3.png" type="Texture" id=16]
+[ext_resource path="res://assets/Symbol/identity1.png" type="Texture" id=17]
+[ext_resource path="res://assets/Symbol/identity2.png" type="Texture" id=18]
+[ext_resource path="res://assets/Symbol/identity3.png" type="Texture" id=19]
+[ext_resource path="res://assets/Symbol/patience1.png" type="Texture" id=20]
+[ext_resource path="res://assets/Symbol/patience2.png" type="Texture" id=21]
+[ext_resource path="res://assets/Symbol/patience3.png" type="Texture" id=22]
+[ext_resource path="res://assets/Symbol/trust1.png" type="Texture" id=23]
+[ext_resource path="res://assets/Symbol/trust2.png" type="Texture" id=24]
+[ext_resource path="res://assets/Symbol/trust3.png" type="Texture" id=25]
+[ext_resource path="res://assets/Symbol/passion1.png" type="Texture" id=26]
+[ext_resource path="res://assets/Symbol/passion2.png" type="Texture" id=27]
+[ext_resource path="res://assets/Symbol/passion3.png" type="Texture" id=28]
 [ext_resource path="res://assets/heartlight.png" type="Texture" id=29]
 [ext_resource path="res://littlemonster.fnt" type="BitmapFont" id=30]
 [ext_resource path="res://assets/point.png" type="Texture" id=31]
@@ -42,12 +42,12 @@ extents = Vector2( 10, 10 )
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
 "loop": true,
-"name": "identity",
-"speed": 4.0
+"name": "confidence",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
-"name": "courage",
+"name": "independence",
 "speed": 4.0
 }, {
 "frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
@@ -57,33 +57,33 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
-"name": "patience",
+"name": "courage",
 "speed": 4.0
 }, {
 "frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
 "loop": true,
-"name": "independence",
+"name": "determination",
 "speed": 4.0
 }, {
 "frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
 "loop": true,
-"name": "trust",
+"name": "identity",
 "speed": 4.0
 }, {
 "frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
 "loop": true,
-"name": "passion",
+"name": "patience",
 "speed": 4.0
 }, {
 "frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
 "loop": true,
-"name": "determination",
+"name": "trust",
 "speed": 4.0
 }, {
 "frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ) ],
 "loop": true,
-"name": "confidence",
-"speed": 5.0
+"name": "passion",
+"speed": 4.0
 } ]
 
 [node name="heart" type="Area2D"]
@@ -103,7 +103,6 @@ heart = ""
 
 frames = SubResource( 2 )
 animation = "courage"
-frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

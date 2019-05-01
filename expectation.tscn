@@ -4,10 +4,10 @@
 [ext_resource path="res://assets/Enemies/Standard/idle1.png" type="Texture" id=2]
 [ext_resource path="res://assets/Enemies/Standard/idle2.png" type="Texture" id=3]
 [ext_resource path="res://assets/Enemies/Standard/idle3.png" type="Texture" id=4]
-[ext_resource path="res://assets/Enemies/Standard/change4.png" type="Texture" id=5]
-[ext_resource path="res://assets/Enemies/Standard/change3.png" type="Texture" id=6]
-[ext_resource path="res://assets/Enemies/Standard/change2.png" type="Texture" id=7]
-[ext_resource path="res://assets/Enemies/Standard/change1.png" type="Texture" id=8]
+[ext_resource path="res://assets/Enemies/Standard/change1.png" type="Texture" id=5]
+[ext_resource path="res://assets/Enemies/Standard/change2.png" type="Texture" id=6]
+[ext_resource path="res://assets/Enemies/Standard/change3.png" type="Texture" id=7]
+[ext_resource path="res://assets/Enemies/Standard/change4.png" type="Texture" id=8]
 [ext_resource path="res://assets/Enemies/Standard/SKREE1.png" type="Texture" id=9]
 [ext_resource path="res://assets/Enemies/Standard/SKREE2.png" type="Texture" id=10]
 
@@ -15,7 +15,7 @@
 
 custom_solver_bias = 0.0
 radius = 11.0
-height = 27.778
+height = 34.0002
 
 [sub_resource type="SpriteFrames" id=2]
 
@@ -25,7 +25,12 @@ animations = [ {
 "name": "idle",
 "speed": 4.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "change",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "change2",
 "speed": 5.0
@@ -34,11 +39,6 @@ animations = [ {
 "loop": true,
 "name": "SKREE",
 "speed": 4.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ) ],
-"loop": true,
-"name": "change",
-"speed": 8.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -65,7 +65,7 @@ script/script = ExtResource( 1 )
 transform/pos = Vector2( 0, -20 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 3
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

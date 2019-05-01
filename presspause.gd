@@ -6,9 +6,7 @@ func _ready():
 func _process(delta):
 	if Input.is_action_pressed("ui_cancel") && !global.presspause:
 		if get_node("RichTextLabel").is_visible():
-			get_node("Continue").show()
-			get_node("About").show()
-			get_node("Quit").show()
+			get_node("VBoxContainer").show()
 			get_node("RichTextLabel").hide()
 			get_node("Back").hide()
 			global.presspause = true
@@ -30,15 +28,13 @@ func _on_Quit_pressed():
 	global._restart()
 
 func _on_About_pressed():
-	get_node("Continue").hide()
-	get_node("About").hide()
-	get_node("Quit").hide()
+	get_node("VBoxContainer").hide()
 	get_node("RichTextLabel").show()
 	get_node("Back").show()
+	get_node("Back").grab_focus()
 
 func _on_Back_pressed():
-	get_node("Continue").show()
-	get_node("About").show()
-	get_node("Quit").show()
+	get_node("VBoxContainer").show()
 	get_node("RichTextLabel").hide()
 	get_node("Back").hide()
+	get_node("VBoxContainer/About").grab_focus()

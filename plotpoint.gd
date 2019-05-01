@@ -27,4 +27,4 @@ func _on_Area2D_body_enter( body ):
 		global.talking = true
 		i = 0
 		if fall:
-			body.set_linear_velocity(Vector2(0,500))
+			body.set_linear_velocity(Vector2(0,300))

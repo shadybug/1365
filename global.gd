@@ -6,6 +6,9 @@ var dead = false
 var health = 100
 var player
 
+var stopntalk = true
+var flicker = true
+
 func _ready():
 	pass
 

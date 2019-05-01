@@ -62,20 +62,28 @@ margin/right = 0.0
 margin/bottom = 0.0
 custom_styles/panel = SubResource( 1 )
 
-[node name="Continue" type="Button" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 
-anchor/left = 3
-anchor/top = 3
-anchor/right = 3
-anchor/bottom = 3
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 576.0
+margin/top = 304.0
+margin/right = 720.0
+margin/bottom = 432.0
+alignment = 0
+
+[node name="Continue" type="Button" parent="VBoxContainer"]
+
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 68.0
-margin/top = 48.0
-margin/right = -64.0
-margin/bottom = -2.0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 144.0
+margin/bottom = 36.0
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/focus = SubResource( 2 )
@@ -89,20 +97,16 @@ shortcut = null
 text = "Continue"
 flat = true
 
-[node name="About" type="Button" parent="."]
+[node name="About" type="Button" parent="VBoxContainer"]
 
-anchor/left = 3
-anchor/top = 3
-anchor/right = 3
-anchor/bottom = 3
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 45.0
-margin/top = 0.0
-margin/right = -45.0
-margin/bottom = -42.0
+margin/left = 0.0
+margin/top = 40.0
+margin/right = 144.0
+margin/bottom = 76.0
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/focus = SubResource( 2 )
@@ -116,20 +120,16 @@ shortcut = null
 text = "About"
 flat = true
 
-[node name="Quit" type="Button" parent="."]
+[node name="Quit" type="Button" parent="VBoxContainer"]
 
-anchor/left = 3
-anchor/top = 3
-anchor/right = 3
-anchor/bottom = 3
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 36.0
-margin/top = -48.0
-margin/right = -36.0
-margin/bottom = -90.0
+margin/left = 0.0
+margin/top = 80.0
+margin/right = 144.0
+margin/bottom = 116.0
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/focus = SubResource( 2 )
@@ -201,11 +201,11 @@ shortcut = null
 text = "Back"
 flat = false
 
-[connection signal="pressed" from="Continue" to="." method="_on_Continue_pressed"]
+[connection signal="pressed" from="VBoxContainer/Continue" to="." method="_on_Continue_pressed"]
 
-[connection signal="pressed" from="About" to="." method="_on_About_pressed"]
+[connection signal="pressed" from="VBoxContainer/About" to="." method="_on_About_pressed"]
 
-[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
 
 [connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
 

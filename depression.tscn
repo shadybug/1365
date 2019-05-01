@@ -57,7 +57,6 @@ script/script = ExtResource( 1 )
 
 frames = SubResource( 2 )
 animation = "default"
-frame = 2
 playing = true
 
 [node name="blobsright" type="Particles2D" parent="sprite"]
@@ -197,6 +196,7 @@ shadow/item_mask = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 visibility/visible = false
+visibility/light_mask = 2
 transform/pos = Vector2( -3, -1 )
 shape = SubResource( 1 )
 trigger = false

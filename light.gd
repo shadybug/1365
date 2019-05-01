@@ -8,5 +8,6 @@ func _ready():
 	if randf() <= offchance:
 		set_enabled(false)
 	get_node("AnimationPlayer").set_speed(0)
-	if randf() <= flickerchance:
-		get_node("AnimationPlayer").set_speed(randf()*200)
+	if global.flicker:
+		if randf() <= flickerchance:
+			get_node("AnimationPlayer").set_speed(randf()*200)

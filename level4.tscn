@@ -9,14 +9,14 @@
 [ext_resource path="res://float.tscn" type="PackedScene" id=7]
 [ext_resource path="res://heart.tscn" type="PackedScene" id=8]
 [ext_resource path="res://littlemonster.fnt" type="BitmapFont" id=9]
-[ext_resource path="res://pausemenu.tscn" type="PackedScene" id=10]
-[ext_resource path="res://diemenu.tscn" type="PackedScene" id=11]
-[ext_resource path="res://health.tscn" type="PackedScene" id=12]
+[ext_resource path="res://health.tscn" type="PackedScene" id=10]
+[ext_resource path="res://pausemenu.tscn" type="PackedScene" id=11]
+[ext_resource path="res://diemenu.tscn" type="PackedScene" id=12]
 
 [sub_resource type="ConcavePolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
-segments = Vector2Array( -9.37916, -5.92857, -9.37916, 3.14286, -9.37916, 3.14286, 27.9897, 3.14286, 27.9897, 3.14286, 27.9897, -6, 27.9897, -6, -9.37916, -5.92857 )
+segments = Vector2Array( 32, 32, 32, 128, 32, 128, 2560, 128, 2560, 128, 2560, 32, 2560, 32, 32, 32 )
 
 [sub_resource type="OccluderPolygon2D" id=2]
 
@@ -27,7 +27,7 @@ polygon = Vector2Array( 32, 32, 98, 32, 98, 30, 126, 30, 126, 32, 258, 32, 258, 
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 0.363647, 10 )
 
 [sub_resource type="StyleBoxFlat" id=4]
 
@@ -44,7 +44,6 @@ draw_bg = true
 
 [node name="level0" type="CanvasModulate"]
 
-transform/pos = Vector2( 6, -3 )
 color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
 script/script = ExtResource( 1 )
 scene = "res://level5.tscn"
@@ -52,7 +51,6 @@ day = "1092"
 
 [node name="TileMap" type="Sprite" parent="."]
 
-transform/pos = Vector2( -6, 3 )
 texture = ExtResource( 2 )
 centered = false
 
@@ -60,7 +58,7 @@ centered = false
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 67.65, 0, 0, 10.5, 666.5, 95 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 15
 collision/mask = 15
@@ -72,10 +70,8 @@ bounce = 0.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/StaticBody2D"]
 
 visibility/visible = false
-transform/pos = Vector2( 666.5, 95 )
-transform/scale = Vector2( 67.65, 10.5 )
 build_mode = 1
-polygon = Vector2Array( -9.37916, -5.92857, -9.37916, 3.14286, 27.9897, 3.14286, 27.9897, -6 )
+polygon = Vector2Array( 32, 32, 32, 128, 2560, 128, 2560, 32 )
 shape_range = Vector2( 0, 0 )
 trigger = false
 
@@ -86,7 +82,7 @@ light_mask = 1
 
 [node name="player" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 50, 115 )
+transform/pos = Vector2( 56, 112 )
 
 [node name="Camera" type="Camera2D" parent="player"]
 
@@ -108,196 +104,214 @@ drag_margin/top = 0.05
 drag_margin/right = 0.05
 drag_margin/bottom = 0.05
 
-[node name="Light2D" parent="." instance=ExtResource( 4 )]
+[node name="LightsContainer" type="Node2D" parent="."]
 
-transform/pos = Vector2( 106, 35 )
-color = Color( 1, 0.683594, 0.683594, 1 )
+[node name="Light2D" parent="LightsContainer" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 112, 32 )
+offset = Vector2( 0, 303 )
+color = Color( 1, 0.682353, 0.682353, 1 )
 offchance = 0.8
 flickerchance = 1.0
 
-[node name="Light2D1" parent="." instance=ExtResource( 4 )]
+[node name="Light2D1" parent="LightsContainer" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 266, 35 )
-color = Color( 1, 0.683594, 0.683594, 1 )
+transform/pos = Vector2( 272, 32 )
+offset = Vector2( 0, 303 )
+color = Color( 1, 0.682353, 0.682353, 1 )
 offchance = 0.8
 flickerchance = 1.0
 
-[node name="Light2D2" parent="." instance=ExtResource( 4 )]
+[node name="Light2D2" parent="LightsContainer" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 426, 35 )
-color = Color( 1, 0.683594, 0.683594, 1 )
+transform/pos = Vector2( 432, 32 )
+offset = Vector2( 0, 303 )
+color = Color( 1, 0.682353, 0.682353, 1 )
 offchance = 0.8
 flickerchance = 1.0
 
-[node name="Light2D3" parent="." instance=ExtResource( 4 )]
+[node name="Light2D3" parent="LightsContainer" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 586, 35 )
-color = Color( 1, 0.683594, 0.683594, 1 )
+transform/pos = Vector2( 592, 32 )
+offset = Vector2( 0, 303 )
+color = Color( 1, 0.682353, 0.682353, 1 )
 offchance = 0.8
 flickerchance = 1.0
 
-[node name="Light2D4" parent="." instance=ExtResource( 4 )]
+[node name="Light2D4" parent="LightsContainer" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 746, 35 )
-color = Color( 1, 0.683594, 0.683594, 1 )
+transform/pos = Vector2( 752, 32 )
+offset = Vector2( 0, 303 )
+color = Color( 1, 0.682353, 0.682353, 1 )
 offchance = 0.8
 flickerchance = 1.0
 
-[node name="Light2D5" parent="." instance=ExtResource( 4 )]
+[node name="Light2D5" parent="LightsContainer" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 906, 35 )
-color = Color( 1, 0.683594, 0.683594, 1 )
+transform/pos = Vector2( 912, 32 )
+offset = Vector2( 0, 303 )
+color = Color( 1, 0.682353, 0.682353, 1 )
 offchance = 0.8
 flickerchance = 1.0
 
-[node name="Light2D6" parent="." instance=ExtResource( 4 )]
+[node name="Light2D6" parent="LightsContainer" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 1066, 35 )
-color = Color( 1, 0.683594, 0.683594, 1 )
+transform/pos = Vector2( 1072, 32 )
+offset = Vector2( 0, 303 )
+color = Color( 1, 0.682353, 0.682353, 1 )
 offchance = 0.8
 flickerchance = 1.0
 
-[node name="Light2D7" parent="." instance=ExtResource( 4 )]
+[node name="Light2D7" parent="LightsContainer" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 1226, 35 )
-color = Color( 1, 0.683594, 0.683594, 1 )
+transform/pos = Vector2( 1232, 32 )
+offset = Vector2( 0, 303 )
+color = Color( 1, 0.682353, 0.682353, 1 )
 offchance = 0.8
 flickerchance = 1.0
 
-[node name="Light2D8" parent="." instance=ExtResource( 4 )]
+[node name="Light2D8" parent="LightsContainer" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 1386, 35 )
-color = Color( 1, 0.683594, 0.683594, 1 )
+transform/pos = Vector2( 1392, 32 )
+offset = Vector2( 0, 303 )
+color = Color( 1, 0.682353, 0.682353, 1 )
 offchance = 0.8
 flickerchance = 1.0
 
-[node name="Light2D9" parent="." instance=ExtResource( 4 )]
+[node name="Light2D9" parent="LightsContainer" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 1546, 35 )
-color = Color( 1, 0.683594, 0.683594, 1 )
+transform/pos = Vector2( 1552, 32 )
+offset = Vector2( 0, 303 )
+color = Color( 1, 0.682353, 0.682353, 1 )
 offchance = 0.8
 flickerchance = 1.0
 
-[node name="Light2D10" parent="." instance=ExtResource( 4 )]
+[node name="Light2D10" parent="LightsContainer" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 1706, 35 )
-color = Color( 1, 0.683594, 0.683594, 1 )
+transform/pos = Vector2( 1712, 32 )
+offset = Vector2( 0, 303 )
+color = Color( 1, 0.682353, 0.682353, 1 )
 offchance = 0.8
 flickerchance = 1.0
 
-[node name="Light2D11" parent="." instance=ExtResource( 4 )]
+[node name="Light2D11" parent="LightsContainer" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 1866, 35 )
-color = Color( 1, 0.683594, 0.683594, 1 )
+transform/pos = Vector2( 1872, 32 )
+offset = Vector2( 0, 303 )
+color = Color( 1, 0.682353, 0.682353, 1 )
 offchance = 0.8
 flickerchance = 1.0
 
-[node name="Light2D12" parent="." instance=ExtResource( 4 )]
+[node name="Light2D12" parent="LightsContainer" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 2026, 35 )
-color = Color( 1, 0.683594, 0.683594, 1 )
+transform/pos = Vector2( 2032, 32 )
+offset = Vector2( 0, 303 )
+color = Color( 1, 0.682353, 0.682353, 1 )
 offchance = 0.8
 flickerchance = 1.0
 
-[node name="Light2D13" parent="." instance=ExtResource( 4 )]
+[node name="Light2D13" parent="LightsContainer" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 2186, 35 )
-color = Color( 1, 0.683594, 0.683594, 1 )
+transform/pos = Vector2( 2192, 32 )
+offset = Vector2( 0, 303 )
+color = Color( 1, 0.682353, 0.682353, 1 )
 offchance = 0.8
 flickerchance = 1.0
 
-[node name="Light2D14" parent="." instance=ExtResource( 4 )]
+[node name="Light2D14" parent="LightsContainer" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 2346, 35 )
-color = Color( 1, 0.683594, 0.683594, 1 )
+transform/pos = Vector2( 2352, 32 )
+offset = Vector2( 0, 303 )
+color = Color( 1, 0.682353, 0.682353, 1 )
 offchance = 0.8
 flickerchance = 1.0
 
-[node name="Light2D15" parent="." instance=ExtResource( 4 )]
+[node name="Light2D15" parent="LightsContainer" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 2506, 35 )
+transform/pos = Vector2( 2512, 32 )
+offset = Vector2( 0, 303 )
 energy = 2.0
 offchance = 0.0
 flickerchance = 0.0
 
 [node name="plotpoint" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 75, 99 )
+transform/pos = Vector2( 80, 96 )
 text = "There's no way out. You did this to yourself."
 
 [node name="plotpoint 2" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 300, 99 )
+transform/pos = Vector2( 296, 96 )
 text = "Alone. Lost. Worthless."
 
 [node name="plotpoint 3" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 400, 99 )
+transform/pos = Vector2( 400, 96 )
 text = "And what are those, hiding in the dark?"
 
 [node name="plotpoint 4" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 600, 99 )
+transform/pos = Vector2( 600, 96 )
 text = "They're just like you. Cowards. Too afraid to show themselves."
 
 [node name="plotpoint 5" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 650, 99 )
+transform/pos = Vector2( 648, 96 )
 text = "How fitting, that a coward should meet their end to another coward."
 
 [node name="plotpoint6" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 850, 99 )
+transform/pos = Vector2( 848, 96 )
 text = "Only a matter of time now."
 
 [node name="plotpoint7" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 1000, 99 )
+transform/pos = Vector2( 1000, 96 )
 text = "...?"
 
 [node name="plotpoint8" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 1200, 99 )
+transform/pos = Vector2( 1200, 96 )
 text = "You actually think you can fight back? Adorable."
 
 [node name="plotpoint9" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 1300, 99 )
+transform/pos = Vector2( 1304, 96 )
 text = "They'll win in the end. I'LL win in the end."
 
 [node name="plotpoint10" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 1600, 99 )
+transform/pos = Vector2( 1600, 96 )
 text = "Stop."
 
 [node name="plotpoint11" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 1800, 99 )
+transform/pos = Vector2( 1800, 96 )
 text = "Give up already."
 
 [node name="plotpoint12" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 2000, 99 )
+transform/pos = Vector2( 2000, 96 )
 text = "Wouldn't it be nice to stop fighting?"
 
 [node name="plotpoint13" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 2050, 99 )
+transform/pos = Vector2( 2048, 96 )
 text = "Wouldn't it be nice to stop trying?"
 
 [node name="plotpoint14" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 2100, 99 )
+transform/pos = Vector2( 2096, 96 )
 text = "Wouldn't it be nice to just... give... IN?"
 
 [node name="plotpoint15" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 2350, 99 )
+transform/pos = Vector2( 2352, 96 )
 text = "I only wanted to protect you."
 
 [node name="plotpoint16" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 2400, 99 )
+transform/pos = Vector2( 2400, 96 )
 text = "I only wanted to help..."
 
 [node name="depression" parent="." instance=ExtResource( 6 )]
@@ -384,11 +398,11 @@ transform/pos = Vector2( 651, 96 )
 "exit",
 ]]
 
-transform/pos = Vector2( 1302, 131 )
-transform/scale = Vector2( 0.125, 1 )
+editor/display_folded = true
+transform/pos = Vector2( 2556, 96 )
 input/pickable = true
 shapes/0/shape = SubResource( 3 )
-shapes/0/transform = Matrix32( 3.20004, 0, 0, 3.2, 9993.6, -30.4 )
+shapes/0/transform = Matrix32( 11, 0, 0, 3.2, 0, 0 )
 shapes/0/trigger = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -397,8 +411,7 @@ angular_damp = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="exit"]
 
-transform/pos = Vector2( 9993.6, -30.4 )
-transform/scale = Vector2( 3.20004, 3.2 )
+transform/scale = Vector2( 11, 3.2 )
 shape = SubResource( 3 )
 trigger = true
 _update_shape_index = 0
@@ -410,7 +423,7 @@ offsety = 16
 
 [node name="determination" parent="." instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 954, 107 )
+transform/pos = Vector2( 952, 104 )
 heart = "determination"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -429,9 +442,9 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 20.0
+margin/left = 60.0
 margin/top = 680.0
-margin/right = 20.0
+margin/right = -20.0
 margin/bottom = 20.0
 
 [node name="Panel" type="Panel" parent="CanvasLayer/Control"]
@@ -470,17 +483,17 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Pause" parent="CanvasLayer" instance=ExtResource( 10 )]
-
-visibility/visible = false
-
-[node name="Die" parent="CanvasLayer" instance=ExtResource( 11 )]
-
-visibility/visible = false
-
-[node name="health" parent="CanvasLayer" instance=ExtResource( 12 )]
+[node name="health" parent="CanvasLayer" instance=ExtResource( 10 )]
 
 transform/pos = Vector2( 16, 16 )
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource( 11 )]
+
+visibility/visible = false
+
+[node name="Die" parent="CanvasLayer" instance=ExtResource( 12 )]
+
+visibility/visible = false
 
 [connection signal="body_enter" from="exit" to="." method="_on_exit_body_enter"]
 

@@ -95,20 +95,32 @@ margin/bottom = -19.0
 texture = ExtResource( 3 )
 stretch_mode = 0
 
-[node name="Start Game" type="Button" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 
-anchor/left = 3
-anchor/top = 3
-anchor/right = 3
-anchor/bottom = 3
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 572.0
+margin/top = 315.0
+margin/right = 612.0
+margin/bottom = 355.0
+alignment = 0
+
+[node name="Start Game" type="Button" parent="VBoxContainer"]
+
+focus_neighbour/left = NodePath("../About")
+focus_neighbour/top = NodePath("../About")
+focus_neighbour/right = NodePath("../Settings")
+focus_neighbour/bottom = NodePath("../Settings")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 80.0
-margin/top = 24.0
-margin/right = -80.0
-margin/bottom = -12.0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 159.0
+margin/bottom = 36.0
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/focus = SubResource( 2 )
@@ -123,20 +135,48 @@ shortcut = null
 text = "Start Game"
 flat = false
 
-[node name="About" type="Button" parent="."]
+[node name="Settings" type="Button" parent="VBoxContainer"]
 
-anchor/left = 3
-anchor/top = 3
-anchor/right = 3
-anchor/bottom = 3
+focus_neighbour/left = NodePath("../Start Game")
+focus_neighbour/top = NodePath("../Start Game")
+focus_neighbour/right = NodePath("../About")
+focus_neighbour/bottom = NodePath("../About")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 40.0
-margin/top = -24.0
-margin/right = 0.0
-margin/bottom = 0.0
+margin/left = 0.0
+margin/top = 40.0
+margin/right = 159.0
+margin/bottom = 76.0
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/disabled = SubResource( 2 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 0.666667, 0.666667, 0.666667, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Settings"
+flat = false
+
+[node name="About" type="Button" parent="VBoxContainer"]
+
+focus_neighbour/left = NodePath("../Settings")
+focus_neighbour/top = NodePath("../Settings")
+focus_neighbour/right = NodePath("../Start Game")
+focus_neighbour/bottom = NodePath("../Start Game")
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 80.0
+margin/right = 159.0
+margin/bottom = 116.0
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/focus = SubResource( 2 )
@@ -182,7 +222,7 @@ custom_fonts/normal_font = ExtResource( 5 )
 bbcode/enabled = true
 bbcode/bbcode = "
 
-In 2016, just before I graduated from high school, I was asked to make a presentation on my last 1365 days at the school. I realized that I couldn't really remember, thanks to my many mental illnesses. So, instead, I made a game about what I could remember: a hostile world, bleak and full of inescapable monsters, but a world that I had just made it out of in one piece. 1365 is a reflection of my own struggles in overcoming Anxiety, Depression, and other such monsters of the mind, specifically in the context of public school.
+In 2016, just before I graduated from high school, I was asked to make a presentation on my last 1365 days at the school. I realized that I couldn't really remember, thanks to my many mental illnesses. Instead, I made a game about what I could rememberU+0003A a hostile world, bleak and full of inescapable monsters, but a world that I had just made it out of in one piece. 1365 is a reflection of my own struggles in overcoming Anxiety, Depression, and other such monsters of the mind, specifically in the context of public school.
 
 While my understanding of myself and my world have changed drastically since I first started working on this game, I opted to keep the original concept intact. I've remade the original game entirely and added a few features that I didn't have time for, but otherwise the game is a time capsule to three years ago, when I finished its first incarnation.
 
@@ -222,10 +262,189 @@ shortcut = null
 text = "Back"
 flat = false
 
-[connection signal="pressed" from="Start Game" to="." method="_on_Start_Game_pressed"]
+[node name="Panel1" type="Panel" parent="."]
 
-[connection signal="pressed" from="About" to="." method="_on_About_pressed"]
+visibility/visible = false
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
+custom_styles/panel = SubResource( 3 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel1"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+alignment = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel1/VBoxContainer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 341.0
+margin/bottom = 36.0
+alignment = 0
+
+[node name="Label" type="Label" parent="Panel1/VBoxContainer/HBoxContainer"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 252.0
+margin/bottom = 36.0
+custom_fonts/font = ExtResource( 4 )
+text = "Stop When Talking"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Talking Buttons" type="HButtonArray" parent="Panel1/VBoxContainer/HBoxContainer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 256.0
+margin/top = 0.0
+margin/right = 341.0
+margin/bottom = 36.0
+custom_styles/hover = SubResource( 2 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/selected = SubResource( 2 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font_selected = ExtResource( 4 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 0.666667, 0.666667, 0.666667, 1 )
+flat = false
+button/count = 2
+button/min_button_size = 20.0
+button/align = 1065353216
+button/0/text = "On"
+button/0/tooltip = ""
+button/0/icon = null
+button/1/text = "Off"
+button/1/tooltip = ""
+button/1/icon = null
+button/selected = 0
+
+[node name="HBoxContainer1" type="HBoxContainer" parent="Panel1/VBoxContainer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 40.0
+margin/right = 341.0
+margin/bottom = 76.0
+alignment = 0
+
+[node name="Label" type="Label" parent="Panel1/VBoxContainer/HBoxContainer1"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 144.0
+margin/bottom = 36.0
+custom_fonts/font = ExtResource( 4 )
+text = "Flickering"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Flickering Buttons" type="HButtonArray" parent="Panel1/VBoxContainer/HBoxContainer1"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 148.0
+margin/top = 0.0
+margin/right = 233.0
+margin/bottom = 36.0
+custom_styles/hover = SubResource( 2 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/selected = SubResource( 2 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font_selected = ExtResource( 4 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 0.666667, 0.666667, 0.666667, 1 )
+flat = false
+button/count = 2
+button/min_button_size = 20.0
+button/align = 1065353216
+button/0/text = "On"
+button/0/tooltip = ""
+button/0/icon = null
+button/1/text = "Off"
+button/1/tooltip = ""
+button/1/icon = null
+button/selected = 0
+
+[node name="Back1" type="Button" parent="Panel1"]
+
+anchor/left = 3
+anchor/top = 1
+anchor/right = 3
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 18.0
+margin/top = 80.0
+margin/right = -48.0
+margin/bottom = 44.0
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/disabled = SubResource( 2 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 0.666667, 0.666667, 0.666667, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "Back"
+flat = false
+
+[connection signal="pressed" from="VBoxContainer/Start Game" to="." method="_on_Start_Game_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_Settings_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/About" to="." method="_on_About_pressed"]
 
 [connection signal="pressed" from="Panel/Back" to="." method="_on_Back_pressed"]
+
+[connection signal="button_selected" from="Panel1/VBoxContainer/HBoxContainer/Talking Buttons" to="." method="_on_Talking_Buttons_button_selected"]
+
+[connection signal="button_selected" from="Panel1/VBoxContainer/HBoxContainer1/Flickering Buttons" to="." method="_on_Flickering_Buttons_button_selected"]
+
+[connection signal="pressed" from="Panel1/Back1" to="." method="_on_Back1_pressed"]
 
 

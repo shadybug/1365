@@ -7,30 +7,30 @@
 [ext_resource path="res://plotpoint.tscn" type="PackedScene" id=5]
 [ext_resource path="res://heart.tscn" type="PackedScene" id=6]
 [ext_resource path="res://littlemonster.fnt" type="BitmapFont" id=7]
-[ext_resource path="res://pausemenu.tscn" type="PackedScene" id=8]
-[ext_resource path="res://diemenu.tscn" type="PackedScene" id=9]
-[ext_resource path="res://health.tscn" type="PackedScene" id=10]
+[ext_resource path="res://health.tscn" type="PackedScene" id=8]
+[ext_resource path="res://pausemenu.tscn" type="PackedScene" id=9]
+[ext_resource path="res://diemenu.tscn" type="PackedScene" id=10]
 
 [sub_resource type="ConcavePolygonShape2D" id=1]
 
 custom_solver_bias = 0.0
-segments = Vector2Array( -9.37916, -5.92857, -9.37916, 6.11905, -9.37916, 6.11905, 9.53437, 6.11905, 9.53437, 6.11905, 9.53437, -5.92857, 9.53437, -5.92857, -9.37916, -5.92857 )
+segments = Vector2Array( 3.2e+06, 3.2e+06, 1.312e+08, 3.2e+06, 1.312e+08, 3.2e+06, 1.312e+08, 1.92e+07, 1.312e+08, 1.92e+07, 3.2e+06, 1.92e+07, 3.2e+06, 1.92e+07, 3.2e+06, 3.2e+06 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 16, 18.6 )
+extents = Vector2( 152, 0 )
 
 [sub_resource type="OccluderPolygon2D" id=3]
 
 closed = true
 cull_mode = 0
-polygon = Vector2Array( 32, 32, 98, 32, 98, 30, 126, 30, 126, 32, 258, 32, 258, 30, 286, 30, 286, 32, 418, 32, 418, 30, 446, 30, 446, 32, 578, 32, 578, 30, 606, 30, 606, 32, 738, 32, 738, 30, 766, 30, 766, 32, 898, 32, 898, 30, 926, 30, 926, 32, 1058, 32, 1058, 30, 1086, 30, 1086, 32, 1218, 32, 1218, 30, 1246, 30, 1246, 32, 1312, 32, 1312, 164, 32, 164, 32, 32, 24, 32, 24, 176, 1320, 176, 1320, 16, 24, 16, 24, 32 )
+polygon = Vector2Array( 32, 32, 98, 32, 98, 30, 126, 30, 126, 32, 258, 32, 258, 30, 286, 30, 286, 32, 418, 32, 418, 30, 446, 30, 446, 32, 578, 32, 578, 30, 606, 30, 606, 32, 738, 32, 738, 30, 766, 30, 766, 32, 898, 32, 898, 30, 926, 30, 926, 32, 1058, 32, 1058, 30, 1086, 30, 1086, 32, 1218, 32, 1218, 30, 1246, 30, 1246, 32, 1312, 32, 1312, 196, 32, 196, 32, 32, 24, 32, 24, 208, 1320, 208, 1320, 16, 24, 16, 24, 32 )
 
 [sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 4, 32 )
 
 [sub_resource type="StyleBoxFlat" id=5]
 
@@ -47,7 +47,6 @@ draw_bg = true
 
 [node name="level0" type="CanvasModulate"]
 
-transform/pos = Vector2( 6, -3 )
 color = Color( 0.392157, 0.392157, 0.392157, 1 )
 script/script = ExtResource( 1 )
 scene = "res://end.tscn"
@@ -55,16 +54,14 @@ day = "1365"
 
 [node name="TileMap" type="Sprite" parent="."]
 
-transform/pos = Vector2( -6, 3 )
 texture = ExtResource( 2 )
 centered = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="TileMap"]
 
-editor/display_folded = true
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 67.65, 0, 0, 10.5, 666.5, 95 )
+shapes/0/transform = Matrix32( 1e-05, 0, 0, 1e-05, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 15
 collision/mask = 15
@@ -76,19 +73,17 @@ bounce = 0.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap/StaticBody2D"]
 
 visibility/visible = false
-transform/pos = Vector2( 666.5, 95 )
-transform/scale = Vector2( 67.65, 10.5 )
+transform/scale = Vector2( 1e-05, 1e-05 )
 build_mode = 1
-polygon = Vector2Array( -9.37916, -5.92857, -9.37916, 6.11905, 9.53437, 6.11905, 9.53437, -5.92857 )
+polygon = Vector2Array( 3.2e+06, 3.2e+06, 1.312e+08, 3.2e+06, 1.312e+08, 1.92e+07, 3.2e+06, 1.92e+07 )
 shape_range = Vector2( 0, 0 )
 trigger = false
 
 [node name="Lockers" type="StaticBody2D" parent="TileMap"]
 
-editor/display_folded = true
 input/pickable = false
 shapes/0/shape = SubResource( 2 )
-shapes/0/transform = Matrix32( 10, 0, 0, 0.0149344, 800, 95.6774 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 800, 128 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -100,8 +95,7 @@ bounce = 0.0
 
 [node name="LockerCollide" type="CollisionShape2D" parent="TileMap/Lockers"]
 
-transform/pos = Vector2( 800, 95.6774 )
-transform/scale = Vector2( 10, 0.0149344 )
+transform/pos = Vector2( 800, 128 )
 shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -113,7 +107,7 @@ light_mask = 1
 
 [node name="player" parent="." instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 50, 147 )
+transform/pos = Vector2( 56, 176 )
 
 [node name="Camera" type="Camera2D" parent="player"]
 
@@ -135,93 +129,105 @@ drag_margin/top = 0.05
 drag_margin/right = 0.05
 drag_margin/bottom = 0.05
 
-[node name="Light2D" parent="." instance=ExtResource( 4 )]
+[node name="LightsContainer" type="Node2D" parent="."]
 
-transform/pos = Vector2( 106, 35 )
+editor/display_folded = true
+transform/pos = Vector2( 112, 32 )
+
+[node name="Light2D" parent="LightsContainer" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 0, 0 )
+offset = Vector2( 0, 303 )
 offchance = 0.0
 flickerchance = 0.0
 
-[node name="Light2D1" parent="." instance=ExtResource( 4 )]
+[node name="Light2D1" parent="LightsContainer" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 266, 35 )
+transform/pos = Vector2( 160, 0 )
+offset = Vector2( 0, 303 )
 offchance = 0.0
 flickerchance = 0.0
 
-[node name="Light2D2" parent="." instance=ExtResource( 4 )]
+[node name="Light2D2" parent="LightsContainer" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 426, 35 )
+transform/pos = Vector2( 320, 0 )
+offset = Vector2( 0, 303 )
 offchance = 0.0
 flickerchance = 0.0
 
-[node name="Light2D3" parent="." instance=ExtResource( 4 )]
+[node name="Light2D3" parent="LightsContainer" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 586, 35 )
+transform/pos = Vector2( 480, 0 )
+offset = Vector2( 0, 303 )
 offchance = 0.0
 flickerchance = 0.0
 
-[node name="Light2D4" parent="." instance=ExtResource( 4 )]
+[node name="Light2D4" parent="LightsContainer" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 746, 35 )
+transform/pos = Vector2( 640, 0 )
+offset = Vector2( 0, 303 )
 offchance = 0.0
 flickerchance = 0.0
 
-[node name="Light2D5" parent="." instance=ExtResource( 4 )]
+[node name="Light2D5" parent="LightsContainer" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 905, 35 )
+transform/pos = Vector2( 800, 0 )
+offset = Vector2( 0, 303 )
 offchance = 0.0
 flickerchance = 0.0
 
-[node name="Light2D6" parent="." instance=ExtResource( 4 )]
+[node name="Light2D6" parent="LightsContainer" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 1066, 35 )
+transform/pos = Vector2( 960, 0 )
+offset = Vector2( 0, 303 )
 offchance = 0.0
 flickerchance = 0.0
 
-[node name="Light2D7" parent="." instance=ExtResource( 4 )]
+[node name="Light2D7" parent="LightsContainer" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 1226, 35 )
+transform/pos = Vector2( 1120, 0 )
+offset = Vector2( 0, 303 )
 offchance = 0.0
 flickerchance = 1.0
 
 [node name="plotpoint" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 300, 99 )
+transform/pos = Vector2( 304, 160 )
 text = "1365 days."
 
 [node name="plotpoint 2" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 400, 99 )
+transform/pos = Vector2( 400, 160 )
 text = "1365 ways to say goodbye."
 
 [node name="plotpoint 3" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 500, 99 )
+transform/pos = Vector2( 496, 160 )
 text = "1365 days - but you're still alive."
 
 [node name="plotpoint 4" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 800, 99 )
+transform/pos = Vector2( 800, 160 )
 text = "It's a wonder you made it this far. Quit while you're ahead."
 
 [node name="plotpoint 5" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 1000, 99 )
+transform/pos = Vector2( 1000, 160 )
 text = "What are you doing?"
 
 [node name="plotpoint6" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 1200, 99 )
+transform/pos = Vector2( 1184, 160 )
 text = "Go BACK."
 
 [node name="exit" type="Area2D" parent="." groups=[
 "exit",
 ]]
 
-transform/pos = Vector2( 1302, 131 )
-transform/scale = Vector2( 0.125, 1 )
+transform/pos = Vector2( 1308, 160 )
 input/pickable = true
 shapes/0/shape = SubResource( 4 )
-shapes/0/transform = Matrix32( 3.20004, 0, 0, 3.2, -0.000366211, 5.72205e-06 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -230,15 +236,13 @@ angular_damp = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="exit"]
 
-transform/pos = Vector2( -0.000366211, 5.72205e-06 )
-transform/scale = Vector2( 3.20004, 3.2 )
 shape = SubResource( 4 )
 trigger = true
 _update_shape_index = 0
 
 [node name="independence" parent="." instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 1226, 139 )
+transform/pos = Vector2( 1232, 168 )
 heart = "independence"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -298,18 +302,18 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="Pause" parent="CanvasLayer" instance=ExtResource( 8 )]
-
-visibility/visible = false
-
-[node name="Die" parent="CanvasLayer" instance=ExtResource( 9 )]
-
-visibility/visible = false
-
-[node name="health" parent="CanvasLayer" instance=ExtResource( 10 )]
+[node name="health" parent="CanvasLayer" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 16, 16 )
 animation = "senior"
+
+[node name="Pause" parent="CanvasLayer" instance=ExtResource( 9 )]
+
+visibility/visible = false
+
+[node name="Die" parent="CanvasLayer" instance=ExtResource( 10 )]
+
+visibility/visible = false
 
 [connection signal="body_enter" from="exit" to="." method="_on_exit_body_enter"]
 

@@ -59,8 +59,8 @@ func _process(delta):
 				set_axis_velocity(Vector2(hspeed - 30,0))
 			if Input.is_action_pressed("ui_right") && hspeed < max_speed && !right.is_colliding():
 				set_axis_velocity(Vector2(hspeed + 30,0))
-#			if Input.is_action_pressed("ui_down") && (lfoot.get_collider().is_in_group("locker") || rfoot.get_collider().is_in_group("locker")):
-#				set_pos(Vector2(get_pos().x, get_pos().y+2))
+			if Input.is_action_pressed("ui_down") && (lfoot.get_collider().is_in_group("locker") || rfoot.get_collider().is_in_group("locker")):
+				set_pos(Vector2(get_pos().x, get_pos().y+2))
 		if !Input.is_action_pressed("ui_up"):
 			jumping = false
 		
