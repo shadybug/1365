@@ -1,8 +1,8 @@
 [gd_scene load_steps=20 format=1]
 
-[ext_resource path="res://assets/health/cardSophomore.png" type="Texture" id=1]
-[ext_resource path="res://assets/health/cardFreshman.png" type="Texture" id=2]
-[ext_resource path="res://assets/health/cardFreshman1.png" type="Texture" id=3]
+[ext_resource path="res://assets/health/cardFreshman1.png" type="Texture" id=1]
+[ext_resource path="res://assets/health/cardSophomore.png" type="Texture" id=2]
+[ext_resource path="res://assets/health/cardFreshman.png" type="Texture" id=3]
 [ext_resource path="res://assets/health/cardSenior.png" type="Texture" id=4]
 [ext_resource path="res://assets/health/cardJunior.png" type="Texture" id=5]
 [ext_resource path="res://health.gd" type="Script" id=6]
@@ -24,17 +24,17 @@
 animations = [ {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
-"name": "sophomore",
+"name": "freshman1",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 2 ) ],
 "loop": true,
-"name": "freshman",
+"name": "sophomore",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "freshman1",
+"name": "freshman",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],

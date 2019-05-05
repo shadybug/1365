@@ -11,3 +11,5 @@ func change_scene():
 		get_tree().change_scene(scn)
 	if scn == "res://end.tscn":
 		get_node("StreamPlayer").stop()
+	if scn == "res://mainmenu.tscn":
+		get_node("StreamPlayer").play()

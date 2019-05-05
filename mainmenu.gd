@@ -42,3 +42,15 @@ func _on_Flickering_Buttons_button_selected( button_idx ):
 		global.flicker = true
 	else:
 		global.flicker = false
+
+func _on_Music_Buttons_button_selected( button_idx ):
+	if button_idx == 0:
+		global.musicOn = true
+	else:
+		global.musicOn = false
+
+func _on_Sfx_Buttons_button_selected( button_idx ):
+	if button_idx == 0:
+		global.sfxOn = true
+	else:
+		global.sfxOn = false

@@ -5,7 +5,7 @@ export var day = "0000"
 var exiting = false
 
 func _ready():
-	global._new_level(get_node("player"))
+	global._new_level(get_node("player"), get_node("CanvasLayer/SamplePlayer"))
 	get_node("CanvasLayer/health")._day(day)
 	set_process(true)
 	global.talking = false
@@ -26,9 +26,8 @@ func _process(delta):
 
 func _on_exit_body_enter( body ):
 	if body.is_in_group("Player"):
-		body.set_linear_velocity(Vector2(0,0))
+		body.velocity = (Vector2(0,0))
 		if !global.talking:
-			#get_tree().change_scene(scene)
 			transitionfade.fade_to(scene)
 			global.talking = true
 		else:

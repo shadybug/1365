@@ -45,7 +45,7 @@ func _process(delta):
 		get_node("CONTINUE").hide()
 
 func _on_END_pressed():
-	get_tree().change_scene("res://mainmenu.tscn")
+	transitionfade.fade_to("res://mainmenu.tscn")
 
 
 func _on_CONTINUE_pressed():

@@ -13,6 +13,7 @@ func _process(delta):
 	if talking == true && i <= text.length():
 		if t > 0.01:
 			get_parent().get_node("CanvasLayer/Control/Label").set_text(text.left(i))
+			global.sfx.play("Anxiety")
 			i += 1
 			t = 0
 	elif i > text.length():
@@ -27,4 +28,4 @@ func _on_Area2D_body_enter( body ):
 		global.talking = true
 		i = 0
 		if fall:
-			body.set_linear_velocity(Vector2(0,300))
+			body.velocity.x = 0

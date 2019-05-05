@@ -222,7 +222,7 @@ custom_fonts/normal_font = ExtResource( 5 )
 bbcode/enabled = true
 bbcode/bbcode = "
 
-In 2016, just before I graduated from high school, I was asked to make a presentation on my last 1365 days at the school. I realized that I couldn't really remember, thanks to my many mental illnesses. Instead, I made a game about what I could rememberU+0003A a hostile world, bleak and full of inescapable monsters, but a world that I had just made it out of in one piece. 1365 is a reflection of my own struggles in overcoming Anxiety, Depression, and other such monsters of the mind, specifically in the context of public school.
+In 2016, just before I graduated from high school, I was asked to make a presentation on my last 1365 days at the school. I realized that I couldn't really remember, thanks to my many mental illnesses. Instead, I made a game about what I could remember: a hostile world, bleak and full of inescapable monsters, but a world that I had just made it out of in one piece. 1365 is a reflection of my own struggles in overcoming Anxiety, Depression, and other such monsters of the mind, specifically in the context of public school.
 
 While my understanding of myself and my world have changed drastically since I first started working on this game, I opted to keep the original concept intact. I've remade the original game entirely and added a few features that I didn't have time for, but otherwise the game is a time capsule to three years ago, when I finished its first incarnation.
 
@@ -405,6 +405,122 @@ button/1/tooltip = ""
 button/1/icon = null
 button/selected = 0
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel1/VBoxContainer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 80.0
+margin/right = 341.0
+margin/bottom = 116.0
+alignment = 0
+
+[node name="Label" type="Label" parent="Panel1/VBoxContainer/HBoxContainer2"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 81.0
+margin/bottom = 36.0
+custom_fonts/font = ExtResource( 4 )
+text = "Music"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Music Buttons" type="HButtonArray" parent="Panel1/VBoxContainer/HBoxContainer2"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 85.0
+margin/top = 0.0
+margin/right = 170.0
+margin/bottom = 36.0
+custom_styles/hover = SubResource( 2 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/selected = SubResource( 2 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font_selected = ExtResource( 4 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 0.666667, 0.666667, 0.666667, 1 )
+flat = false
+button/count = 2
+button/min_button_size = 20.0
+button/align = 1065353216
+button/0/text = "On"
+button/0/tooltip = ""
+button/0/icon = null
+button/1/text = "Off"
+button/1/tooltip = ""
+button/1/icon = null
+button/selected = 0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel1/VBoxContainer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 120.0
+margin/right = 341.0
+margin/bottom = 156.0
+alignment = 0
+
+[node name="Label" type="Label" parent="Panel1/VBoxContainer/HBoxContainer3"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 195.0
+margin/bottom = 36.0
+custom_fonts/font = ExtResource( 4 )
+text = "Sound Effects"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Sfx Buttons" type="HButtonArray" parent="Panel1/VBoxContainer/HBoxContainer3"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 199.0
+margin/top = 0.0
+margin/right = 284.0
+margin/bottom = 36.0
+custom_styles/hover = SubResource( 2 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/selected = SubResource( 2 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font_selected = ExtResource( 4 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 0.666667, 0.666667, 0.666667, 1 )
+flat = false
+button/count = 2
+button/min_button_size = 20.0
+button/align = 1065353216
+button/0/text = "On"
+button/0/tooltip = ""
+button/0/icon = null
+button/1/text = "Off"
+button/1/tooltip = ""
+button/1/icon = null
+button/selected = 0
+
 [node name="Back1" type="Button" parent="Panel1"]
 
 anchor/left = 3
@@ -444,6 +560,10 @@ flat = false
 [connection signal="button_selected" from="Panel1/VBoxContainer/HBoxContainer/Talking Buttons" to="." method="_on_Talking_Buttons_button_selected"]
 
 [connection signal="button_selected" from="Panel1/VBoxContainer/HBoxContainer1/Flickering Buttons" to="." method="_on_Flickering_Buttons_button_selected"]
+
+[connection signal="button_selected" from="Panel1/VBoxContainer/HBoxContainer2/Music Buttons" to="." method="_on_Music_Buttons_button_selected"]
+
+[connection signal="button_selected" from="Panel1/VBoxContainer/HBoxContainer3/Sfx Buttons" to="." method="_on_Sfx_Buttons_button_selected"]
 
 [connection signal="pressed" from="Panel1/Back1" to="." method="_on_Back1_pressed"]
 
