@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=1]
+[gd_scene load_steps=17 format=1]
 
 [ext_resource path="res://level0.gd" type="Script" id=1]
 [ext_resource path="res://assets/Maps/0_starthall.png" type="Texture" id=2]
@@ -10,41 +10,65 @@
 [ext_resource path="res://float.tscn" type="PackedScene" id=8]
 [ext_resource path="res://spawner.tscn" type="PackedScene" id=9]
 
-[sub_resource type="ConcavePolygonShape2D" id=1]
+[sub_resource type="ConcavePolygonShape2D" id=5]
 
 custom_solver_bias = 0.0
 segments = Vector2Array( 32, 32, 320, 32, 320, 32, 320, 160, 320, 160, 32, 160, 32, 160, 32, 32 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
 extents = Vector2( 16, 18.6 )
 
-[sub_resource type="OccluderPolygon2D" id=3]
+[sub_resource type="OccluderPolygon2D" id=7]
 
 closed = true
 cull_mode = 0
 polygon = Vector2Array( 32, 32, 98, 32, 98, 30, 126, 30, 126, 32, 258, 32, 258, 30, 286, 30, 286, 32, 418, 32, 418, 30, 446, 30, 446, 32, 578, 32, 578, 30, 606, 30, 606, 32, 738, 32, 738, 30, 766, 30, 766, 32, 898, 32, 898, 30, 926, 30, 926, 32, 1058, 32, 1058, 30, 1086, 30, 1086, 32, 1218, 32, 1218, 30, 1246, 30, 1246, 32, 1312, 32, 1312, 164, 32, 164, 32, 32, 24, 32, 24, 176, 1320, 176, 1320, 16, 24, 16, 24, 32 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=8]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[sub_resource type="StyleBoxFlat" id=5]
+[sub_resource type="StyleBoxFlat" id=11]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-bg_color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
-light_color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
-dark_color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
+bg_color = Color( 0, 0, 0, 0.705882 )
+light_color = Color( 0.8, 0.8, 0.8, 1 )
+dark_color = Color( 0.8, 0.8, 0.8, 1 )
 border_size = 0
 border_blend = true
 draw_bg = true
 
-[sub_resource type="Curve2D" id=6]
+[sub_resource type="Theme" id=10]
+
+default_font = ExtResource( 4 )
+Button/colors/font_color = Color( 0.752941, 0.752941, 0.752941, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 1, 1, 1, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = null
+Button/styles/focus = null
+Button/styles/hover = null
+Button/styles/normal = null
+Button/styles/pressed = null
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/font = null
+Panel/icons/ = null
+PopupPanel/styles/panel = SubResource( 11 )
+
+[sub_resource type="Curve2D" id=9]
 
 bake_interval = 5.0
 _data = {
@@ -69,7 +93,7 @@ centered = false
 
 visibility/visible = false
 input/pickable = false
-shapes/0/shape = SubResource( 1 )
+shapes/0/shape = SubResource( 5 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 15
@@ -89,7 +113,7 @@ trigger = false
 [node name="Lockers" type="StaticBody2D" parent="TileMap"]
 
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
+shapes/0/shape = SubResource( 6 )
 shapes/0/transform = Matrix32( 10, 0, 0, 0.0149344, 800, 95.6774 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -104,13 +128,13 @@ bounce = 0.0
 
 transform/pos = Vector2( 800, 95.6774 )
 transform/scale = Vector2( 10, 0.0149344 )
-shape = SubResource( 2 )
+shape = SubResource( 6 )
 trigger = false
 _update_shape_index = 0
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="TileMap"]
 
-occluder = SubResource( 3 )
+occluder = SubResource( 7 )
 light_mask = 1
 
 [node name="player" parent="." instance=ExtResource( 3 )]
@@ -142,7 +166,7 @@ drag_margin/bottom = 0.05
 transform/pos = Vector2( 1302, 131 )
 transform/scale = Vector2( 0.125, 1 )
 input/pickable = true
-shapes/0/shape = SubResource( 4 )
+shapes/0/shape = SubResource( 8 )
 shapes/0/transform = Matrix32( 3.20004, 0, 0, 3.2, -0.000366211, 5.72205e-06 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -154,7 +178,7 @@ angular_damp = 1.0
 
 transform/pos = Vector2( -0.000366211, 5.72205e-06 )
 transform/scale = Vector2( 3.20004, 3.2 )
-shape = SubResource( 4 )
+shape = SubResource( 8 )
 trigger = false
 _update_shape_index = 0
 
@@ -174,6 +198,7 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
+theme/theme = SubResource( 10 )
 margin/left = 20.0
 margin/top = 680.0
 margin/right = 20.0
@@ -193,7 +218,6 @@ margin/left = -20.0
 margin/top = 94.0
 margin/right = -20.0
 margin/bottom = -20.0
-custom_styles/panel = SubResource( 5 )
 
 [node name="Label" type="Label" parent="CanvasLayer/Control"]
 
@@ -208,8 +232,6 @@ margin/left = 10.0
 margin/top = 84.0
 margin/right = 10.0
 margin/bottom = 10.0
-custom_fonts/font = ExtResource( 4 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
 autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
@@ -246,7 +268,7 @@ margin/bottom = 40.0
 
 [node name="Path2D" type="Path2D" parent="."]
 
-curve = SubResource( 6 )
+curve = SubResource( 9 )
 
 [node name="spawner" parent="Path2D" instance=ExtResource( 9 )]
 

@@ -1,12 +1,200 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=38 format=1]
 
-[ext_resource path="res://mainmenu.gd" type="Script" id=1]
-[ext_resource path="res://assets/1365 title words.png" type="Texture" id=2]
-[ext_resource path="res://assets/1365 title box.png" type="Texture" id=3]
-[ext_resource path="res://littlemonster2.fnt" type="BitmapFont" id=4]
-[ext_resource path="res://littlemonster.fnt" type="BitmapFont" id=5]
+[ext_resource path="res://assets/GUI/ButtonHover.png" type="Texture" id=1]
+[ext_resource path="res://assets/GUI/Button.png" type="Texture" id=2]
+[ext_resource path="res://assets/GUI/ButtonPress.png" type="Texture" id=3]
+[ext_resource path="res://assets/GUI/CheckedBox.png" type="Texture" id=4]
+[ext_resource path="res://assets/GUI/CheckBox.png" type="Texture" id=5]
+[ext_resource path="res://assets/GUI/SmallButtonHover.png" type="Texture" id=6]
+[ext_resource path="res://assets/GUI/SmallButton.png" type="Texture" id=7]
+[ext_resource path="res://assets/GUI/SmallButtonPress.png" type="Texture" id=8]
+[ext_resource path="res://assets/GUI/Grabber.png" type="Texture" id=9]
+[ext_resource path="res://assets/GUI/Tick.png" type="Texture" id=10]
+[ext_resource path="res://assets/GUI/Hslider.png" type="Texture" id=11]
+[ext_resource path="res://assets/GUI/OptionButtonHover.png" type="Texture" id=12]
+[ext_resource path="res://assets/GUI/OptionButton.png" type="Texture" id=13]
+[ext_resource path="res://littlemonster.fnt" type="BitmapFont" id=14]
+[ext_resource path="res://littlemonster2.fnt" type="BitmapFont" id=15]
+[ext_resource path="res://mainmenu.gd" type="Script" id=16]
+[ext_resource path="res://assets/1365 title words.png" type="Texture" id=17]
+[ext_resource path="res://assets/1365 title box.png" type="Texture" id=18]
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxEmpty" id=17]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
+[sub_resource type="StyleBoxTexture" id=1]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 1 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=2]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 2 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=3]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 3 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=4]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 6 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=5]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 7 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=6]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 8 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=20]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 11 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="ImageTexture" id=7]
+
+flags = 7
+image = Image()
+size = Vector2( 0, 0 )
+storage = 0
+lossy_quality = 0.7
+
+[sub_resource type="StyleBoxEmpty" id=19]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+
+[sub_resource type="StyleBoxTexture" id=8]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 12 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=9]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 13 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxFlat" id=10]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -17,30 +205,164 @@ light_color = Color( 0.8, 0.8, 0.8, 1 )
 dark_color = Color( 0.8, 0.8, 0.8, 1 )
 border_size = 0
 border_blend = true
-draw_bg = false
+draw_bg = true
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=11]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-bg_color = Color( 0.6, 0.6, 0.6, 1 )
-light_color = Color( 0.8, 0.8, 0.8, 1 )
-dark_color = Color( 0.8, 0.8, 0.8, 1 )
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+light_color = Color( 0.8, 0.8, 0.8, 0 )
+dark_color = Color( 0.8, 0.8, 0.8, 0 )
 border_size = 0
 border_blend = true
-draw_bg = false
+draw_bg = true
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=12]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-bg_color = Color( 0, 0, 0, 1 )
+bg_color = Color( 0.196078, 0.235294, 0.223529, 1 )
+light_color = Color( 0.607843, 0.678431, 0.717647, 1 )
+dark_color = Color( 0.607843, 0.678431, 0.717647, 1 )
+border_size = 4
+border_blend = false
+draw_bg = true
+
+[sub_resource type="StyleBoxFlat" id=13]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 1, 1, 1, 1 )
+light_color = Color( 1, 1, 1, 1 )
+dark_color = Color( 1, 1, 1, 1 )
+border_size = 0
+border_blend = true
+draw_bg = true
+
+[sub_resource type="Theme" id=14]
+
+default_font = ExtResource( 15 )
+Button/colors/font_color = Color( 0.607843, 0.678431, 0.717647, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 1, 1, 1, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = null
+Button/styles/focus = SubResource( 17 )
+Button/styles/hover = SubResource( 1 )
+Button/styles/normal = SubResource( 2 )
+Button/styles/pressed = SubResource( 3 )
+CheckBox/colors/font_color = Color( 0.607843, 0.678431, 0.717647, 1 )
+CheckBox/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+CheckBox/colors/font_color_hover = Color( 1, 1, 1, 1 )
+CheckBox/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+CheckBox/constants/check_vadjust = 0
+CheckBox/constants/hseparation = 4
+CheckBox/fonts/font = null
+CheckBox/icons/checked = ExtResource( 4 )
+CheckBox/icons/radio_checked = null
+CheckBox/icons/radio_unchecked = null
+CheckBox/icons/unchecked = ExtResource( 5 )
+CheckBox/styles/disabled = null
+CheckBox/styles/focus = null
+CheckBox/styles/hover = null
+CheckBox/styles/normal = null
+CheckBox/styles/pressed = null
+HButtonArray/colors/font_color = Color( 0.517647, 0.494118, 0.529412, 1 )
+HButtonArray/colors/font_color_selected = Color( 1, 1, 1, 1 )
+HButtonArray/constants/button_separator = 4
+HButtonArray/constants/icon_separator = 2
+HButtonArray/fonts/font = null
+HButtonArray/fonts/font_selected = null
+HButtonArray/styles/focus = SubResource( 4 )
+HButtonArray/styles/hover = SubResource( 4 )
+HButtonArray/styles/normal = SubResource( 5 )
+HButtonArray/styles/selected = SubResource( 6 )
+HSlider/icons/grabber = ExtResource( 5 )
+HSlider/icons/grabber_hilite = ExtResource( 9 )
+HSlider/icons/tick = ExtResource( 10 )
+HSlider/styles/focus = null
+HSlider/styles/grabber_hilite = null
+HSlider/styles/slider = SubResource( 20 )
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/font = null
+OptionButton/colors/font_color = Color( 0.607843, 0.678431, 0.717647, 1 )
+OptionButton/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+OptionButton/colors/font_color_hover = Color( 1, 1, 1, 1 )
+OptionButton/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+OptionButton/constants/arrow_margin = 2
+OptionButton/constants/hseparation = 2
+OptionButton/fonts/font = null
+OptionButton/icons/arrow = SubResource( 7 )
+OptionButton/styles/disabled = null
+OptionButton/styles/focus = SubResource( 19 )
+OptionButton/styles/hover = SubResource( 8 )
+OptionButton/styles/normal = SubResource( 9 )
+OptionButton/styles/pressed = SubResource( 8 )
+Panel/icons/ = null
+PanelContainer/styles/panel = SubResource( 10 )
+PopupMenu/colors/font_color = Color( 0.607843, 0.678431, 0.717647, 1 )
+PopupMenu/colors/font_color_accel = Color( 0.607843, 0.678431, 0.717647, 1 )
+PopupMenu/colors/font_color_disabled = Color( 0.4, 0.4, 0.4, 0.8 )
+PopupMenu/colors/font_color_hover = Color( 1, 1, 1, 1 )
+PopupMenu/constants/hseparation = 4
+PopupMenu/constants/vseparation = 4
+PopupMenu/fonts/font = null
+PopupMenu/icons/checked = ExtResource( 4 )
+PopupMenu/icons/submenu = null
+PopupMenu/icons/unchecked = ExtResource( 5 )
+PopupMenu/styles/hover = SubResource( 11 )
+PopupMenu/styles/panel = SubResource( 12 )
+PopupMenu/styles/panel_disabled = null
+PopupMenu/styles/separator = SubResource( 13 )
+RichTextLabel/colors/default_color = Color( 0.878431, 0.878431, 0.878431, 1 )
+RichTextLabel/colors/font_color_selected = Color( 0.490196, 0.490196, 0.490196, 1 )
+RichTextLabel/colors/selection_color = Color( 0.1, 0.1, 1, 0.8 )
+RichTextLabel/constants/line_separation = 1
+RichTextLabel/constants/table_hseparation = 3
+RichTextLabel/constants/table_vseparation = 3
+RichTextLabel/fonts/bold_font = null
+RichTextLabel/fonts/bold_italics_font = null
+RichTextLabel/fonts/italics_font = null
+RichTextLabel/fonts/mono_font = null
+RichTextLabel/fonts/normal_font = ExtResource( 14 )
+RichTextLabel/styles/focus = null
+
+[sub_resource type="StyleBoxFlat" id=15]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0, 0, 0, 0.784314 )
 light_color = Color( 0, 0, 0, 1 )
 dark_color = Color( 0, 0, 0, 1 )
+border_size = 0
+border_blend = true
+draw_bg = true
+
+[sub_resource type="StyleBoxFlat" id=16]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0, 0, 0, 0.784314 )
+light_color = Color( 0.8, 0.8, 0.8, 1 )
+dark_color = Color( 0.8, 0.8, 0.8, 1 )
 border_size = 0
 border_blend = true
 draw_bg = true
@@ -53,11 +375,12 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
+theme/theme = SubResource( 14 )
 margin/left = 0.0
 margin/top = -1.0
 margin/right = 0.0
 margin/bottom = 1.0
-script/script = ExtResource( 1 )
+script/script = ExtResource( 16 )
 
 [node name="TextureFrame" type="TextureFrame" parent="."]
 
@@ -74,7 +397,7 @@ margin/left = 642.0
 margin/top = 356.0
 margin/right = 2.0
 margin/bottom = -4.0
-texture = ExtResource( 2 )
+texture = ExtResource( 17 )
 stretch_mode = 0
 
 [node name="TextureFrame 2" type="TextureFrame" parent="."]
@@ -92,7 +415,7 @@ margin/left = 230.0
 margin/top = 135.0
 margin/right = 0.0
 margin/bottom = -19.0
-texture = ExtResource( 3 )
+texture = ExtResource( 18 )
 stretch_mode = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -101,14 +424,15 @@ focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 572.0
-margin/top = 315.0
-margin/right = 612.0
-margin/bottom = 355.0
-alignment = 0
+margin/left = 510.0
+margin/top = 273.0
+margin/right = 790.0
+margin/bottom = 473.0
+alignment = 1
 
 [node name="Start Game" type="Button" parent="VBoxContainer"]
 
+rect/min_size = Vector2( 0, 56 )
 focus_neighbour/left = NodePath("../About")
 focus_neighbour/top = NodePath("../About")
 focus_neighbour/right = NodePath("../Settings")
@@ -118,17 +442,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 0.0
-margin/right = 159.0
-margin/bottom = 36.0
-custom_styles/hover = SubResource( 1 )
-custom_styles/pressed = SubResource( 2 )
-custom_styles/focus = SubResource( 2 )
-custom_styles/disabled = SubResource( 2 )
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font = ExtResource( 4 )
-custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 0.666667, 0.666667, 0.666667, 1 )
+margin/top = 12.0
+margin/right = 280.0
+margin/bottom = 68.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -137,6 +453,7 @@ flat = false
 
 [node name="Settings" type="Button" parent="VBoxContainer"]
 
+rect/min_size = Vector2( 0, 56 )
 focus_neighbour/left = NodePath("../Start Game")
 focus_neighbour/top = NodePath("../Start Game")
 focus_neighbour/right = NodePath("../About")
@@ -146,17 +463,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 40.0
-margin/right = 159.0
-margin/bottom = 76.0
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 2 )
-custom_styles/focus = SubResource( 2 )
-custom_styles/disabled = SubResource( 2 )
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font = ExtResource( 4 )
-custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 0.666667, 0.666667, 0.666667, 1 )
+margin/top = 72.0
+margin/right = 280.0
+margin/bottom = 128.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -165,6 +474,7 @@ flat = false
 
 [node name="About" type="Button" parent="VBoxContainer"]
 
+rect/min_size = Vector2( 0, 56 )
 focus_neighbour/left = NodePath("../Settings")
 focus_neighbour/top = NodePath("../Settings")
 focus_neighbour/right = NodePath("../Start Game")
@@ -174,17 +484,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 80.0
-margin/right = 159.0
-margin/bottom = 116.0
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 2 )
-custom_styles/focus = SubResource( 2 )
-custom_styles/disabled = SubResource( 2 )
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font = ExtResource( 4 )
-custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 0.666667, 0.666667, 0.666667, 1 )
+margin/top = 132.0
+margin/right = 280.0
+margin/bottom = 188.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -204,7 +506,7 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 0.0
 margin/bottom = 0.0
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 15 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
 
@@ -218,7 +520,6 @@ margin/left = 60.0
 margin/top = 40.0
 margin/right = 60.0
 margin/bottom = 0.0
-custom_fonts/normal_font = ExtResource( 5 )
 bbcode/enabled = true
 bbcode/bbcode = "
 
@@ -244,18 +545,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 18.0
+margin/left = 140.0
 margin/top = 80.0
-margin/right = 0.0
-margin/bottom = 80.0
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 2 )
-custom_styles/focus = SubResource( 2 )
-custom_styles/disabled = SubResource( 2 )
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font = ExtResource( 4 )
-custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 0.666667, 0.666667, 0.666667, 1 )
+margin/right = -140.0
+margin/bottom = 24.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -275,251 +568,291 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 0.0
 margin/bottom = 0.0
-custom_styles/panel = SubResource( 3 )
+custom_styles/panel = SubResource( 16 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel1"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = false
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 40.0
-margin/bottom = 40.0
-alignment = 0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel1/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel1"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 0.0
+margin/left = 330.0
+margin/top = 23.0
+margin/right = 970.0
+margin/bottom = 683.0
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel1/HBoxContainer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 32.0
 margin/top = 0.0
-margin/right = 341.0
-margin/bottom = 36.0
-alignment = 0
+margin/right = 352.0
+margin/bottom = 660.0
+alignment = 1
 
-[node name="Label" type="Label" parent="Panel1/VBoxContainer/HBoxContainer"]
+[node name="Talking Label" type="Label" parent="Panel1/HBoxContainer/VBoxContainer"]
 
+rect/min_size = Vector2( 320, 48 )
 focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 176.0
+margin/right = 320.0
+margin/bottom = 224.0
+text = "Stop When Talking"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Flickering Label" type="Label" parent="Panel1/HBoxContainer/VBoxContainer"]
+
+rect/min_size = Vector2( 0, 48 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 228.0
+margin/right = 320.0
+margin/bottom = 276.0
+text = "Flickering"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Music Label" type="Label" parent="Panel1/HBoxContainer/VBoxContainer"]
+
+rect/min_size = Vector2( 0, 48 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 280.0
+margin/right = 320.0
+margin/bottom = 328.0
+text = "Music"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Sfx Label" type="Label" parent="Panel1/HBoxContainer/VBoxContainer"]
+
+rect/min_size = Vector2( 0, 48 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 332.0
+margin/right = 320.0
+margin/bottom = 380.0
+text = "Sound Effects"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Font Label" type="Label" parent="Panel1/HBoxContainer/VBoxContainer"]
+
+rect/min_size = Vector2( 0, 48 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 384.0
+margin/right = 320.0
+margin/bottom = 432.0
+text = "Font"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Speed Label" type="Label" parent="Panel1/HBoxContainer/VBoxContainer"]
+
+rect/min_size = Vector2( 0, 48 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 436.0
+margin/right = 320.0
+margin/bottom = 484.0
+text = "Game Speed"
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="VBoxContainer 2" type="VBoxContainer" parent="Panel1/HBoxContainer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 356.0
+margin/top = 0.0
+margin/right = 608.0
+margin/bottom = 660.0
+alignment = 1
+
+[node name="Talking Buttons" type="HButtonArray" parent="Panel1/HBoxContainer/VBoxContainer 2"]
+
+rect/min_size = Vector2( 0, 48 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 176.0
+margin/right = 252.0
+margin/bottom = 224.0
+flat = false
+button/count = 2
+button/min_button_size = 72.0
+button/align = 0
+button/0/text = "On"
+button/0/tooltip = "Stops the player when Anxiety is talking."
+button/0/icon = null
+button/1/text = "Off"
+button/1/tooltip = "The player can move while Anxiety is talking. Not recommended, may be harder to read!"
+button/1/icon = null
+button/selected = 0
+
+[node name="Flickering Buttons" type="HButtonArray" parent="Panel1/HBoxContainer/VBoxContainer 2"]
+
+rect/min_size = Vector2( 0, 48 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 228.0
+margin/right = 252.0
+margin/bottom = 276.0
+flat = false
+button/count = 2
+button/min_button_size = 72.0
+button/align = 0
+button/0/text = "On"
+button/0/tooltip = "Shows flickering lights and effects."
+button/0/icon = null
+button/1/text = "Off"
+button/1/tooltip = "Turns of flickering lights and effects."
+button/1/icon = null
+button/selected = 0
+
+[node name="Music Buttons" type="HButtonArray" parent="Panel1/HBoxContainer/VBoxContainer 2"]
+
+rect/min_size = Vector2( 0, 48 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 280.0
+margin/right = 252.0
+margin/bottom = 328.0
+flat = false
+button/count = 2
+button/min_button_size = 72.0
+button/align = 0
+button/0/text = "On"
+button/0/tooltip = "Turns music on."
+button/0/icon = null
+button/1/text = "Off"
+button/1/tooltip = "Turns music off."
+button/1/icon = null
+button/selected = 0
+
+[node name="Sfx Buttons" type="HButtonArray" parent="Panel1/HBoxContainer/VBoxContainer 2"]
+
+rect/min_size = Vector2( 0, 48 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 332.0
+margin/right = 252.0
+margin/bottom = 380.0
+flat = false
+button/count = 2
+button/min_button_size = 72.0
+button/align = 0
+button/0/text = "On"
+button/0/tooltip = "Turns sound effects on."
+button/0/icon = null
+button/1/text = "Off"
+button/1/tooltip = "Turns sound effects off."
+button/1/icon = null
+button/selected = 0
+
+[node name="Font Dropdown" type="OptionButton" parent="Panel1/HBoxContainer/VBoxContainer 2"]
+
+rect/min_size = Vector2( 252, 48 )
+hint/tooltip = "Changes the default font."
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 384.0
+margin/right = 252.0
+margin/bottom = 432.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+flat = false
+align = 0
+selected = -1
+items = [  ]
+
+[node name="Container" type="Container" parent="Panel1/HBoxContainer/VBoxContainer 2"]
+
+rect/min_size = Vector2( 0, 48 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 436.0
+margin/right = 252.0
+margin/bottom = 484.0
+
+[node name="HSlider" type="HSlider" parent="Panel1/HBoxContainer/VBoxContainer 2/Container"]
+
+hint/tooltip = "Changes the overall speed of the game (recommended: x1)"
+focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 0.0
 margin/top = 0.0
 margin/right = 252.0
-margin/bottom = 36.0
-custom_fonts/font = ExtResource( 4 )
-text = "Stop When Talking"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Talking Buttons" type="HButtonArray" parent="Panel1/VBoxContainer/HBoxContainer"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 256.0
-margin/top = 0.0
-margin/right = 341.0
-margin/bottom = 36.0
-custom_styles/hover = SubResource( 2 )
-custom_styles/focus = SubResource( 2 )
-custom_styles/selected = SubResource( 2 )
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font_selected = ExtResource( 4 )
-custom_fonts/font = ExtResource( 4 )
-custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 0.666667, 0.666667, 0.666667, 1 )
-flat = false
-button/count = 2
-button/min_button_size = 20.0
-button/align = 1065353216
-button/0/text = "On"
-button/0/tooltip = ""
-button/0/icon = null
-button/1/text = "Off"
-button/1/tooltip = ""
-button/1/icon = null
-button/selected = 0
-
-[node name="HBoxContainer1" type="HBoxContainer" parent="Panel1/VBoxContainer"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = false
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 40.0
-margin/right = 341.0
-margin/bottom = 76.0
-alignment = 0
-
-[node name="Label" type="Label" parent="Panel1/VBoxContainer/HBoxContainer1"]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 144.0
-margin/bottom = 36.0
-custom_fonts/font = ExtResource( 4 )
-text = "Flickering"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Flickering Buttons" type="HButtonArray" parent="Panel1/VBoxContainer/HBoxContainer1"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 148.0
-margin/top = 0.0
-margin/right = 233.0
-margin/bottom = 36.0
-custom_styles/hover = SubResource( 2 )
-custom_styles/focus = SubResource( 2 )
-custom_styles/selected = SubResource( 2 )
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font_selected = ExtResource( 4 )
-custom_fonts/font = ExtResource( 4 )
-custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 0.666667, 0.666667, 0.666667, 1 )
-flat = false
-button/count = 2
-button/min_button_size = 20.0
-button/align = 1065353216
-button/0/text = "On"
-button/0/tooltip = ""
-button/0/icon = null
-button/1/text = "Off"
-button/1/tooltip = ""
-button/1/icon = null
-button/selected = 0
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="Panel1/VBoxContainer"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = false
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 80.0
-margin/right = 341.0
-margin/bottom = 116.0
-alignment = 0
-
-[node name="Label" type="Label" parent="Panel1/VBoxContainer/HBoxContainer2"]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 81.0
-margin/bottom = 36.0
-custom_fonts/font = ExtResource( 4 )
-text = "Music"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Music Buttons" type="HButtonArray" parent="Panel1/VBoxContainer/HBoxContainer2"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 85.0
-margin/top = 0.0
-margin/right = 170.0
-margin/bottom = 36.0
-custom_styles/hover = SubResource( 2 )
-custom_styles/focus = SubResource( 2 )
-custom_styles/selected = SubResource( 2 )
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font_selected = ExtResource( 4 )
-custom_fonts/font = ExtResource( 4 )
-custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 0.666667, 0.666667, 0.666667, 1 )
-flat = false
-button/count = 2
-button/min_button_size = 20.0
-button/align = 1065353216
-button/0/text = "On"
-button/0/tooltip = ""
-button/0/icon = null
-button/1/text = "Off"
-button/1/tooltip = ""
-button/1/icon = null
-button/selected = 0
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="Panel1/VBoxContainer"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = false
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 120.0
-margin/right = 341.0
-margin/bottom = 156.0
-alignment = 0
-
-[node name="Label" type="Label" parent="Panel1/VBoxContainer/HBoxContainer3"]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 0.0
-margin/top = 0.0
-margin/right = 195.0
-margin/bottom = 36.0
-custom_fonts/font = ExtResource( 4 )
-text = "Sound Effects"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="Sfx Buttons" type="HButtonArray" parent="Panel1/VBoxContainer/HBoxContainer3"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 199.0
-margin/top = 0.0
-margin/right = 284.0
-margin/bottom = 36.0
-custom_styles/hover = SubResource( 2 )
-custom_styles/focus = SubResource( 2 )
-custom_styles/selected = SubResource( 2 )
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font_selected = ExtResource( 4 )
-custom_fonts/font = ExtResource( 4 )
-custom_colors/font_color_selected = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 0.666667, 0.666667, 0.666667, 1 )
-flat = false
-button/count = 2
-button/min_button_size = 20.0
-button/align = 1065353216
-button/0/text = "On"
-button/0/tooltip = ""
-button/0/icon = null
-button/1/text = "Off"
-button/1/tooltip = ""
-button/1/icon = null
-button/selected = 0
+margin/bottom = 48.0
+range/min = 0.25
+range/max = 2.0
+range/step = 0.25
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+tick_count = 8
+ticks_on_borders = true
+focus_mode = 2
 
 [node name="Back1" type="Button" parent="Panel1"]
 
@@ -531,18 +864,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 18.0
+margin/left = 140.0
 margin/top = 80.0
-margin/right = -48.0
-margin/bottom = 44.0
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 2 )
-custom_styles/focus = SubResource( 2 )
-custom_styles/disabled = SubResource( 2 )
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font = ExtResource( 4 )
-custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
-custom_colors/font_color = Color( 0.666667, 0.666667, 0.666667, 1 )
+margin/right = -140.0
+margin/bottom = 24.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -557,13 +882,17 @@ flat = false
 
 [connection signal="pressed" from="Panel/Back" to="." method="_on_Back_pressed"]
 
-[connection signal="button_selected" from="Panel1/VBoxContainer/HBoxContainer/Talking Buttons" to="." method="_on_Talking_Buttons_button_selected"]
+[connection signal="button_selected" from="Panel1/HBoxContainer/VBoxContainer 2/Talking Buttons" to="." method="_on_Talking_Buttons_button_selected"]
 
-[connection signal="button_selected" from="Panel1/VBoxContainer/HBoxContainer1/Flickering Buttons" to="." method="_on_Flickering_Buttons_button_selected"]
+[connection signal="button_selected" from="Panel1/HBoxContainer/VBoxContainer 2/Flickering Buttons" to="." method="_on_Flickering_Buttons_button_selected"]
 
-[connection signal="button_selected" from="Panel1/VBoxContainer/HBoxContainer2/Music Buttons" to="." method="_on_Music_Buttons_button_selected"]
+[connection signal="button_selected" from="Panel1/HBoxContainer/VBoxContainer 2/Music Buttons" to="." method="_on_Music_Buttons_button_selected"]
 
-[connection signal="button_selected" from="Panel1/VBoxContainer/HBoxContainer3/Sfx Buttons" to="." method="_on_Sfx_Buttons_button_selected"]
+[connection signal="button_selected" from="Panel1/HBoxContainer/VBoxContainer 2/Sfx Buttons" to="." method="_on_Sfx_Buttons_button_selected"]
+
+[connection signal="item_selected" from="Panel1/HBoxContainer/VBoxContainer 2/Font Dropdown" to="." method="_on_Font_Dropdown_item_selected"]
+
+[connection signal="value_changed" from="Panel1/HBoxContainer/VBoxContainer 2/Container/HSlider" to="." method="_on_HSlider_value_changed"]
 
 [connection signal="pressed" from="Panel1/Back1" to="." method="_on_Back1_pressed"]
 

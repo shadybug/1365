@@ -1,33 +1,19 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=3 format=1]
 
 [ext_resource path="res://diemenu.gd" type="Script" id=1]
-[ext_resource path="res://littlemonster2.fnt" type="BitmapFont" id=2]
 
-[sub_resource type="StyleBoxFlat" id=1]
-
-content_margin/left = -1.0
-content_margin/right = -1.0
-content_margin/top = -1.0
-content_margin/bottom = -1.0
-bg_color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
-light_color = Color( 0, 0, 0, 1 )
-dark_color = Color( 0, 0, 0, 1 )
-border_size = 0
-border_blend = true
-draw_bg = true
-
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=16]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-bg_color = Color( 0.6, 0.6, 0.6, 1 )
+bg_color = Color( 0, 0, 0, 0.784314 )
 light_color = Color( 0.8, 0.8, 0.8, 1 )
 dark_color = Color( 0.8, 0.8, 0.8, 1 )
 border_size = 0
 border_blend = true
-draw_bg = false
+draw_bg = true
 
 [node name="Die" type="Popup"]
 
@@ -59,7 +45,7 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 0.0
 margin/bottom = 0.0
-custom_styles/panel = SubResource( 1 )
+custom_styles/panel = SubResource( 16 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 
@@ -67,29 +53,27 @@ focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 576.0
-margin/top = 320.0
-margin/right = 720.0
-margin/bottom = 416.0
-alignment = 0
+margin/left = 510.0
+margin/top = 0.0
+margin/right = 790.0
+margin/bottom = 704.0
+alignment = 1
 
 [node name="Continue" type="Button" parent="VBoxContainer"]
 
+rect/min_size = Vector2( 280, 56 )
+focus_neighbour/left = NodePath("../Quit")
+focus_neighbour/top = NodePath("../Quit")
+focus_neighbour/right = NodePath("../Quit")
+focus_neighbour/bottom = NodePath("../Quit")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 0.0
-margin/right = 144.0
-margin/bottom = 36.0
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 2 )
-custom_styles/focus = SubResource( 2 )
-custom_styles/disabled = SubResource( 2 )
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 0.8, 0.8, 0.8, 1 )
+margin/top = 294.0
+margin/right = 280.0
+margin/bottom = 350.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -98,21 +82,19 @@ flat = true
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 
+rect/min_size = Vector2( 280, 56 )
+focus_neighbour/left = NodePath("../Continue")
+focus_neighbour/top = NodePath("../Continue")
+focus_neighbour/right = NodePath("../Continue")
+focus_neighbour/bottom = NodePath("../Continue")
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 40.0
-margin/right = 144.0
-margin/bottom = 76.0
-custom_styles/hover = SubResource( 2 )
-custom_styles/pressed = SubResource( 2 )
-custom_styles/focus = SubResource( 2 )
-custom_styles/disabled = SubResource( 2 )
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font = ExtResource( 2 )
-custom_colors/font_color = Color( 0.8, 0.8, 0.8, 1 )
+margin/top = 354.0
+margin/right = 280.0
+margin/bottom = 410.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null

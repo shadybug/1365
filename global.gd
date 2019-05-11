@@ -11,6 +11,10 @@ var stopntalk = true
 var flicker = true
 var sfxOn = true
 var musicOn = true
+var font = "res://littlemonster.fnt"
+var font2 = "res://littlemonster2.fnt"
+var fontName = "littlemonster"
+var gameSpeed = 1
 
 func _ready():
 	pass

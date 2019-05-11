@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=1]
+[gd_scene load_steps=58 format=1]
 
 [ext_resource path="res://level0.gd" type="Script" id=1]
 [ext_resource path="res://assets/Maps/1_hey.png" type="Texture" id=2]
@@ -15,10 +15,22 @@
 [ext_resource path="res://assets/Sfx/Expectation2.wav" type="Sample" id=13]
 [ext_resource path="res://assets/Sfx/Heart.wav" type="Sample" id=14]
 [ext_resource path="res://assets/Sfx/Hurt.wav" type="Sample" id=15]
-[ext_resource path="res://littlemonster.fnt" type="BitmapFont" id=16]
-[ext_resource path="res://health.tscn" type="PackedScene" id=17]
-[ext_resource path="res://pausemenu.tscn" type="PackedScene" id=18]
-[ext_resource path="res://diemenu.tscn" type="PackedScene" id=19]
+[ext_resource path="res://assets/GUI/ButtonHover.png" type="Texture" id=16]
+[ext_resource path="res://assets/GUI/Button.png" type="Texture" id=17]
+[ext_resource path="res://assets/GUI/ButtonPress.png" type="Texture" id=18]
+[ext_resource path="res://assets/GUI/CheckedBox.png" type="Texture" id=19]
+[ext_resource path="res://assets/GUI/CheckBox.png" type="Texture" id=20]
+[ext_resource path="res://assets/GUI/SmallButtonHover.png" type="Texture" id=21]
+[ext_resource path="res://assets/GUI/SmallButton.png" type="Texture" id=22]
+[ext_resource path="res://assets/GUI/SmallButtonPress.png" type="Texture" id=23]
+[ext_resource path="res://assets/GUI/OptionButtonHover.png" type="Texture" id=24]
+[ext_resource path="res://assets/GUI/OptionButton.png" type="Texture" id=25]
+[ext_resource path="res://littlemonster.fnt" type="BitmapFont" id=26]
+[ext_resource path="res://littlemonster2.fnt" type="BitmapFont" id=27]
+[ext_resource path="res://health.tscn" type="PackedScene" id=28]
+[ext_resource path="res://speech.tscn" type="PackedScene" id=29]
+[ext_resource path="res://pausemenu.tscn" type="PackedScene" id=30]
+[ext_resource path="res://diemenu.tscn" type="PackedScene" id=31]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -76,7 +88,7 @@ polygon = Vector2Array( 32, 32, 98, 32, 98, 30, 126, 30, 126, 32, 258, 32, 258, 
 custom_solver_bias = 0.0
 extents = Vector2( 4, 32 )
 
-[sub_resource type="SampleLibrary" id=38]
+[sub_resource type="SampleLibrary" id=12]
 
 samples/Anxiety = {
 "db": 0.0,
@@ -109,18 +121,290 @@ samples/Hurt = {
 "sample": ExtResource( 15 )
 }
 
-[sub_resource type="StyleBoxFlat" id=13]
+[sub_resource type="StyleBoxTexture" id=13]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-bg_color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
-light_color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
-dark_color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
+texture = ExtResource( 16 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=14]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 17 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=15]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 18 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=16]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 21 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=17]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 22 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=18]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 23 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="ImageTexture" id=19]
+
+flags = 7
+image = Image()
+size = Vector2( 0, 0 )
+storage = 0
+lossy_quality = 0.7
+
+[sub_resource type="StyleBoxTexture" id=20]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 24 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=21]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 25 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxFlat" id=22]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0.6, 0.6, 0.6, 1 )
+light_color = Color( 0.8, 0.8, 0.8, 1 )
+dark_color = Color( 0.8, 0.8, 0.8, 1 )
 border_size = 0
 border_blend = true
 draw_bg = true
+
+[sub_resource type="StyleBoxFlat" id=23]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+light_color = Color( 0.8, 0.8, 0.8, 0 )
+dark_color = Color( 0.8, 0.8, 0.8, 0 )
+border_size = 0
+border_blend = true
+draw_bg = true
+
+[sub_resource type="StyleBoxFlat" id=24]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0.196078, 0.235294, 0.223529, 1 )
+light_color = Color( 0.607843, 0.678431, 0.717647, 1 )
+dark_color = Color( 0.607843, 0.678431, 0.717647, 1 )
+border_size = 4
+border_blend = false
+draw_bg = true
+
+[sub_resource type="StyleBoxFlat" id=25]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 1, 1, 1, 1 )
+light_color = Color( 1, 1, 1, 1 )
+dark_color = Color( 1, 1, 1, 1 )
+border_size = 0
+border_blend = true
+draw_bg = true
+
+[sub_resource type="Theme" id=26]
+
+default_font = ExtResource( 27 )
+Button/colors/font_color = Color( 0.607843, 0.678431, 0.717647, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 1, 1, 1, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = null
+Button/styles/focus = SubResource( 13 )
+Button/styles/hover = SubResource( 13 )
+Button/styles/normal = SubResource( 14 )
+Button/styles/pressed = SubResource( 15 )
+CheckBox/colors/font_color = Color( 0.607843, 0.678431, 0.717647, 1 )
+CheckBox/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+CheckBox/colors/font_color_hover = Color( 1, 1, 1, 1 )
+CheckBox/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+CheckBox/constants/check_vadjust = 0
+CheckBox/constants/hseparation = 4
+CheckBox/fonts/font = null
+CheckBox/icons/checked = ExtResource( 19 )
+CheckBox/icons/radio_checked = null
+CheckBox/icons/radio_unchecked = null
+CheckBox/icons/unchecked = ExtResource( 20 )
+CheckBox/styles/disabled = null
+CheckBox/styles/focus = null
+CheckBox/styles/hover = null
+CheckBox/styles/normal = null
+CheckBox/styles/pressed = null
+HButtonArray/colors/font_color = Color( 0.517647, 0.494118, 0.529412, 1 )
+HButtonArray/colors/font_color_selected = Color( 1, 1, 1, 1 )
+HButtonArray/constants/button_separator = 4
+HButtonArray/constants/icon_separator = 2
+HButtonArray/fonts/font = null
+HButtonArray/fonts/font_selected = null
+HButtonArray/styles/focus = SubResource( 16 )
+HButtonArray/styles/hover = SubResource( 16 )
+HButtonArray/styles/normal = SubResource( 17 )
+HButtonArray/styles/selected = SubResource( 18 )
+Label/colors/font_color = Color( 1, 1, 1, 1 )
+Label/colors/font_color_shadow = Color( 0, 0, 0, 0 )
+Label/constants/line_spacing = 3
+Label/constants/shadow_as_outline = 0
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/fonts/font = null
+OptionButton/colors/font_color = Color( 0.607843, 0.678431, 0.717647, 1 )
+OptionButton/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+OptionButton/colors/font_color_hover = Color( 1, 1, 1, 1 )
+OptionButton/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+OptionButton/constants/arrow_margin = 2
+OptionButton/constants/hseparation = 2
+OptionButton/fonts/font = null
+OptionButton/icons/arrow = SubResource( 19 )
+OptionButton/styles/disabled = null
+OptionButton/styles/focus = SubResource( 20 )
+OptionButton/styles/hover = SubResource( 20 )
+OptionButton/styles/normal = SubResource( 21 )
+OptionButton/styles/pressed = SubResource( 20 )
+Panel/icons/ = null
+PanelContainer/styles/panel = SubResource( 22 )
+PopupMenu/colors/font_color = Color( 0.607843, 0.678431, 0.717647, 1 )
+PopupMenu/colors/font_color_accel = Color( 0.607843, 0.678431, 0.717647, 1 )
+PopupMenu/colors/font_color_disabled = Color( 0.4, 0.4, 0.4, 0.8 )
+PopupMenu/colors/font_color_hover = Color( 1, 1, 1, 1 )
+PopupMenu/constants/hseparation = 4
+PopupMenu/constants/vseparation = 4
+PopupMenu/fonts/font = null
+PopupMenu/icons/checked = ExtResource( 19 )
+PopupMenu/icons/submenu = null
+PopupMenu/icons/unchecked = ExtResource( 20 )
+PopupMenu/styles/hover = SubResource( 23 )
+PopupMenu/styles/panel = SubResource( 24 )
+PopupMenu/styles/panel_disabled = null
+PopupMenu/styles/separator = SubResource( 25 )
+RichTextLabel/colors/default_color = Color( 0.878431, 0.878431, 0.878431, 1 )
+RichTextLabel/colors/font_color_selected = Color( 0.490196, 0.490196, 0.490196, 1 )
+RichTextLabel/colors/selection_color = Color( 0.1, 0.1, 1, 0.8 )
+RichTextLabel/constants/line_separation = 1
+RichTextLabel/constants/table_hseparation = 3
+RichTextLabel/constants/table_vseparation = 3
+RichTextLabel/fonts/bold_font = null
+RichTextLabel/fonts/bold_italics_font = null
+RichTextLabel/fonts/italics_font = null
+RichTextLabel/fonts/mono_font = null
+RichTextLabel/fonts/normal_font = ExtResource( 26 )
+RichTextLabel/styles/focus = null
 
 [node name="level0" type="CanvasModulate"]
 
@@ -521,7 +805,7 @@ scale = Vector2( 1, 1 )
 [node name="SamplePlayer" type="SamplePlayer" parent="CanvasLayer"]
 
 config/polyphony = 20
-config/samples = SubResource( 38 )
+config/samples = SubResource( 12 )
 default/volume_db = 0.0
 default/pitch_scale = 1.0
 default/pan = 0.0
@@ -537,64 +821,30 @@ default/chorus_send = 0.0
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 
-anchor/top = 1
-anchor/right = 1
-anchor/bottom = 1
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 16.0
-margin/top = 676.0
-margin/right = 24.0
-margin/bottom = 16.0
+theme/theme = SubResource( 26 )
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 0.0
+margin/bottom = 0.0
 
-[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
-
-visibility/opacity = 0.75
-anchor/top = 1
-anchor/right = 1
-anchor/bottom = 1
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = -20.0
-margin/top = 94.0
-margin/right = -20.0
-margin/bottom = -20.0
-custom_styles/panel = SubResource( 13 )
-
-[node name="Label" type="Label" parent="CanvasLayer/Control"]
-
-anchor/top = 1
-anchor/right = 1
-anchor/bottom = 1
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 10.0
-margin/top = 84.0
-margin/right = 10.0
-margin/bottom = 10.0
-custom_fonts/font = ExtResource( 16 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-autowrap = true
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="health" parent="CanvasLayer" instance=ExtResource( 17 )]
+[node name="health" parent="CanvasLayer/Control" instance=ExtResource( 28 )]
 
 transform/pos = Vector2( 16, 16 )
 animation = "freshman1"
 
-[node name="Pause" parent="CanvasLayer" instance=ExtResource( 18 )]
+[node name="Speech" parent="CanvasLayer/Control" instance=ExtResource( 29 )]
 
 visibility/visible = false
 
-[node name="Die" parent="CanvasLayer" instance=ExtResource( 19 )]
+[node name="Pause" parent="CanvasLayer/Control" instance=ExtResource( 30 )]
+
+visibility/visible = false
+
+[node name="Die" parent="CanvasLayer/Control" instance=ExtResource( 31 )]
 
 visibility/visible = false
 
